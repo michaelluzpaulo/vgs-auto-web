@@ -1,0 +1,751 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-22: 1.375rem;
+  --fs-24: 1.5rem;
+  --fs-30: 1.875rem;
+  --fs-34: 2.125rem;
+  --fs-36: 2.25rem;
+
+  --white: #fff;
+  --gray-100: #e0e0e0;
+  --gray-200: #d9d9d9;
+  --gray-500: #768291;
+  --gray-600: #28313c;
+  --black: #000;
+}
+
+.yaldevi {
+  font-family: "Yaldevi", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.bad-script-regular {
+  font-family: "Bad Script", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Yaldevi", sans-serif;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-soothing: antialiased !important;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  background-color: var(--white);
+  color: var(--black);
+  font-size: var(--fs-18);
+}
+
+dl,
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+ol,
+ul {
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+  word-break: break-word;
+}
+/* p {
+  margin-bottom: 0;
+} */
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+.breadcrumb {
+  margin-bottom: 0;
+}
+.p-geral {
+  padding: 4rem 0;
+}
+.g-background-1 {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.g-btn-ver-todos {
+  color: var(--gray-600);
+  font-size: var(--fs-16);
+  text-align: center;
+  display: block;
+}
+.g-btn-ver-todos span {
+  font-size: var(--fs-18);
+}
+.g-btn-ver-todos:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.title-geral-p {
+  padding-bottom: 50px;
+}
+.pg-internas .title-geral-p {
+  padding-bottom: 30px;
+}
+.title-geral {
+  font-size: var(--fs-34);
+  font-weight: bold;
+  color: var(--fs-black);
+  text-align: center;
+}
+.title-geral-traco {
+  width: 100%;
+  height: 5px;
+  background: var(--gray-500);
+  margin: auto;
+}
+
+.all-header {
+  width: 100%;
+  border-top: 5px solid var(--gray-500);
+}
+.all-header .logo img {
+  width: 100%;
+  height: 4.6875rem;
+}
+.all-header .nav-link {
+  font-size: var(--fs-18);
+  color: var(--gray-500);
+}
+.all-header .nav-link:hover {
+  color: var(--black);
+}
+.all-header .nav-link.active{
+  color: var(--black) !important;
+}
+.all-header .header-btn_area-restrita {
+  background-color: var(--gray-500);
+  color: var(--white);
+  padding: 0.75rem 1.5625rem;
+  transition: 0.8s;
+}
+.all-header .header-btn_area-restrita:hover {
+  background-color: var(--gray-600);
+}
+.all-header .header-redes-sociais {
+  margin-right: 12px;
+}
+.all-header .header-redes-sociais-ico {
+  color: var(--black);
+  font-size: var(--fs-20);
+}
+.all-header .header-redes-sociais-ico:hover {
+  color: var(--gray-500);
+}
+.all-banner {
+  -webkit-box-shadow: 0px 10px 26px -7px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 10px 26px -7px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 10px 26px -7px rgba(0, 0, 0, 0.5);
+  background-color: var(--gray-100);
+  height: 350px;
+}
+.owl-carousel .owl-dots.disabled,
+.owl-carousel .owl-nav.disabled {
+  display: flex;
+}
+.owl-theme .owl-nav {
+  width: 100%;
+  top: 50%;
+  margin-top: -42px !important;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: blue; */
+  padding: 0 8%;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 2;
+}
+.owl-carousel-principal {
+  width: 100%;
+}
+.owl-carousel-principal .owl-carousel__item {
+  height: 350px;
+}
+.owl-nav button i {
+  color: #fff;
+  font-size: 50px;
+  background-color: rgba(128, 83, 106, 0.55);
+}
+.owl-nav button:hover i {
+  background-color: #869791;
+}
+.all-curso-online,
+.all-depoimentos {
+  background-color: var(--gray-200);
+}
+.sobre .sobre-box_fotos {
+  width: 17.5rem;
+  height: 27.125rem;
+  margin: auto;
+  margin-bottom: 36px;
+}
+.sobre .sobre-box_fotos-box {
+  width: 17.5rem;
+  height: 27.125rem;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  z-index: 999;
+}
+.sobre .sobre-box_fotos .sobre-box_fotos-mask1 {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 5.875rem;
+  height: 8.4375rem;
+  z-index: 1;
+}
+.sobre .sobre-box_fotos .sobre-box_fotos-mask2 {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 5.875rem;
+  height: 8.4375rem;
+  z-index: 1;
+}
+.flor_mask {
+  width: 10.0625rem;
+  height: 3.5625rem;
+  margin: auto;
+  margin-top: 1.875rem;
+}
+.sobre_content {
+  font-size: var(--fs-18);
+  /* font-family: "Bad Script"; */
+}
+.all-curso-online .title-geral-traco {
+  width: 8.625rem;
+}
+.terapia .title-geral-traco {
+  width: 23rem;
+}
+.g-box_shadow{
+    background-color: rgba(5, 4, 4, 0.2);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.curso-box,
+.terapia-box {
+  width: 394px;
+  height: 206px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.curso-box_title,
+.terapia-box_title {
+  font-size: var(--fs-24);
+  font-weight: bold;
+  color: var(--white);
+  padding: 0 25px;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.42);
+  line-height: 30px;
+  z-index: 999
+}
+.curso-box_btn {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--white);
+  font-size: var(--fs-18);
+  font-weight: bold;
+  -webkit-border-top-left-radius: 20px;
+  -moz-border-radius-topleft: 20px;
+  border-top-left-radius: 20px;
+  padding: 8px 20px;
+  color: var(--black);
+  transition: all 0.5s;
+  cursor: pointer;
+  -webkit-box-shadow: -8px -9px 12px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -8px -9px 12px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: -8px -9px 12px -10px rgba(0, 0, 0, 0.75);
+}
+.curso-box_btn:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  right: 10px;
+  bottom: 3px;
+}
+.curso-box_btn i {
+  margin-left: 10px;
+  color: var(--gray-500);
+}
+.curso-box_mask {
+  background-color: var(--white);
+  height: 10px;
+  width: 70%;
+  position: absolute;
+  top: -5px;
+  left: 0;
+}
+.terapia-box_btn {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: var(--fs-18);
+  font-weight: bold;
+  padding: 8px 20px;
+  color: var(--white);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.terapia-box_btn i {
+  margin-left: 10px;
+  color: var(--white);
+}
+.terapia-box_mask {
+  background-color: var(--white);
+  height: 5px;
+  width: 60%;
+  position: absolute;
+  bottom: 40px;
+  right: 0;
+}
+.terapia-box_btn:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  right: 10px;
+  bottom: 3px;
+}
+.terapia-box_btn:hover .terapia-box_mask {
+  bottom: 40px;
+}
+/* .all-depoimentos {
+  font-family: "Bad Script";
+} */
+.all-depoimentos .title-geral-traco {
+  width: 11rem;
+}
+.all-depoimentos .depoimentos-box_ico i {
+  color: var(--gray-500);
+  font-size: var(--fs-24);
+  margin-right: 5px;
+}
+.all-depoimentos .depoimentos-box_name {
+  font-size: var(--fs-16);
+}
+.all-depoimentos .depoimentos-box_content {
+  font-size: var(--fs-16);
+}
+.all-depoimentos .depoimentos-box {
+  margin: 0 35px;
+}
+.all-depoimentos .depoimentos-box .depoimentos-box_mask {
+  position: absolute;
+  top: -10px;
+  left: -30px;
+  width: 55px;
+  height: 32px;
+}
+.all-redes-sociais {
+  background-color: var(--gray-500);
+  color: var(--white);
+  text-align: center;
+  padding: 10px 0;
+}
+.all-redes-sociais p {
+  font-size: var(--fs-18);
+  font-weight: bold;
+}
+.all-redes-sociais .redes-sociais-ico {
+  color: var(--white);
+  font-size: var(--fs-24);
+}
+.all-redes-sociais .redes-sociais-ico:hover {
+  color: var(--gray-600);
+}
+.all-footer {
+  background-color: var(--gray-500);
+  color: var(--white);
+  font-size: var(--fs-14);
+  text-align: center;
+  padding: 10px 0;
+}
+.footer-menu_logo img {
+  width: 150px;
+}
+.footer-menu .title-geral {
+  font-size: var(--fs-18);
+  text-align: left;
+}
+.footer-menu .footer-menu_menu .title-geral-traco {
+  width: 3rem;
+  margin: initial;
+}
+.footer-menu .footer-menu_menu .nav-link {
+  color: var(--blabk);
+}
+.footer-menu .footer-menu_menu .nav-link:hover {
+  color: var(--gray-500);
+}
+.footer-menu .footer-menu_contato .title-geral-traco {
+  width: 7rem;
+  margin: initial;
+}
+.footer-menu .footer-menu_contato i {
+  margin-right: 5px;
+}
+.pg-internas .title-geral {
+  font-size: var(--fs-30);
+}
+.pg-internas .title-geral-traco {
+  width: 15%;
+}
+.all-breadcrumb {
+  background-color: var(--gray-500);
+  font-size: var(--fs-16);
+  padding: 6px 0;
+}
+.all-breadcrumb .breadcrumb-item-text {
+  color: var(--white);
+}
+.all-galeria-fotos {
+  background-color: var(--gray-200);
+  padding: 70px 0;
+  margin-top: 50px;
+}
+.all-galeria-fotos .galeria-fotos_box1 {
+  width: 100%;
+  height: 380px;
+  background: red;
+}
+.all-galeria-fotos .galeria-fotos_box2 {
+  width: 100%;
+  height: 178px;
+  background: red;
+}
+.artigos_box {
+  padding: 10px 15px;
+  background-color: var(--white);
+  display: block;
+  margin-top: 30px;
+}
+.artigos_box:hover {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.artigos_box h2 {
+  font-size: var(--fs-18);
+  font-weight: bold;
+  color: var(--black);
+  height: 44px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.artigos_box .artigos_box-divider {
+  width: 100%;
+  height: 5px;
+  background: var(--gray-500);
+}
+.artigos_box h3 {
+  font-size: var(--fs-16);
+  color: var(--black);
+  margin-top: 8px;
+}
+.artigos_box-content {
+  height: 140px;
+  margin-top: 10px;
+  color: var(--black);
+}
+.artigos_box-bnt {
+  font-size: var(--fs-16);
+  background-color: var(--gray-500);
+  color: var(--white);
+  padding: 4px 22px;
+  font-weight: bold;
+}
+.artigos_box-bnt span {
+  font-size: var(--fs-20);
+}
+.content-artigo .title-geral {
+  text-align: left;
+}
+.content-artigo .title-geral-traco {
+  margin: initial;
+  width: 100%;
+}
+.curso-box_valor {
+  background-color: var(--gray-200);
+  height: 150px;
+  margin-left: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: var(--fs-36);
+}
+.curso-box_valor span {
+  font-size: var(--fs-24);
+}
+.curso-box_valor .curso-box_valor-inscrever {
+  position: absolute;
+  bottom: -26px;
+  left: auto;
+  background-color: var(--gray-500);
+  color: var(--white);
+  padding: 12px 50px;
+  font-size: var(--fs-20);
+}
+.curso-box_valor .curso-box_valor-inscrever:hover{
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.curso-box_free {
+  background-color: var(--gray-200);
+  padding: 20px 0;
+}
+.curso-box_free_valor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: var(--fs-36);
+  margin-bottom: 20px;
+}
+.curso-box_free  .curso-box-free_inscrever{
+  background-color: var(--gray-500);
+  color: var(--white);
+  padding: 12px 50px;
+  font-size: var(--fs-20);
+  display:block;
+  margin: auto;
+}
+.curso-box_valor .curso-box_valor-inscrever:hover, .curso-box_free .curso-box-free_inscrever:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.pg-contato input,
+.pg-contato textarea {
+  background-color: var(--gray-100);
+  border-radius: 0;
+}
+.contato-btn {
+  color: var(--white);
+  background-color: var(--gray-500);
+  padding: 8px 80px;
+  border-radius: 0;
+  margin-top: 10px;
+}
+.contato-btn:hover {
+  background-color: var(--gray-600);
+  color: var(--white);
+}
+.contato-card {
+  padding: 2.188rem;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  color: var(--black);
+  height: 9.375rem;
+}
+.contato-card-title {
+  font-size: 0.75rem;
+}
+.contato-card-ico-fone {
+  width: 4.313rem;
+  height: 4.063rem;
+}
+.contato-card-ico {
+  font-size: 4.063rem;
+  line-height: 4.063rem;
+  color: var(--gray-500);
+}
+.contato-card-telefone {
+  font-size: 1.375rem;
+}
+.all-maps {
+  width: 100%;
+  height: 450px;
+}
+.galeria_fotos {
+  background-color: #eee;
+  margin-top: 2.5rem;
+  padding: 1.25rem 0;
+}
+.galeria_fotos a {
+  display: block;
+  padding: 0.938rem 0;
+}
+.galeria_fotos img {
+  width: 100%;
+  background-size: cover;
+}
+.footer_email {
+  font-size: var(--fs-16);
+}
+.content-artigo p {
+  margin-bottom: 0; important
+}
+.btn_whatsapp {
+  display: flex;
+    width: 70px;
+    height: 70px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 1px 1px 2px #888;
+}
+
+.all-depoimentos .owl-carousel .item{
+    margin-right: 10px
+}
+.all-depoimentos .owl-nav {
+display: flex;
+justify-content: center;
+font-size: 60px;
+line-height: 30px;
+gap: 5px
+}
+.all-depoimentos .owl-nav span{
+  color: var(--gray-500);
+  }
+
+
+
+@media (max-width: 1400px) {
+  .curso-box,
+  .terapia-box {
+    width: 350px;
+    height: 206px;
+    margin-bottom: 36px;
+  }
+  .curso-box_btn {
+    padding: 5px 20px;
+  }
+}
+@media (max-width: 1024px) {
+  .p-geral {
+    padding: 4rem 0.375rem;
+  }
+  .all-header .logo img {
+    width: 100%;
+    height: 3.6875rem;
+  }
+  .header-redes-sociais {
+    justify-content: center;
+  }
+  .all-header .header-btn_area-restrita {
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+  }
+  .footer-menu_menu {
+    display: none;
+  }
+  .curso-box,
+  .terapia-box {
+    width: 100%;
+  }
+  .all-galeria-fotos .galeria-fotos_box1,
+  .all-galeria-fotos .galeria-fotos_box2 {
+    margin-bottom: 20px;
+  }
+  .all-depoimentos .depoimentos-box {
+    margin: 20px 10px;
+  }
+  .artigos_box-content {
+    height: 170px;
+  }
+  .curso-box_valor {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 700px) {
+  .pg-internas .pg-internas_texto img
+  {
+    height: 100% !important;
+    margin-right: 0 !important;
+    width: 50% !important;
+  }
+  .owl-carousel-principal .owl-carousel__item {
+    height: 400px;
+    background-size: cover;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+  .all-header .logo img {
+    width: 149px;
+    height: 48px;
+}
+  .curso-box,
+  .terapia-box {
+    width: 100%;
+    height: 160px;
+  }
+  .curso-box_title,
+  .terapia-box_title {
+    font-size: var(--fs-18);
+    line-height: var(--fs-18);
+    padding: 0 10px;
+  }
+  .curso-box_btn,
+  .terapia-box_btn {
+    font-size: var(--fs-16);
+  }
+  .terapia-box_mask {
+    bottom: 38px;
+    width: 60%;
+  }
+  .footer-menu_menu,
+  .footer-menu_logo {
+    display: none;
+  }
+  .all-depoimentos .depoimentos-box .depoimentos-box_mask {
+    left: -10px;
+  }
+  .pg-internas .title-geral-traco {
+    width: 40%;
+  }
+
+  .curso-box_valor {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+  .sobre-box_fotos {
+    margin-bottom: 30px;
+  }
+  .all-header .header-redes-sociais {
+    margin-right: 0;
+}
+}

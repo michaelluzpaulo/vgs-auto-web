@@ -1,0 +1,11 @@
+{
+    "name": "Depoimento",
+    "alias": "depoimento",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Depoimento\\Providers\\DepoimentoServiceProvider"
+    ],
+    "files": []
+}
