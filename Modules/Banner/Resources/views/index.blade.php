@@ -34,8 +34,8 @@
 
                         <div class="col-lg-3">
                             <div class="form-group">
-                                <label for="filtro_titulo" class="control-label">Nome</label>
-                                <input type="text" class="form-control" name="filtro_titulo" id="filtro_titulo"
+                                <label for="filtro_nome" class="control-label">Nome</label>
+                                <input type="text" class="form-control" name="filtro_nome" id="filtro_nome"
                                     placeholder="Digite uma palavra chave">
                             </div>
                         </div>
@@ -72,7 +72,7 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Titulo</th>
+                                        <th>Nome</th>
                                         <th class="text-center">Ordem</th>
                                         <th class="text-center">Ativo</th>
                                         <th class="text-center">Editar</th>

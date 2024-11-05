@@ -7,13 +7,12 @@
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Terapias Integradas</title>
+    <title>VGS Autos</title>
     <meta
-        content="A área terapêutica tem evoluído significativamente, adaptando-se às demandas atuais. Hoje, se busca resultados rápidos e eficazes, e por isso sou focada e especializada em abordagens práticas com ferramentas e tratamentos que promovem autoconhecimento profundo"
+        content="VGS negócios automotivos atua no ramo de comércio de automóveis,trabalhando com alguns diferenciais como amizade, respeito,profissionalismo e transparência em nossos serviços prestados."
         name="description">
-    <meta name="keywords"
-        content="Terapias, REIKI, CONHECENDO MEU CAMPO ENERGÉTICO, CONSTELAÇÃO SISTÊMICA FAMILIAR,DESENVOLVENDO VISÃO SISTEMICA, COMUNICAÇÃO NÃO VIOLENTA, REIKI MESTRADO, PSICANÁLISE MODERNA,TERAPIA DE ESQUEMAS DE YOUNG, TERAPIA COGNITIVO COMPORTAMENTAL, CONSTELAÇÃO FAMILIAR, REIKI TERAPIA, TERAPIAS EM GRUPO, CONSTELAÇÃO ORGANIZACIONAL, TERAPIA ONLINE">
-    <meta property="og:title" content="Cursos e Terapias Integradas">
+    <meta name="keywords" content="revenda de carros, carros, carros usados, venda de carro, compra de carro, revenda">
+    <meta property="og:title" content="VGS negócios automotivos">
     <meta property="og:description" content="">
     <meta property="og:type" content="article" />
     <meta property="og:image" content="">
@@ -33,7 +32,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" />
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-THD77CF5RK"></script>
+    {{-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-THD77CF5RK"></script> --}}
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -47,8 +46,7 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Yaldevi:wght@200..700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet" />
 
     <link href="/vendorjs/owl/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="/vendorjs/owl/assets/owl.theme.default.css" rel="stylesheet">
@@ -85,33 +83,24 @@
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse justify-content-end gap-5" id="navbarSupportedContent">
-                                <ul class="navbar-nav  mb-2 mb-lg-0">
+                                <ul class="navbar-nav  mb-2 mb-lg-0 d-flex items-center ">
                                     @include('site::inc-menu')
                                 </ul>
-                                <div class="header-redes-sociais d-flex gap-3">
-                                    <a href="https://www.instagram.com/terapias_integradas_suelen/" target="_blanck"><i
-                                            class="bi bi-instagram header-redes-sociais-ico"></i></a>
-                                    <a href="https://wa.me/5511932443316?text=Abordagem%20prática,%20foco%20em%20resultados%20eficientes!"
-                                        target="_blanck"><i class="bi bi-whatsapp header-redes-sociais-ico"></i></a>
-                                    <a href="https://www.tiktok.com/@suelenpereira_terapias" target="_blanck"><i
-                                            class="bi bi-tiktok header-redes-sociais-ico"></i></a>
-                                    <a href="https://www.youtube.com/@cursoseterapiasintegradas" target="_blanck"><i
-                                            class="bi bi-youtube header-redes-sociais-ico"></i></a>
-                                </div>
-                                <a href="/area-restrita-aluno" class="header-btn_area-restrita">Área do Aluno</a>
+                                <a href="https://wa.me/5551998331102?text=VGS%20negócios%20automotivos" target="_blanck"
+                                    class="header-redes-sociais desktop">
+                                    <i class="bi bi-whatsapp header-redes-sociais-ico"></i>
+                                    <span>(51) 99833-1102</span>
+                                </a>
                             </div>
                         </div>
                     </nav>
                 </div>
             </div>
-
-
         </header>
         <main>
             @yield('content')
         </main>
         <footer>
-            @include('site::inc-redes-sociais')
             @include('site::inc-footer')
         </footer>
     </div>

@@ -8,27 +8,30 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
-use Modules\Curso\Repositories\CursoRepository;
 use Modules\Site\Services\EmailService;
 use Modules\Institucional\Repositories\InstitucionalRepository;
-use Modules\Aluno\Repositories\AlunoRepository;
-use Modules\Aluno\Repositories\AlunoCursoRepository;
+use Modules\Institucional\Repositories\InstitucionalFotoRepository;
+use Modules\Categoria\Repositories\CategoriaRepository;
+use Modules\Carro\Repositories\CarroFotoRepository;
+use Modules\Carro\Repositories\CarroRepository;
 
 class SiteController extends Controller
 {
-  public $alunoRepository;
-  public $alunoCursoRepository;
-  public $cursoRepository;
-  public $institucionalRepository;
+  private $institucionalRepository;
+  private $institucionalFotoRepository;
+  private $categoriaRepository;
+  private $carroRepository;
+  private $carroFotoRepository;
   private $emailService;
 
-  public function __construct(CursoRepository $cursoRepository,  AlunoRepository $alunoRepository, AlunoCursoRepository $alunoCursoRepository, InstitucionalRepository $institucionalRepository, EmailService $emailService)
+  public function __construct(CarroFotoRepository $carroFotoRepository, CategoriaRepository $categoriaRepository, CarroRepository $carroRepository, InstitucionalRepository $institucionalRepository, InstitucionalFotoRepository $institucionalFotoRepository, EmailService $emailService)
   {
     $this->emailService = $emailService;
-    $this->cursoRepository = $cursoRepository;
     $this->institucionalRepository = $institucionalRepository;
-    $this->alunoRepository = $alunoRepository;
-    $this->alunoCursoRepository = $alunoCursoRepository;
+    $this->institucionalFotoRepository = $institucionalFotoRepository;
+    $this->categoriaRepository = $categoriaRepository;
+    $this->carroRepository = $carroRepository;
+    $this->carroFotoRepository = $carroFotoRepository;
   }
 
   /**
@@ -42,33 +45,19 @@ class SiteController extends Controller
       ->orderByRaw("ordem")
       ->get();
 
-    $bannersPrincipalMobile = DB::table("banner")
-      ->where("ativo", "=", "S")
-      ->orderByRaw("ordem")
-      ->get();
+    // $bannersPrincipalMobile = DB::table("banner")
+    //   ->where("ativo", "=", "S")
+    //   ->orderByRaw("ordem")
+    //   ->get();
 
+    $carros = $this->carroRepository->listDestaque('N');
+    // $carros = DB::table("carro")
+    //   ->where("ativo", "=", "S")
+    //   ->orderByRaw("ASC")
+    //   ->limit(9)
+    //   ->get();
 
-    $institucional = $this->institucionalRepository->find(1);
-    $institucionalFoto =  $this->institucionalRepository->getFirstImg(1);
-
-    $depoimentos = DB::table("depoimento")
-      ->where("ativo", "=", "S")
-      ->orderByRaw("RAND()")
-      ->get();
-
-    $cursos = DB::table("curso")
-      ->where("ativo", "=", "S")
-      ->orderByRaw("ordem")
-      ->limit(9)
-      ->get();
-
-    $terapias = DB::table("terapia")
-      ->where("ativo", "=", "S")
-      ->orderByRaw("ordem")
-      ->limit(9)
-      ->get();
-
-    return view('site::index', ['pgId' => "pg-home", 'pgClass' => '', 'bannersPrincipal' => $bannersPrincipal, "institucional" => $institucional, "institucionalFoto" => $institucionalFoto, "depoimentos" => $depoimentos, "cursos" => $cursos, "terapias" => $terapias, "bannersPrincipalMobile " => $bannersPrincipalMobile]);
+    return view('site::index', ['pgId' => "pg-home", 'pgClass' => '', 'bannersPrincipal' => $bannersPrincipal, 'carros' => $carros]);
   }
 
   public function institucional($ref_amigavel)

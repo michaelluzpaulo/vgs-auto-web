@@ -28,7 +28,7 @@ class BannerService
   {
 
     return $v = Validator::make($arr, [
-      'titulo' => 'required|min:2|max:70',
+      'nome' => 'required|min:2|max:70',
     ]);
   }
 
@@ -85,14 +85,14 @@ class BannerService
       $search = $request->get('search');
 
       $search['id'] = (int)$search['id'];
-      $search['titulo'] = filter_var($search['titulo'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+      $search['nome'] = filter_var($search['nome'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
 
       switch ((int)$order[0]['column']) {
         case 0:
           $sort = 'id';
           break;
         case 1:
-          $sort = 'titulo';
+          $sort = 'nome';
           break;
         case 2:
           $sort = 'ordem';

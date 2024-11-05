@@ -1,0 +1,11 @@
+{
+    "name": "Carro",
+    "alias": "carro",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Carro\\Providers\\CarroServiceProvider"
+    ],
+    "files": []
+}

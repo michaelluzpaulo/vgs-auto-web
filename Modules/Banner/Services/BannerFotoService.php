@@ -67,7 +67,7 @@ class BannerFotoService
         $nameFile = "{$name}.{$extension}";
 
         $w = 1920;
-        $h = 350;
+        $h = 384;
         if ($tipoImg != 'img') {
           $w = 600;
           $h = 600;

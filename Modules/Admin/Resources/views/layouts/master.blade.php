@@ -75,7 +75,7 @@
             <!-- Brand Logo -->
             <a href="/admin" class="brand-link" style="display: flex; justify-content: center;text-decoration: none;">
                 <!--  <img src="/img/logo.png" alt="AdminLTE Logo" class="brand-image  elevation-3" style="">-->
-                <span class="brand-text"><strong>Terapias</strong>&nbsp;integradas</span>
+                <span class="brand-text"><strong>VGS</strong>&nbsp;Autos</span>
             </a>
 
             <!-- Sidebar -->
@@ -103,68 +103,26 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/alunos" class="nav-link" style="color: #fff">
-                                <i class="nav-icon fas fa-user-tie"></i>
+                            <a href="/admin/banners" class="nav-link" style="color: #fff">
+                                <i class="nav-icon fas fa-file-signature"></i>
                                 <p>
-                                    Alunos
+                                    Banner
                                 </p>
                             </a>
-                        </li>
-                        @if (user()->role_id == 1)
-                            <li class="nav-item">
-                                <a href="/admin/depoimentos" class="nav-link" style="color: #fff">
-                                    <i class="nav-icon fas fa-file-signature"></i>
-                                    <p>
-                                        Depoimentos
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/admin/artigos" class="nav-link" style="color: #fff">
-                                    <i class="nav-icon fas fa-file-signature"></i>
-                                    <p>
-                                        Artigos
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/admin/banners" class="nav-link" style="color: #fff">
-                                    <i class="nav-icon fas fa-file-signature"></i>
-                                    <p>
-                                        Banner
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/admin/cupom" class="nav-link" style="color: #fff">
-                                    <i class="nav-icon fas fa-file-signature"></i>
-                                    <p>
-                                        Cupons
-                                    </p>
-                                </a>
-                            </li>
-                        @endif
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" style="color: #fff"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="nav-icon fas fa-comment"></i>
-                                <p>
-                                    Ger. Cursos
-                                </p>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/admin/cursos">Cursos</a></li>
-                                <li><a class="dropdown-item" href="/admin/cursos-modulos">Módulos</a></li>
-                                <li><a class="dropdown-item" href="/admin/cursos-aulas">Aulas</a></li>
-                                <li><a class="dropdown-item" href="/admin/cursos-aulas-duvidas">Dúvidas</a></li>
-                                <li><a class="dropdown-item" href="/admin/cursos-aulas-avaliacoes">Avaliações</a></li>
-                            </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/terapias" class="nav-link" style="color: #fff">
+                            <a href="/admin/categorias" class="nav-link" style="color: #fff">
                                 <i class="nav-icon fas fa-comment"></i>
                                 <p>
-                                    Terapias
+                                    Categorias
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/carros" class="nav-link" style="color: #fff">
+                                <i class="nav-icon fas fa-comment"></i>
+                                <p>
+                                    Carros
                                 </p>
                             </a>
                         </li>
@@ -173,14 +131,6 @@
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Institucionais
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/admin/transacao" class="nav-link" style="color: #fff">
-                                <i class="nav-icon fas fa-dollar-sign"></i>
-                                <p>
-                                    Pagamentos
                                 </p>
                             </a>
                         </li>

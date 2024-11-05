@@ -24,6 +24,7 @@
   --gray-400: #999999;
   --gray-200: #d9d9d9;
   --black: #000;
+  --black-200: #080a00;
   --white: #fff;
   --white-500: #f8f8f8;
   --white-400: #f8f8f8;
@@ -220,11 +221,11 @@ label:not(.form-check-label):not(.custom-file-label) {
   color: var(--white);
 }
 .card-login .card-header {
-  background: var(--purple-600);
+  background: var(--black-200);
   color: var(--white);
 }
 .card-login .btn-login {
-  background: var(--blue);
+  background: var(--black-200);
   color: var(--white);
   padding: 0.438rem 1.25rem;
 }

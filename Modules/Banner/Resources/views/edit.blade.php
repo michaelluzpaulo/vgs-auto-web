@@ -9,9 +9,9 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="titulo" class="control-label">Titulo: </label>
-                    <input type="text" class="form-control" name="titulo" id="titulo" maxlength="70"
-                        value="<?php echo $banner->titulo; ?>">
+                    <label for="nome" class="control-label">Titulo: </label>
+                    <input type="text" class="form-control" name="nome" id="nome" maxlength="70"
+                        value="<?php echo $banner->nome; ?>">
                 </div>
             </div>
             <div class="col-md-6">
@@ -46,7 +46,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="form-group">
-                    <label for="img" class="control-label">Imagem: (1920x350)</label>
+                    <label for="img" class="control-label">Imagem: (1920x384)</label>
                     <input type="file" class="form-control" name="img" id="img">
                 </div>
             </div>
@@ -63,31 +63,6 @@
                     @endif
                 </div>
             </div>
-
-            <div class="col-md-12">
-                <hr />
-            </div>
-            <div class="col-lg-6">
-                <div class="form-group">
-                    <label for="img_mob" class="control-label">Imagem Mobile: (600x600)</label>
-                    <input type="file" class="form-control" name="img_mob" id="img_mob">
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="form-group">
-                    <label for="img_mobx" class="control-label">&nbsp;</label>
-                    @if ($banner->img_mob)
-                        <div><a href="/storage/banner/big_{{ $banner->img_mob }}" target="_blank"
-                                class="btn btn-secondary">Ver imagem</a></div>
-                    @else
-                        <div class="alert alert-warning" role="alert">
-                            <i class="fa fa-exclamation-triangle"></i> Nenhum arquivo encontrado.
-                        </div>
-                    @endif
-                </div>
-            </div>
-
-
         </div>
     </div>
 

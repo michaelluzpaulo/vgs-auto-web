@@ -15,6 +15,6 @@ class Usuarios extends Seeder
   public function run(): void
   {
     DB::table('users')->insert(['id' => 1, 'name' => 'DEVELOPER', 'email' => 'michaelluzpaulo@gmail.com', 'password' =>
-    Hash::make('mlp123'), 'role_id' => 1]);
+    Hash::make('mlp123..'), 'role_id' => 1, "created_at" => date("Y-m-d H:i:s"), 'updated_at' => date("Y-m-d H:i:s"), "active" => 1]);
   }
 }

@@ -28,13 +28,12 @@
 
 <body>
     <div id="app" class="wrapper">
-        <nav class="navbar navbar-expand-md navbar-light bg-login login shadow-sm"
-            style="background-color:#fff;border-top:solid 6px #758291">
+        <nav class="navbar navbar-expand-md navbar-light bg-login login shadow-sm" style="background-color:#080a00">
             <div class="container">
 
                 <a class="navbar-brand m-auto" href="{{ url('/') }}" style="text-decoration: none;">
-                    <img src="{{ env('APP_LOGO_HEADER') }}" title="logo cursos e Terapias Integradas"
-                        alt="logo cursos e Terapias Integradas">
+                    <img src="{{ env('APP_LOGO_HEADER') }}" title="logo vgs negócios automotivos"
+                        alt="logo vgs negócios automotivos" style="height: 90px;">
                     {{-- <span class="brand-text" style="color: #fff;"><strong>Terapias</strong>&nbsp;Integradas</span> --}}
                     <!--
                     <img src="/img/logo.png" style="height: 70px"

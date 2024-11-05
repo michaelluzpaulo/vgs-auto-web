@@ -17,7 +17,7 @@ class BannerRepository extends AbstractRepository implements RepositoryInterface
    * @var string
    */
   protected $table = "banner";
-  protected $fillable = ['url', 'img', 'url', 'ordem', 'ativo', 'titulo', 'img_mob'];
+  protected $fillable = ['nome', 'url', 'img', 'ordem', 'ativo', 'target'];
   //protected $guarded = ['id'];
   public $timestamps = false;
 
@@ -38,8 +38,8 @@ class BannerRepository extends AbstractRepository implements RepositoryInterface
       $select->where(['I.id' => (int)$query_params['search']['id']]);
     }
 
-    if (!empty($query_params['search']['titulo'])) {
-      $select->where('I.titulo', 'LIKE', "%{$query_params['search']['titulo']}%");
+    if (!empty($query_params['search']['nome'])) {
+      $select->where('I.nome', 'LIKE', "%{$query_params['search']['nome']}%");
     }
 
 
@@ -61,7 +61,7 @@ class BannerRepository extends AbstractRepository implements RepositoryInterface
     $data = [];
 
     foreach ($result as $row) {
-      $data[] = ['DT_RowId' => $row->id, $row->id, $row->titulo, $row->ordem, $row->ativo];
+      $data[] = ['DT_RowId' => $row->id, $row->id, $row->nome, $row->ordem, $row->ativo];
     }
 
     // Set total amount of table

@@ -8,8 +8,8 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="titulo" class="control-label">Titulo: </label>
-                    <input type="text" class="form-control" name="titulo" id="titulo" maxlength="70">
+                    <label for="nome" class="control-label">Titulo: </label>
+                    <input type="text" class="form-control" name="nome" id="nome" maxlength="70">
                 </div>
             </div>
             <div class="col-md-6">
@@ -38,17 +38,16 @@
             <hr>
             <div class="col-lg-6">
                 <div class="form-group">
-                    <label for="img" class="control-label">Imagem: (1920x350)</label>
+                    <label for="img" class="control-label">Imagem: (1920x384)</label>
                     <input type="file" class="form-control" name="img" id="img">
                 </div>
             </div>
-            <hr>
-            <div class="col-lg-6">
+            <!--  <div class="col-lg-6">
                 <div class="form-group">
                     <label for="img_mob" class="control-label">Imagem Mobile: (600x600)</label>
                     <input type="file" class="form-control" name="img_mob" id="img_mob">
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 

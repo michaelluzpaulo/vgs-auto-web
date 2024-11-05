@@ -48,7 +48,7 @@ const Banner = (function () {
     myModal.show();
 
     qs(_modalId).addEventListener("shown.bs.modal", function () {
-      qs(`${_modalId} #titulo`).focus();
+      qs(`${_modalId} #nome`).focus();
     });
     qs(_modalId).addEventListener("hidden.bs.modal", function () {
       $(_modalId).remove();
@@ -101,7 +101,7 @@ const Banner = (function () {
       fnServerParams: function (aoData) {
         $.loadmask();
         aoData["search[id]"] = $("#filtro_id").val();
-        aoData["search[titulo]"] = $("#filtro_titulo").val();
+        aoData["search[nome]"] = $("#filtro_nome").val();
         aoData["search[ativo]"] = $("#filtro_ativo").val();
       },
       columnDefs: [
@@ -313,31 +313,31 @@ const Banner = (function () {
             });
           }
 
-          var formData = new FormData();
-          var file = document.querySelector("#img_mob", _formId);
+          // var formData = new FormData();
+          // var file = document.querySelector("#img_mob", _formId);
 
-          if (file.value != "") {
-            step++;
-            var file = file.files[0];
-            formData.append("img_mob", file);
-            formData.append("tipo", 2);
+          // if (file.value != "") {
+          //   step++;
+          //   var file = file.files[0];
+          //   formData.append("img_mob", file);
+          //   formData.append("tipo", 2);
 
-            $.ajax({
-              url: "/admin/banners/" + json.data.id + "/foto",
-              type: "POST",
-              data: formData,
-              dataType: "json",
-              processData: false,
-              contentType: false,
-              success: function (retorno) {
-                message += retorno.message;
-                step--;
-              },
-              error: function (jqXHR, textStatus, errorThrown) {
-                ServiceHttp.exceptionAjax(jqXHR, textStatus, errorThrown);
-              },
-            });
-          }
+          //   $.ajax({
+          //     url: "/admin/banners/" + json.data.id + "/foto",
+          //     type: "POST",
+          //     data: formData,
+          //     dataType: "json",
+          //     processData: false,
+          //     contentType: false,
+          //     success: function (retorno) {
+          //       message += retorno.message;
+          //       step--;
+          //     },
+          //     error: function (jqXHR, textStatus, errorThrown) {
+          //       ServiceHttp.exceptionAjax(jqXHR, textStatus, errorThrown);
+          //     },
+          //   });
+          // }
 
           var tentativa = 0;
           var interval = setInterval(function () {
