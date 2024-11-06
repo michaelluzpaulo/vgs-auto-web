@@ -64,16 +64,23 @@
     <div class="all-content p-geral">
         <div class="container">
             <div class="row">
-                <?php $__currentLoopData = $carros; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php $__currentLoopData = $carro; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="col-lg-3 col-6">
-                        <div class="curso-box g-background-1 position-relative"
-                            style="background-image: url(/storage/carro/big_<?php echo e($c->img); ?>);width: 100%;background-repeat: no-repeat;background-position: center center;">
-                            <div class="g-box_shadow"></div>
-                            <div class="curso-box_title"><?php echo e($c->titulo); ?></div>
-                            <a href="/carro/<?php echo e($c->ref_amigavel); ?>" class="curso-box_btn">Saiba<i
-                                    class="bi bi-plus-circle-fill"></i></a>
-                            <div class="curso-box_mask"></div>
-                        </div>
+                        <a href="/carro/<?php echo e($c->ref_amigavel); ?>" class="carro-card">
+                            <img class="g-background-1 carro-card_img"
+                                style="background-image: url(/storage/carro/big_<?php echo e($c->img); ?>);width: 100%;background-repeat: no-repeat;background-position: center center;">
+                            <div class="carro-card_box d-flex flex-column gap-3">
+                                <div class="carro-card_box-categoria"><?php echo e($c->CATEGORIA); ?></div>
+                                <div class="carro-card_box-titulo"><?php echo e($c->titulo); ?></div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="carro-card_box-ano"><strong>ANO:</strong> <?php echo e($c->ano); ?></div>
+                                    <div class="carro-card_box-combustivel"><strong>COMB:</strong> <?php echo e($c->combustivel); ?>
+
+                                    </div>
+                                </div>
+                                <div class="carro-card_box-valor">R$ <?php echo $c->valor; ?></div>
+                            </div>
+                        </a>
                     </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 

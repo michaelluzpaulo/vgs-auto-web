@@ -50,88 +50,75 @@ class SiteController extends Controller
     //   ->orderByRaw("ordem")
     //   ->get();
 
-    $carros = $this->carroRepository->listDestaque('N');
-    // $carros = DB::table("carro")
-    //   ->where("ativo", "=", "S")
-    //   ->orderByRaw("ASC")
-    //   ->limit(9)
-    //   ->get();
+    $carro = $this->carroRepository->listDestaque('N');
 
-    return view('site::index', ['pgId' => "pg-home", 'pgClass' => '', 'bannersPrincipal' => $bannersPrincipal, 'carros' => $carros]);
+
+    return view('site::index', ['pgId' => "pg-home", 'pgClass' => '', 'bannersPrincipal' => $bannersPrincipal, 'carro' => $carro]);
   }
 
-  public function institucional($ref_amigavel)
+  // public function institucional($ref_amigavel)
+  // {
+  //   $institucional = DB::table("institucional")->where("ref_amigavel", "=", $ref_amigavel)->first();
+  //   $galeria = DB::table("institucional_foto")->where('institucional_id', '=', $institucional->id)->get();
+  //   return view('site::institucional', ['pgId' => "pg-sobre", 'pgClass' => '', "institucional" => $institucional, "galeria" => $galeria]);
+  // }
+
+  public function nossoEndereco(Request $request)
   {
-    $institucional = DB::table("institucional")->where("ref_amigavel", "=", $ref_amigavel)->first();
-    $galeria = DB::table("institucional_foto")->where('institucional_id', '=', $institucional->id)->get();
-    return view('site::institucional', ['pgId' => "pg-sobre", 'pgClass' => '', "institucional" => $institucional, "galeria" => $galeria]);
+    $institucional = $this->institucionalRepository->find(2);
+    return view('site::localizacao', [
+      'pgId' => "pg-localizacao",
+      'pgClass' => '',
+      "institucional" => $institucional
+    ]);
   }
+
 
   public function contato()
   {
     return view('site::contato', ['pgId' => "pg-contato", 'pgClass' => '',]);
   }
 
-  public function artigos()
+  public function carros()
   {
-    $artigos = DB::table("artigo")
-      ->where("ativo", "=", "S")
-      ->orderByRaw("data_cadastro DESC")
-      ->get();
+    $carro = $this->carroRepository->listDestaque('N');
 
 
-    return view('site::artigos', ['pgId' => "pg-artigos", 'pgClass' => '', "artigos" => $artigos]);
+    return view('site::carros', ['pgId' => "pg-carros", 'pgClass' => '', 'carro' => $carro]);
   }
 
-  public function artigo($ref_amigavel)
+  public function carro($ref_amigavel)
   {
-    $artigo = DB::table("artigo")
-      ->where("ref_amigavel", "=", $ref_amigavel)
-      ->first();
+    $carro = $this->carroRepository->findOne(['ref_amigavel' => $ref_amigavel]);
+    $carroFotos = $this->carroFotoRepository->findByArray(['carro_id' => $carro->id], ['*'], 'ordem ASC');
+    $categoria = $this->categoriaRepository->find($carro['categoria_id']);
 
 
-    return view('site::artigo', ['pgId' => "pg-artigos", 'pgClass' => '', "artigo" => $artigo]);
+    return view('site::carro', ['pgId' => "pg-carro", 'pgClass' => '', "carro" => $carro, 'categoria' => $categoria, 'carroFotos' => $carroFotos]);
   }
 
-  public function cursosOnline()
+  public function financiamento(Request $request)
   {
-    $cursos = DB::table("curso")
-      ->where("ativo", "=", "S")
-      ->orderByRaw("ordem")
-      ->get();
-
-    return view('site::cursos', ['pgId' => "pg-cursos", 'pgClass' => '', "cursos" => $cursos]);
+    $institucional = $this->institucionalRepository->find(2);
+    return view('site::financiamento', ['pgId' => 'pg-financiamento', 'pgClass' => '', "institucional" => $institucional]);
   }
 
-  public function terapias()
-  {
-    $terapias = DB::table("terapia")
-      ->where("ativo", "=", "S")
-      ->orderByRaw("ordem")
-      ->get();
+  // public function financiamentoSend(Request $request)
+  // {
+  //   try {
+  //     $data = json_decode($request->all()['data'], true);
+  //     Mail::to('autotoprs@gmail.com', 'Auto Top Multimarcas')
+  //       //    Mail::to('michaelluzpaulo@gmail.com', 'Auto Top Multimarcas')
+  //       ->bcc('ralph@starbuck.com.br', 'Copia Auto Top Multimarcas')
+  //       ->send(new FinanciamentoEmail($data));
 
-    return view('site::terapias', ['pgId' => "pg-terapias", 'pgClass' => '', "terapias" => $terapias]);
-  }
+  //     return response()->json(['error' => 0, 'message' => 'Mensagem enviada com sucesso.', 'data' => ''], 200);
+  //   } catch (\Exception $e) {
+  //     return response()->json(['error' => 1, 'message' => $e->getMessage(), 'data' => ''], 400);
+  //   }
+  // }
 
-  public function curso($ref_amigavel)
-  {
-    $curso = DB::table("curso")
-      ->where("ref_amigavel", "=", $ref_amigavel)
-      ->first();
 
-    $galeria = DB::table("curso_foto")->where('curso_id', '=', $curso->id)->get();
-
-    return view('site::curso', ['pgId' => "pg-cursos", 'pgClass' => '', "curso" => $curso, "galeria" => $galeria]);
-  }
-
-  public function terapia($ref_amigavel)
-  {
-    $terapia = DB::table("terapia")
-      ->where("ref_amigavel", "=", $ref_amigavel)
-      ->first();
-
-    return view('site::terapia', ['pgId' => "pg-terapias", 'pgClass' => '', "terapia" => $terapia]);
-  }
 
   public function sendContato(Request $request)
   {

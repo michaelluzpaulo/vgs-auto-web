@@ -59,6 +59,9 @@ a {
 /* p {
   margin-bottom: 0;
 } */
+ h1{
+  font-size: var(--fs-20);
+ }
 .desktop {
   display: block;
 }
@@ -70,9 +73,11 @@ a {
   margin-bottom: 0;
 }
 .p-geral {
-  padding: 2rem 0;
+  padding: 3rem 0;
 }
-
+.m-t-50{
+margin-top: 50px;
+}
 
 .all-header {
   width: 100%;
@@ -160,9 +165,47 @@ box-shadow: 0px 7px 5px 0px rgba(0,0,0,0.75);
 .all-content{
 background: var(--gray-200);
 }
+.carro-card{
+ display: block;
+ margin-bottom: 50px;
+}
+.carro-card:hover{
+  -webkit-box-shadow: 0px 7px 5px 0px rgba(0,0,0,0.40);
+  -moz-box-shadow: 0px 7px 5px 0px rgba(0,0,0,0.40);
+  box-shadow: 0px 7px 5px 0px rgba(0,0,0,0.40);
+}
+.carro-card_img{
+  height: 200px;
+  background-size: contain;
+}
+.carro-card_box{
+  background: var(--white);
+  padding: 0 10px 20px;
+}
+.carro-card_box-categoria{
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  padding: 3px 0;
+}
+.carro-card_box-titulo{
+  color: var(--black);
+  height: 54px;
+}
+.carro-card_box-ano, .carro-card_box-combustivel{
+  font-size: var(--fs-14);
+  color: var(--black);
+}
+.carro-card_box-valor{
+  color: var(--black);
+  text-align: center;
+}
 .g-btn-ver-todos{
   background: var(--black);
   color: var(--white);
+  padding: 5px 40px;
 }
 .footer-menu {
   background: var(--black);
@@ -399,12 +442,7 @@ gap: 5px
 
 
 @media (max-width: 1400px) {
-  .curso-box,
-  .terapia-box {
-    width: 350px;
-    height: 206px;
-    margin-bottom: 36px;
-  }
+
   .curso-box_btn {
     padding: 5px 20px;
   }
@@ -425,10 +463,7 @@ gap: 5px
     display: block;
     text-align: center;
   }
-  .curso-box,
-  .terapia-box {
-    width: 100%;
-  }
+
   .all-galeria-fotos .galeria-fotos_box1,
   .all-galeria-fotos .galeria-fotos_box2 {
     margin-bottom: 20px;
@@ -467,11 +502,7 @@ gap: 5px
     width: 149px;
     height: 48px;
 }
-  .curso-box,
-  .terapia-box {
-    width: 100%;
-    height: 160px;
-  }
+
   .curso-box_title,
   .terapia-box_title {
     font-size: var(--fs-18);
