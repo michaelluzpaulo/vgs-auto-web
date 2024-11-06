@@ -62,6 +62,7 @@ a {
  h1{
   font-size: var(--fs-20);
  }
+
 .desktop {
   display: block;
 }
@@ -177,6 +178,7 @@ background: var(--gray-200);
 .carro-card_img{
   height: 200px;
   background-size: contain;
+  border: 0;
 }
 .carro-card_box{
   background: var(--white);

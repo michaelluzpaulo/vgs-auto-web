@@ -42,8 +42,6 @@
                             </div>
                         </div>
                     </div>
-                    
-
                 </div>
             </div>
             <?php if($carroFotos && count($carroFotos) > 0): ?>

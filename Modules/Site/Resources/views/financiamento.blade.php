@@ -27,7 +27,9 @@
         <div class="p-geral">
             <div class="container">
                 <div class="row">
-                    <P>GGGG</P>
+                    <div class="col-lg-12">
+                        <h1>teste</h1>
+                    </div>
                 </div>
             </div>
         </div>
