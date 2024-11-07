@@ -51,30 +51,32 @@
 
 
     <div class="all-banner">
-        <div class="owl-carousel owl-theme owl-carousel-principal-mobile" style="position: relative">
-            @foreach ($bannersPrincipal as $banner)
-                <div class="item">
-                    <a href="{{ $banner->url }}" data-background="/storage/banner/big_{{ $banner->img }}"
-                        class="item owl-carousel__item"
-                        style="background-image: url(/storage/banner/big_{{ $banner->img }});width: 100%;height: 384px;background-repeat: no-repeat;background-position: center center;background-size: cover;display:block">
-                    </a>
-                </div>
-            @endforeach
+        <div class="desktop">
+            <div class="owl-carousel owl-theme owl-carousel-principal-mobile shadow" style="position: relative">
+                @foreach ($bannersPrincipal as $banner)
+                    <div class="item">
+                        <a href="{{ $banner->url }}" data-background="/storage/banner/big_{{ $banner->img }}"
+                            class="item owl-carousel__item"
+                            style="background-image: url(/storage/banner/big_{{ $banner->img }});width: 100%;height: 384px;background-repeat: no-repeat;background-position: center center;background-size: cover;display:block">
+                        </a>
+                    </div>
+                @endforeach
+            </div>
         </div>
-        {{-- <div class="banner mobile">
-            <div class="owl-carousel owl-theme owl-carousel-principal">
+        <div class="mobile">
+            <div class="owl-carousel owl-theme owl-carousel-principal ">
                 @foreach ($bannersPrincipal as $banner)
                     <div class="item">
                         <a href="{{ $banner->url }}">
-                            <figure data-background="/storage/banner/big_{{ $banner->img_mob }}"
+                            <figure data-background="/storage/banner/big_{{ $banner->img }}"
                                 class="item owl-carousel__item"
-                                style="background-image: url(/storage/banner/big_{{ $banner->img_mob }});width: 100%;height: 350px;background-repeat: no-repeat;background-position: center center;">
+                                style="background-image: url(/storage/banner/big_{{ $banner->img }});width: 100%;height: 200px;background-repeat: no-repeat;background-position: center center;">
                             </figure>
                         </a>
                     </div>
                 @endforeach
             </div>
-        </div> --}}
+        </div>
     </div>
     <div class="all-content p-geral">
         <div class="container">

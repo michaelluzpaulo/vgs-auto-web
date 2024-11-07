@@ -49,17 +49,32 @@
 
 
     <div class="all-banner">
-        <div class="owl-carousel owl-theme owl-carousel-principal-mobile" style="position: relative">
-            <?php $__currentLoopData = $bannersPrincipal; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $banner): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="item">
-                    <a href="<?php echo e($banner->url); ?>" data-background="/storage/banner/big_<?php echo e($banner->img); ?>"
-                        class="item owl-carousel__item"
-                        style="background-image: url(/storage/banner/big_<?php echo e($banner->img); ?>);width: 100%;height: 384px;background-repeat: no-repeat;background-position: center center;background-size: cover;display:block">
-                    </a>
-                </div>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        <div class="desktop">
+            <div class="owl-carousel owl-theme owl-carousel-principal-mobile shadow" style="position: relative">
+                <?php $__currentLoopData = $bannersPrincipal; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $banner): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="item">
+                        <a href="<?php echo e($banner->url); ?>" data-background="/storage/banner/big_<?php echo e($banner->img); ?>"
+                            class="item owl-carousel__item"
+                            style="background-image: url(/storage/banner/big_<?php echo e($banner->img); ?>);width: 100%;height: 384px;background-repeat: no-repeat;background-position: center center;background-size: cover;display:block">
+                        </a>
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </div>
         </div>
-        
+        <div class="mobile">
+            <div class="owl-carousel owl-theme owl-carousel-principal ">
+                <?php $__currentLoopData = $bannersPrincipal; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $banner): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="item">
+                        <a href="<?php echo e($banner->url); ?>">
+                            <figure data-background="/storage/banner/big_<?php echo e($banner->img); ?>"
+                                class="item owl-carousel__item"
+                                style="background-image: url(/storage/banner/big_<?php echo e($banner->img); ?>);width: 100%;height: 200px;background-repeat: no-repeat;background-position: center center;">
+                            </figure>
+                        </a>
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </div>
+        </div>
     </div>
     <div class="all-content p-geral">
         <div class="container">

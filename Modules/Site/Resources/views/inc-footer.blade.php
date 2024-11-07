@@ -11,7 +11,7 @@
                                 class="bi bi-facebook"></i></a>
                     </div>
                     <a href="https://wa.me/5551998331102?text=VGS%20negócios%20automotivos" target="_blanck"
-                        class="d-flex gap-2 text-white"><i class="bi bi-whatsapp"></i>(51) 99833-1102</a>
+                        class="d-flex gap-2 text-white footer-whats"><i class="bi bi-whatsapp"></i>(51) 99833-1102</a>
                     <div class="d-flex gap-2"><i class="bi bi-envelope-fill"></i>
                         <div class="footer_email">vgsauto.poa@gmail.com</div>
                     </div>
