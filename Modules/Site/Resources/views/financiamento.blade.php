@@ -1,7 +1,11 @@
 @extends('site::layouts.master')
 @section('js')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-    <script src="/dist/js/site/CursoCadastroSimplificado.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
+    {{-- <script type="text/javascript">
+        $(document).ready(function() {
+            Financeiro.init();
+        });
+    </script> --}}
 @endsection
 @section('css')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet" />
@@ -110,7 +114,7 @@
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="data_nascimento" class="form-label">Data nascimento</label>
-                                <input type="text" class="form-control" data-mask-type="data" required
+                                <input type="text" class="form-control" data-mask-type="date" required
                                     name="data_nascimento" id="data_nascimento" />
                             </div>
                         </div>

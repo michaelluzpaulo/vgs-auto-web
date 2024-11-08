@@ -1,6 +1,6 @@
 <?php $__env->startSection('js'); ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-    <script src="/dist/js/site/CursoCadastroSimplificado.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
+    
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('css'); ?>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet" />
@@ -109,7 +109,7 @@
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="data_nascimento" class="form-label">Data nascimento</label>
-                                <input type="text" class="form-control" data-mask-type="data" required
+                                <input type="text" class="form-control" data-mask-type="date" required
                                     name="data_nascimento" id="data_nascimento" />
                             </div>
                         </div>

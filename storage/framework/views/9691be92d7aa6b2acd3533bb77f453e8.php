@@ -1,5 +1,5 @@
 <?php $__env->startSection('js'); ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="/vendorjs/lightbox2/dist/js/lightbox.min.js"></script>
     <script>
         <?php if($carro->vendido == 'S'): ?>
             document.querySelector('.nav-link-2').classList.add("active");
@@ -9,7 +9,7 @@
     </script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('css'); ?>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet" />
+    <link href="/vendorjs/lightbox2/dist/css/lightbox.min.css" rel="stylesheet">
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        <div class="p-geral">
+        <div class="p-geral" id="pg-carro">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
@@ -39,10 +39,9 @@
                         </figure>
                         <div class="desktop">
                             <div class="row m-0 ">
-
                                 <?php if(count($carroFotos) > 0): ?>
                                     <?php $__currentLoopData = $carroFotos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $foto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <div class=" col-lg-3 col-md-6 col-sm-4 p-2">
+                                        <div class=" col-lg-3 col-md-6 col-sm-4">
                                             <figure class="thumb-selector">
                                                 <a href="/storage/carro/big_<?php echo e($foto->img); ?>" title="<?php echo $foto['legenda']; ?>"
                                                     style="display: block" class="galeria-img amplia-imagem">
@@ -60,7 +59,7 @@
                             <?php if($carro->vendido == 'S'): ?>
                                 VENDIDO
                             <?php else: ?>
-                                <?php echo $carro->valor; ?>
+                                R$ <?php echo __currency_mysql_to_iso($carro->valor); ?>
                             <?php endif; ?>
                         </div>
                         <div class="descricao-produto">

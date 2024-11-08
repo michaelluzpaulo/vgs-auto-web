@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class CursoCadastroEmail extends Mailable
+class FinanciamentoEmail extends Mailable
 {
   use Queueable, SerializesModels;
   public $arr;
@@ -21,9 +21,9 @@ class CursoCadastroEmail extends Mailable
   {
     $this->arr = $arr;
 
-    return $this->from('auth@cursoseterapiasintegradas.com.br', 'Cursos e Terapias Integradas')
-      ->subject('Novo Cadastro de Aluno')
-      ->replyTo('contato@cursoseterapiasintegradas.com.br', 'Cadastro de Aluno');
+    return $this->from('auth@vgsauto.com.br', 'Contato')
+      ->subject('Contatos')
+      ->replyTo($this->arr['email'], $this->arr['nome']);
   }
 
   /**
@@ -33,6 +33,6 @@ class CursoCadastroEmail extends Mailable
    */
   public function build()
   {
-    return $this->view('site::emails/cursoCadastro', ['data' => $this->arr]);
+    return $this->view('site::emails/financiamento', ['data' => $this->arr]);
   }
 }

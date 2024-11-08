@@ -1,6 +1,6 @@
 @extends('site::layouts.master')
 @section('js')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="/vendorjs/lightbox2/dist/js/lightbox.min.js"></script>
     <script>
         @if ($carro->vendido == 'S')
             document.querySelector('.nav-link-2').classList.add("active");
@@ -10,7 +10,7 @@
     </script>
 @endsection
 @section('css')
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet" />
+    <link href="/vendorjs/lightbox2/dist/css/lightbox.min.css" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div class="p-geral">
+        <div class="p-geral" id="pg-carro">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
@@ -40,10 +40,9 @@
                         </figure>
                         <div class="desktop">
                             <div class="row m-0 ">
-
                                 @if (count($carroFotos) > 0)
                                     @foreach ($carroFotos as $foto)
-                                        <div class=" col-lg-3 col-md-6 col-sm-4 p-2">
+                                        <div class=" col-lg-3 col-md-6 col-sm-4">
                                             <figure class="thumb-selector">
                                                 <a href="/storage/carro/big_{{ $foto->img }}" title="<?php echo $foto['legenda']; ?>"
                                                     style="display: block" class="galeria-img amplia-imagem">
@@ -61,7 +60,7 @@
                             @if ($carro->vendido == 'S')
                                 VENDIDO
                             @else
-                                <?php echo $carro->valor; ?>
+                                R$ <?php echo __currency_mysql_to_iso($carro->valor); ?>
                             @endif
                         </div>
                         <div class="descricao-produto">

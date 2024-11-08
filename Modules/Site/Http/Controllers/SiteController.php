@@ -120,7 +120,7 @@ class SiteController extends Controller
 
 
 
-  public function sendContato(Request $request)
+  public function financiamentoSend(Request $request)
   {
     try {
       $data = json_decode($request->all()['data'], true);
@@ -131,7 +131,7 @@ class SiteController extends Controller
       if (mb_strlen($data['nome']) < 6) {
         throw new Exception('Digite seu nome completo! ');
       }
-      $this->emailService->contatoEmail($data);
+      $this->emailService->financiamentoEmail($data);
 
       return response()->json(['error' => 0, 'message' => __('Mensagem enviada com sucesso'), 'data' => ''], 200);
     } catch (\Exception $e) {

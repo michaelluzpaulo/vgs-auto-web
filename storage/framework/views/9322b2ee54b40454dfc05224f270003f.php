@@ -127,6 +127,7 @@
 
 
     <?php echo $__env->yieldContent('js'); ?>
+    <script src="/dist/js/site/Financiamento.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
     <script src="/dist/js/site/Contato.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
     <script src="/dist/js/site/main.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
 

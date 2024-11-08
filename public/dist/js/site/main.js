@@ -21,11 +21,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
     Contato.init();
   }
 
-  if (qs("#form-curso-simplificado")) {
-    CursoCadastroSimplificado.init();
+  if ($("#form-financiamento")[0]) {
+    Financiamento.init();
   }
 
-  if (qs("#pg-checkout")) {
-    Checkout.init();
+  if ($(".amplia-imagem")[0]) {
+    $(".amplia-imagem").attr("data-lightbox", "imagem");
   }
 });

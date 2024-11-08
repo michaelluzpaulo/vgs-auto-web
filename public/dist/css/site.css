@@ -347,6 +347,10 @@ h1 {
   height: 60px;
   margin: auto;
 }
+#pg-carro .galeria-img img {
+  max-width: 100%;
+  background-size: cover;
+}
 
 @media (max-width: 1024px) {
   .p-geral {

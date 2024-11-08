@@ -21,7 +21,7 @@ class ContatoEmail extends Mailable
   {
     $this->arr = $arr;
 
-    return $this->from('auth@cursoseterapiasintegradas.com.br', 'Contato')
+    return $this->from('auth@vgsauto.com.br', 'Contato')
       ->subject('Contatos')
       ->replyTo($this->arr['email'], $this->arr['nome']);
   }

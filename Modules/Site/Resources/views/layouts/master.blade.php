@@ -130,6 +130,7 @@
 
 
     @yield('js')
+    <script src="/dist/js/site/Financiamento.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
     <script src="/dist/js/site/Contato.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
     <script src="/dist/js/site/main.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
 
