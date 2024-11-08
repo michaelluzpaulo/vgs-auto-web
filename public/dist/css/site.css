@@ -175,18 +175,18 @@ h1 {
 }
 .carro-card_img {
   height: 200px;
-  background-size: contain;
+  background-size: cover;
   border: 0;
 }
 .carro-card_box {
   background: var(--white);
-  padding: 0 10px 20px;
+  padding: 10px 20px;
 }
 .carro-card_box-categoria {
   background: var(--black);
   color: var(--white);
   text-align: center;
-  width: 70%;
+  width: 100%;
   margin: auto;
   padding: 3px 0;
 }

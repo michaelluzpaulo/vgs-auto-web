@@ -84,8 +84,8 @@
                         <a href="/carro/<?php echo e($c->ref_amigavel); ?>" class="carro-card">
                             <img class="g-background-1 carro-card_img"
                                 style="background-image: url(/storage/carro/big_<?php echo e($c->img); ?>);width: 100%;background-repeat: no-repeat;background-position: center center;">
+                            <div class="carro-card_box-categoria"><?php echo e($c->CATEGORIA); ?></div>
                             <div class="carro-card_box d-flex flex-column gap-3">
-                                <div class="carro-card_box-categoria"><?php echo e($c->CATEGORIA); ?></div>
                                 <div class="carro-card_box-titulo"><?php echo e($c->titulo); ?></div>
                                 <div class="d-flex justify-content-between">
                                     <div class="carro-card_box-ano"><strong>ANO:</strong> <?php echo e($c->ano); ?></div>
