@@ -43,12 +43,13 @@ class CarroService
   public function save($id = 0, $data)
   {
 
-    $data['valor'] = __currency_iso_to_mysql($data['valor']);
 
     $v = $this->isValidate($data);
     if ($v->fails()) {
       return __format_error_html($v);
     }
+
+    $data['valor'] = __currency_iso_to_mysql($data['valor']);
 
     if ($id) {
       $obj = $this->repository->find($id);

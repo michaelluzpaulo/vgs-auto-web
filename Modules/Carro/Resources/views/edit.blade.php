@@ -112,7 +112,7 @@
                         <div class="form-group">
                             <label for="valor" class="control-label">Valor R$: </label>
                             <input type="text" class="form-control" name="valor" id="valor"
-                                value="<?php echo $carro->valor; ?>">
+                                data-mask-type="moeda" value="<?php echo $carro->valor; ?>">
                         </div>
                     </div>
                 </div>

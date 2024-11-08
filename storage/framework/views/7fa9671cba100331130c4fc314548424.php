@@ -77,7 +77,8 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="valor" class="control-label">Valor R$: </label>
-                    <input type="text" class="form-control" name="valor" id="valor">
+                    <input type="text" class="form-control" name="valor" id="valor"
+                        data-mask-type="moeda">
                 </div>
             </div>
 

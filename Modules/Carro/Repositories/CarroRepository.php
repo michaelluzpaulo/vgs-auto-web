@@ -54,6 +54,16 @@ class CarroRepository extends AbstractRepository implements RepositoryInterface
     $select = DB::table('carro AS C')
       ->selectRaw("C.*,CAT.nome AS CATEGORIA")
       ->join("categoria AS CAT", 'C.categoria_id', 'CAT.id')
+      ->orderByRaw('CAT.nome ASC, C.titulo ASC')
+      ->limit(8);
+    $select->whereRaw("C.vendido = '{$vendido}' && C.ativo = 'S'");
+    return $select->get();
+  }
+  public function listCarros($vendido = 'S')
+  {
+    $select = DB::table('carro AS C')
+      ->selectRaw("C.*,CAT.nome AS CATEGORIA")
+      ->join("categoria AS CAT", 'C.categoria_id', 'CAT.id')
       ->orderByRaw('CAT.nome ASC, C.titulo ASC');
     $select->whereRaw("C.vendido = '{$vendido}' && C.ativo = 'S'");
     return $select->get();

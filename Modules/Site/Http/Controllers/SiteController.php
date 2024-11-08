@@ -81,7 +81,7 @@ class SiteController extends Controller
 
   public function carros()
   {
-    $carro = $this->carroRepository->listDestaque('N');
+    $carro = $this->carroRepository->listCarros('N');
 
 
     return view('site::carros', ['pgId' => "pg-carros", 'pgClass' => '', 'carro' => $carro]);
