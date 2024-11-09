@@ -21,7 +21,7 @@ class FinanciamentoEmail extends Mailable
   {
     $this->arr = $arr;
 
-    return $this->from('auth@vgsauto.com.br', 'VGS Auto')
+    return $this->from('contato@vgsauto.com.br', 'VGS Auto')
       ->replyTo($this->arr["email"], $this->arr["nome"])
       ->subject('Financiamento');
   }
