@@ -45,11 +45,6 @@ class SiteController extends Controller
       ->orderByRaw("ordem")
       ->get();
 
-    // $bannersPrincipalMobile = DB::table("banner")
-    //   ->where("ativo", "=", "S")
-    //   ->orderByRaw("ordem")
-    //   ->get();
-
     $carro = $this->carroRepository->listDestaque('N');
 
 
@@ -107,7 +102,7 @@ class SiteController extends Controller
   // {
   //   try {
   //     $data = json_decode($request->all()['data'], true);
-  //     Mail::to('autotoprs@gmail.com', 'Auto Top Multimarcas')
+  //     Mail::to('jossana.paulo@gmail.com', 'Auto Top Multimarcas')
   //       //    Mail::to('michaelluzpaulo@gmail.com', 'Auto Top Multimarcas')
   //       ->bcc('ralph@starbuck.com.br', 'Copia Auto Top Multimarcas')
   //       ->send(new FinanciamentoEmail($data));

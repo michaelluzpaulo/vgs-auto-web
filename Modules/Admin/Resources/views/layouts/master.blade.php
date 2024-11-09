@@ -94,14 +94,14 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
-                        <li class="nav-item">
+                        <!--  <li class="nav-item">
                             <a href="/admin/clientes" class="nav-link" style="color: #fff">
                                 <i class="nav-icon fas fa-user-tie"></i>
                                 <p>
                                     Clientes
                                 </p>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a href="/admin/banners" class="nav-link" style="color: #fff">
                                 <i class="nav-icon fas fa-file-signature"></i>
@@ -112,7 +112,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="/admin/categorias" class="nav-link" style="color: #fff">
-                                <i class="nav-icon fas fa-comment"></i>
+                                <i class="nav-icon fas fa-file-signature"></i>
                                 <p>
                                     Categorias
                                 </p>
@@ -120,7 +120,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="/admin/carros" class="nav-link" style="color: #fff">
-                                <i class="nav-icon fas fa-comment"></i>
+                                <i class="nav-icon fas fa-file-signature"></i>
                                 <p>
                                     Carros
                                 </p>

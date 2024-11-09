@@ -31,7 +31,7 @@
 }
 
 body {
-  font-family: "open-sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-rendering: optimizeLegibility !important;
   -webkit-font-soothing: antialiased !important;
   font-optical-sizing: auto;
@@ -40,6 +40,7 @@ body {
   background-color: var(--white);
   color: var(--black);
   font-size: var(--fs-18);
+  font-variation-settings: "wdth" 100;
 }
 
 dl,
@@ -351,6 +352,23 @@ h1 {
   max-width: 100%;
   background-size: cover;
 }
+.whats_fixed {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 1px 1px 2px #888;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @media (max-width: 1024px) {
   .p-geral {
@@ -397,5 +415,22 @@ h1 {
   }
   .carro-card_box-combustivel {
     text-align: right;
+  }
+  .whats_fixed {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 150px;
+    right: 15px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 1px 1px 2px #888;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

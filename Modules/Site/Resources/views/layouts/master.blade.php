@@ -16,8 +16,8 @@
     <meta property="og:description" content="">
     <meta property="og:type" content="article" />
     <meta property="og:image" content="">
-    <meta property="og:url" content="https://cursoseterapiasintegradas.com.br">
-    <meta property="og:author" content="Cursos e Terapias Integradas">
+    <meta property="og:url" content="https://vgsauto.com.br">
+    <meta property="og:author" content="VGS negócios automotivos">
 
     <meta name="twitter:title" content="">
     <meta name="twitter:description" content="">
@@ -46,7 +46,8 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
 
     <link href="/vendorjs/owl/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="/vendorjs/owl/assets/owl.theme.default.css" rel="stylesheet">
@@ -73,8 +74,8 @@
                         <div class="container">
                             <a class="navbar-brand" href="/">
                                 <div class="logo">
-                                    <img src="{{ env('APP_LOGO_HEADER') }}" title="logo cursos e Terapias Integradas"
-                                        alt="logo cursos e Terapias Integradas">
+                                    <img src="{{ env('APP_LOGO_HEADER') }}" title="VGS negócios automotivos"
+                                        alt="logo VGS negócios automotivos">
                                 </div>
                             </a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -103,6 +104,10 @@
         <footer>
             @include('site::inc-footer')
         </footer>
+        <a class="whats_fixed" href="https://wa.me/5551998331102?text=VGS%20negócios%20automotivos" target="_blank"
+            title="whatsapp">
+            <i class="bi bi-whatsapp" aria-hidden="true"></i>
+        </a>
     </div>
     {{--
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"

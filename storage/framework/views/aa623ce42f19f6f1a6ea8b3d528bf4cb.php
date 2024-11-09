@@ -1,9 +1,9 @@
-<?php $__env->startSection('js'); ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-    
-<?php $__env->stopSection(); ?>
 <?php $__env->startSection('css'); ?>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet" />
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('js'); ?>
+    <script type="text/javascript" src="/dist/js/vendorjs/jquery.price_format.2.0.min.js"></script>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>

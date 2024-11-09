@@ -10,36 +10,36 @@
     <p><img style="width: 200px" src="{{ env('MAIL_LOGO') }}" /></p>
     <p>
         <br><b>Veículo(s) que desejo financiar</b><br>
-        <?php echo nl2br($dados['veiculo_desejado']); ?><br>
+        <?php echo nl2br($data['veiculo_desejado']); ?><br>
 
         <br><b>Dados Pessoais</b><br>
         Assunto: Financiamento<br>
-        Nome: {{ $dados['nome'] }}<br>
-        Email: {{ $dados['email'] }}<br>
-        RG: {{ $dados['rg'] }}<br>
-        CPF: {{ $dados['documento'] }}<br>
-        Data de nascimento: {{ $dados['data_nascimento'] }}<br>
-        Local nascimento: {{ $dados['local_nascimento'] }}<br>
-        Nome da mãe: {{ $dados['nome_mae'] }}<br>
-        Celular: {{ $dados['celular'] }}<br>
-        Possui CNH: {{ $dados['possui_cnh'] == 'S' ? 'Sim' : 'Não' }}<br>
-        CEP: {{ $dados['cep'] }}<br>
-        Estado: {{ $dados['estado'] }}<br>
-        Cidade: {{ $dados['cidade'] }}<br>
-        Bairro: {{ $dados['bairro'] }}<br>
-        Logradouro: {{ $dados['endereco'] }}<br>
-        Número: {{ $dados['numero'] }}<br>
-        Complemento: {{ $dados['complemento'] }}<br>
+        Nome: {{ $data['nome'] }}<br>
+        Email: {{ $data['email'] }}<br>
+        RG: {{ $data['rg'] }}<br>
+        CPF: {{ $data['documento'] }}<br>
+        Data de nascimento: {{ $data['data_nascimento'] }}<br>
+        Local nascimento: {{ $data['local_nascimento'] }}<br>
+        Nome da mãe: {{ $data['nome_mae'] }}<br>
+        Celular: {{ $data['celular'] }}<br>
+        Possui CNH: {{ $data['possui_cnh'] == 'S' ? 'Sim' : 'Não' }}<br>
+        CEP: {{ $data['cep'] }}<br>
+        Estado: {{ $data['estado'] }}<br>
+        Cidade: {{ $data['cidade'] }}<br>
+        Bairro: {{ $data['bairro'] }}<br>
+        Logradouro: {{ $data['endereco'] }}<br>
+        Número: {{ $data['numero'] }}<br>
+        Complemento: {{ $data['complemento'] }}<br>
 
         <br><b>Dados Profissionais</b><br>
-        Função / Cargo: {{ $dados['cargo'] }}<br>
-        Salário: {{ $dados['renda'] }}<br>
+        Função / Cargo: {{ $data['cargo'] }}<br>
+        Salário: {{ $data['renda'] }}<br>
 
         <br><b>Dados Financeiros</b><br>
-        Valor disponível para a entrada: {{ $dados['valor_entrada'] }}<br>
+        Valor disponível para a entrada: {{ $data['valor_entrada'] }}<br>
 
         <br><b>Observações</b><br>
-        <?php echo nl2br($dados['veiculo_obs']); ?><br>
+        <?php echo nl2br($data['veiculo_obs']); ?><br>
         <br />
     </p>
 </body>

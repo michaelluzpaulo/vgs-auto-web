@@ -39,7 +39,7 @@
 
                                         </div>
                                     </div>
-                                    <div class="carro-card_box-valor">R$ <?php echo $c->valor; ?></div>
+                                    <div class="carro-card_box-valor">R$ <?php echo __currency_mysql_to_iso($c->valor); ?></div>
                                 </div>
                             </a>
                         </div>

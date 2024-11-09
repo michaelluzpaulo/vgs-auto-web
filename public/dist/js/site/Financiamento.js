@@ -7,7 +7,7 @@ var Financiamento = (function ($) {
 
   function __actions() {
     Utils.setMask(_formId);
-    ServiceCep.watch(_formId);
+
     $(_formId).on("submit", function (e) {
       e.preventDefault();
       if (!__valid()) {

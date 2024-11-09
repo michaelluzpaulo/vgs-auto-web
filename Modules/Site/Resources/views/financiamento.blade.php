@@ -1,15 +1,11 @@
 @extends('site::layouts.master')
-@section('js')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-    {{-- <script type="text/javascript">
-        $(document).ready(function() {
-            Financeiro.init();
-        });
-    </script> --}}
-@endsection
 @section('css')
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet" />
-@endsection
+
+@stop
+
+@section('js')
+    <script type="text/javascript" src="/dist/js/vendorjs/jquery.price_format.2.0.min.js"></script>
+@stop
 
 @section('content')
     <main>
