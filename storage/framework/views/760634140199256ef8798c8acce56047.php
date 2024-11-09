@@ -85,6 +85,9 @@
                             <img class="g-background-1 carro-card_img"
                                 style="background-image: url(/storage/carro/big_<?php echo e($c->img); ?>);width: 100%;background-repeat: no-repeat;background-position: center center;">
                             <div class="carro-card_box-categoria"><?php echo e($c->CATEGORIA); ?></div>
+                            <?php if($c->vendido == 'S'): ?>
+                                <div class="target text-center">VENDIDO</div>
+                            <?php endif; ?>
                             <div class="carro-card_box d-flex flex-column gap-3">
                                 <div class="carro-card_box-titulo"><?php echo e($c->titulo); ?></div>
                                 <div class="d-flex justify-content-between">

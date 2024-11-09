@@ -31,15 +31,20 @@
                             <a href="/carro/{{ $c->ref_amigavel }}" class="carro-card">
                                 <img class="g-background-1 carro-card_img"
                                     style="background-image: url(/storage/carro/big_{{ $c->img }});width: 100%;background-repeat: no-repeat;background-position: center center;">
+                                <div class="carro-card_box-categoria">{{ $c->CATEGORIA }}</div>
                                 <div class="carro-card_box d-flex flex-column gap-3">
-                                    <div class="carro-card_box-categoria">{{ $c->CATEGORIA }}</div>
                                     <div class="carro-card_box-titulo">{{ $c->titulo }}</div>
                                     <div class="d-flex justify-content-between">
                                         <div class="carro-card_box-ano"><strong>ANO:</strong> {{ $c->ano }}</div>
                                         <div class="carro-card_box-combustivel"><strong>COMB:</strong> {{ $c->combustivel }}
                                         </div>
                                     </div>
-                                    <div class="carro-card_box-valor">R$ <?php echo __currency_mysql_to_iso($c->valor); ?></div>
+                                    @if ($c->vendido == 'S')
+                                        <div class="text-center text-bg-dark bg-secondary">VENDIDO</div>
+                                    @else
+                                        <div class="carro-card_box-valor">R$ <?php echo __currency_mysql_to_iso($c->valor); ?></div>
+                                    @endif
+
                                 </div>
                             </a>
                         </div>

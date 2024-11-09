@@ -51,12 +51,12 @@ class SiteController extends Controller
     return view('site::index', ['pgId' => "pg-home", 'pgClass' => '', 'bannersPrincipal' => $bannersPrincipal, 'carro' => $carro]);
   }
 
-  // public function institucional($ref_amigavel)
-  // {
-  //   $institucional = DB::table("institucional")->where("ref_amigavel", "=", $ref_amigavel)->first();
-  //   $galeria = DB::table("institucional_foto")->where('institucional_id', '=', $institucional->id)->get();
-  //   return view('site::institucional', ['pgId' => "pg-sobre", 'pgClass' => '', "institucional" => $institucional, "galeria" => $galeria]);
-  // }
+  public function institucional($ref_amigavel)
+  {
+    $institucional = DB::table("institucional")->where("ref_amigavel", "=", $ref_amigavel)->first();
+    $galeria = DB::table("institucional_foto")->where('institucional_id', '=', $institucional->id)->get();
+    return view('site::institucional', ['pgId' => "pg-sobre", 'pgClass' => '', "institucional" => $institucional, "galeria" => $galeria]);
+  }
 
   public function nossoEndereco(Request $request)
   {
@@ -74,10 +74,15 @@ class SiteController extends Controller
     return view('site::contato', ['pgId' => "pg-contato", 'pgClass' => '',]);
   }
 
+  public function vendidos(Request $request)
+  {
+    $carros = $this->carroRepository->listDestaque('S');
+    return view('site::vendidos', ['pg_id' => 'pg-vendidos', 'pg_class' => '', 'carros' => $carros]);
+  }
+
   public function carros()
   {
     $carro = $this->carroRepository->listCarros('N');
-
 
     return view('site::carros', ['pgId' => "pg-carros", 'pgClass' => '', 'carro' => $carro]);
   }
@@ -97,22 +102,6 @@ class SiteController extends Controller
     $institucional = $this->institucionalRepository->find(2);
     return view('site::financiamento', ['pgId' => 'pg-financiamento', 'pgClass' => '', "institucional" => $institucional]);
   }
-
-  // public function financiamentoSend(Request $request)
-  // {
-  //   try {
-  //     $data = json_decode($request->all()['data'], true);
-  //     Mail::to('jossana.paulo@gmail.com', 'Auto Top Multimarcas')
-  //       //    Mail::to('michaelluzpaulo@gmail.com', 'Auto Top Multimarcas')
-  //       ->bcc('ralph@starbuck.com.br', 'Copia Auto Top Multimarcas')
-  //       ->send(new FinanciamentoEmail($data));
-
-  //     return response()->json(['error' => 0, 'message' => 'Mensagem enviada com sucesso.', 'data' => ''], 200);
-  //   } catch (\Exception $e) {
-  //     return response()->json(['error' => 1, 'message' => $e->getMessage(), 'data' => ''], 400);
-  //   }
-  // }
-
 
 
   public function financiamentoSend(Request $request)

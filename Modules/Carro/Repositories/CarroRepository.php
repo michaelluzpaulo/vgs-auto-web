@@ -65,7 +65,7 @@ class CarroRepository extends AbstractRepository implements RepositoryInterface
       ->selectRaw("C.*,CAT.nome AS CATEGORIA")
       ->join("categoria AS CAT", 'C.categoria_id', 'CAT.id')
       ->orderByRaw('CAT.nome ASC, C.titulo ASC');
-    $select->whereRaw("C.vendido = '{$vendido}' && C.ativo = 'S'");
+    // $select->whereRaw("C.vendido = '{$vendido}' && C.ativo = 'S'");
     return $select->get();
   }
 

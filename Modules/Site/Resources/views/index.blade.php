@@ -87,6 +87,9 @@
                             <img class="g-background-1 carro-card_img"
                                 style="background-image: url(/storage/carro/big_{{ $c->img }});width: 100%;background-repeat: no-repeat;background-position: center center;">
                             <div class="carro-card_box-categoria">{{ $c->CATEGORIA }}</div>
+                            @if ($c->vendido == 'S')
+                                <div class="target text-center">VENDIDO</div>
+                            @endif
                             <div class="carro-card_box d-flex flex-column gap-3">
                                 <div class="carro-card_box-titulo">{{ $c->titulo }}</div>
                                 <div class="d-flex justify-content-between">
