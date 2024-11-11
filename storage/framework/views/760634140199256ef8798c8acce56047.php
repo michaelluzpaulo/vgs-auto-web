@@ -112,8 +112,16 @@
                 <div class="col-12">
                     <h1 class="m-t-50"><strong>SIGA-NOS NO INSTAGRAN</strong></h1>
                     <div>
-                        <script src="https://static.elfsight.com/platform/platform.js" async></script>
-                        <div class="elfsight-app-7d1ee193-9622-4c8e-8b5c-c62cc039523d" data-elfsight-app-lazy></div>
+                        
+
+
+
+
+                        <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0"
+                            src="https://www.instagram.com/vgs.auto/embed/?cr=1&amp;v=12&amp;wp=1242&amp;rd=https%3A%2F%2Fvgsauto.com.br"
+                            allowtransparency="true" allowfullscreen="true" frameborder="0" height="1049"
+                            data-instgrm-payload-id="instagram-media-payload-0" scrolling="no"
+                            style="background: white; max-width: 99.375%; width: 99.375%; max-height: 100%; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe>
                     </div>
                 </div>
             </div>

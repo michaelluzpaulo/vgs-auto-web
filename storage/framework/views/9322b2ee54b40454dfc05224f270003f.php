@@ -53,6 +53,9 @@
     <link href="/vendorjs/owl/assets/owl.theme.default.css" rel="stylesheet">
     <link rel="shortcut icon" href="/dist/img/favicon.png" />
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer.min.js"></script>
+
     
     
 
