@@ -447,4 +447,7 @@ h1 {
     -webkit-tap-highlight-color: transparent;
     z-index: 2;
   }
+  .navbar {
+    background: red;
+  }
 }
