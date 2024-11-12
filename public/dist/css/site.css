@@ -396,8 +396,8 @@ h1 {
   }
 
   .all-header .logo img {
-    width: 136px;
-    height: 50px;
+    width: 200px;
+    height: 80px;
   }
   .carro-card_img {
     height: 120px;
@@ -443,8 +443,16 @@ h1 {
     display: flex;
     justify-content: space-between;
     /* background-color: blue; */
-    padding: 0 5%;
+    padding: 0 1%;
     -webkit-tap-highlight-color: transparent;
     z-index: 2;
+  }
+  .navbar-toggler-icon {
+    width: 1em;
+    height: 1em;
+  }
+  .carro-card_box-ano,
+  .carro-card_box-combustivel {
+    height: 42px;
   }
 }
