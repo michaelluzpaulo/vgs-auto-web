@@ -439,4 +439,7 @@ h1 {
   .instagram-media {
     height: 800px;
   }
+  .owl-theme .owl-nav {
+    top: 25%;
+  }
 }
