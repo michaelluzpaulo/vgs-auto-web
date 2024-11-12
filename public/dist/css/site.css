@@ -53,7 +53,6 @@ ol,
 ul {
   padding-left: 0;
 }
-
 a {
   text-decoration: none;
   word-break: break-word;
@@ -369,9 +368,6 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-.instagram-media {
-  height: 1000px;
-}
 
 @media (max-width: 1024px) {
   .p-geral {
@@ -398,8 +394,10 @@ h1 {
   .mobile {
     display: block;
   }
+
   .all-header .logo img {
-    height: 60px;
+    width: 136px;
+    height: 50px;
   }
   .carro-card_img {
     height: 120px;
@@ -436,10 +434,17 @@ h1 {
     justify-content: center;
     align-items: center;
   }
-  .instagram-media {
-    height: 800px;
-  }
+
   .owl-theme .owl-nav {
-    top: 25%;
+    width: 100%;
+    top: 30%;
+    margin-top: -65px !important;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: blue; */
+    padding: 0 5%;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 2;
   }
 }

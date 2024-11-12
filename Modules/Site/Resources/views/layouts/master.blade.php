@@ -74,24 +74,24 @@
             <div class="all-header">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg">
-                        <div class="container">
-                            <a class="navbar-brand" href="/">
-                                <div class="logo">
-                                    <img src="{{ env('APP_LOGO_HEADER') }}" title="VGS negócios automotivos"
-                                        alt="logo VGS negócios automotivos">
-                                </div>
-                            </a>
-                            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse justify-content-end gap-5" id="navbarSupportedContent">
-                                <ul class="navbar-nav  mb-2 mb-lg-0 d-flex items-center ">
-                                    @include('site::inc-menu')
-                                </ul>
+                        <a class="navbar-brand" href="/">
+                            <div class="logo">
+                                <img src="{{ env('APP_LOGO_HEADER') }}" title="VGS negócios automotivos"
+                                    alt="logo VGS negócios automotivos">
+                            </div>
+                        </a>
+                        <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-end gap-5" id="navbarSupportedContent">
+                            <ul class="navbar-nav  mb-2 mb-lg-0 d-flex items-center ">
+                                @include('site::inc-menu')
+                            </ul>
+                            <div class="desktop">
                                 <a href="https://wa.me/5551998331102?text=VGS%20negócios%20automotivos" target="_blanck"
-                                    class="header-redes-sociais desktop">
+                                    class="header-redes-sociais">
                                     <i class="bi bi-whatsapp header-redes-sociais-ico"></i>
                                     <span>(51) 99833-1102</span>
                                 </a>
