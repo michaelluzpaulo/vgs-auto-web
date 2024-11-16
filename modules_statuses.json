@@ -5,5 +5,6 @@
   "Site": true,
   "Banner": true,
   "Carro": true,
-  "Categoria": true
+  "Categoria": true,
+  "Newsletter": true
 }

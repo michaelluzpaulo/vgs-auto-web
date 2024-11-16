@@ -90,13 +90,21 @@
                             <?php endif; ?>
                             <div class="carro-card_box d-flex flex-column gap-3">
                                 <div class="carro-card_box-titulo"><?php echo e($c->titulo); ?></div>
-                                <div class="d-flex justify-content-between">
-                                    <div class="carro-card_box-ano"><strong>ANO:</strong> <?php echo e($c->ano); ?></div>
-                                    <div class="carro-card_box-combustivel"><strong>COMB:</strong> <?php echo e($c->combustivel); ?>
+                                <div class="carro-card_box-valor">R$ <?php echo __currency_mysql_to_iso($c->valor); ?></div>
+                                <div class="carro-card_box-desc">
+                                    <hr>
+                                    <div class="d-flex justify-content-between mt-2">
+                                        <div class="carro-card_box-ano"><strong>ANO:</strong> <?php echo e($c->ano); ?></div>
+                                        <div class="carro-card_box-combustivel"><strong>KM:</strong>
+                                            <?php echo e($c->combustivel); ?>
 
+                                        </div>
+                                        <div class="carro-card_box-combustivel"><strong>COMB:</strong>
+                                            <?php echo e($c->combustivel); ?>
+
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="carro-card_box-valor">R$ <?php echo __currency_mysql_to_iso($c->valor); ?></div>
                             </div>
                         </a>
                     </div>
@@ -112,17 +120,12 @@
                 <div class="col-12">
                     <h1 class="m-t-50"><strong>SIGA-NOS NO INSTAGRAM</strong></h1>
                     <div>
-                        <!-- <iframe onload="iFrameResize(this)" src="https://7d1ee19396224c8e8b5cc62cc039523d.elf.site"
-                                                        style="border:none;width:100%;"></iframe> -->
-
-
-
                         <div class="desktop">
                             <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0"
                                 src="https://www.instagram.com/vgs.auto/embed/?cr=1&amp;v=12&amp;wp=1242&amp;rd=https%3A%2F%2Fvgsauto.com.br"
                                 allowtransparency="true" allowfullscreen="true" frameborder="0" height="1100"
                                 data-instgrm-payload-id="instagram-media-payload-0" scrolling="no"
-                                style="background: white; max-width: 99.375%; width: 99.375%; max-height: 100%; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe>
+                                style="background: white; max-width: 70%; width: 70%; max-height: 100%; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;margin: auto"></iframe>
                         </div>
                         <div class="mobile">
                             <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0"

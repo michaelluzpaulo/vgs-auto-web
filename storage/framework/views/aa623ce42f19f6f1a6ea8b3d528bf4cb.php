@@ -14,7 +14,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/" class="breadcrumb-item-text">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Financiamento</li>
+                            <li class="breadcrumb-item active" aria-current="page">Aprove o seu crédito</li>
                         </ol>
                     </nav>
                     <a href="javascript:history.back();" class="breadcrumb-item-text">Voltar</a>
@@ -27,7 +27,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>FINANCIAMENTO</h1>
+                        <h1>APROVE O SEU CRÉDITO</h1>
                         <hr>
                         <div class="paceiros">
                             <h3 class="text-center">Parceiros</h3>

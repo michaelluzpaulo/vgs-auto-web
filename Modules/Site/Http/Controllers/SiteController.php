@@ -14,6 +14,7 @@ use Modules\Institucional\Repositories\InstitucionalFotoRepository;
 use Modules\Categoria\Repositories\CategoriaRepository;
 use Modules\Carro\Repositories\CarroFotoRepository;
 use Modules\Carro\Repositories\CarroRepository;
+use Modules\Newsletter\Repositories\NewsletterRepository;
 
 class SiteController extends Controller
 {
@@ -23,8 +24,9 @@ class SiteController extends Controller
   private $carroRepository;
   private $carroFotoRepository;
   private $emailService;
+  private $newsletterRepository;
 
-  public function __construct(CarroFotoRepository $carroFotoRepository, CategoriaRepository $categoriaRepository, CarroRepository $carroRepository, InstitucionalRepository $institucionalRepository, InstitucionalFotoRepository $institucionalFotoRepository, EmailService $emailService)
+  public function __construct(CarroFotoRepository $carroFotoRepository, CategoriaRepository $categoriaRepository, CarroRepository $carroRepository, InstitucionalRepository $institucionalRepository, InstitucionalFotoRepository $institucionalFotoRepository, EmailService $emailService, NewsletterRepository $newsletterRepository)
   {
     $this->emailService = $emailService;
     $this->institucionalRepository = $institucionalRepository;
@@ -32,6 +34,7 @@ class SiteController extends Controller
     $this->categoriaRepository = $categoriaRepository;
     $this->carroRepository = $carroRepository;
     $this->carroFotoRepository = $carroFotoRepository;
+    $this->newsletterRepository = $newsletterRepository;
   }
 
   /**
@@ -115,6 +118,18 @@ class SiteController extends Controller
       if (mb_strlen($data['nome']) < 6) {
         throw new Exception('Digite seu nome completo! ');
       }
+
+      $data['parcelasTxt'] = "";
+      if (isset($data['parcelas']) && count($data['parcelas']) > 0) {
+        $data['parcelasTxt'] = implode(', ', $data['parcelas']);
+      }
+      $data['desejo_receber_promocao_ofertasTxt'] = isset($data['desejo_receber_promocao_ofertas']) ? 'SIM' : 'NÃO';
+
+      $existNews = DB::table('newsletter')->where('email', '=', $data['email'])->first();
+      $newsletter =  $existNews ? $this->newsletterRepository->find($existNews->id) : $this->newsletterRepository;
+      $newsletter->fill($data);
+      $newsletter->save();
+
       $this->emailService->financiamentoEmail($data);
 
       return response()->json(['error' => 0, 'message' => __('Mensagem enviada com sucesso'), 'data' => ''], 200);

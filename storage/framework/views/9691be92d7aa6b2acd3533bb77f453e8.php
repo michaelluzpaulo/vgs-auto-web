@@ -82,7 +82,7 @@
                                         <td><?php echo e($carro->combustivel); ?></td>
                                     </tr>
                                     <tr>
-                                        <th>Motorização</th>
+                                        <th>Km</th>
                                         <td><?php echo e($carro->motorizacao); ?></td>
                                     </tr>
                                     <tr>

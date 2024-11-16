@@ -134,6 +134,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/admin/newsletters" class="nav-link" style="color: #fff">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Newsletter
+                                </p>
+                            </a>
+                        </li>
                         @if (user()->role_id == 1)
                             <li class="nav-item">
                                 <a href="/admin/usuarios" class="nav-link" style="color: #fff">

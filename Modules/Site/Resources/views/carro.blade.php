@@ -68,7 +68,7 @@
                                 <table>
                                     <tr>
                                         <th>Marca</th>
-                                        <td>{{ $categoria->nome }}</td>
+                                        <td style="text-transform: uppercase">{{ $categoria->nome }}</td>
                                     </tr>
                                     <tr>
                                         <th>Cor</th>
@@ -83,14 +83,17 @@
                                         <td>{{ $carro->combustivel }}</td>
                                     </tr>
                                     <tr>
-                                        <th>Motorização</th>
-                                        <td>{{ $carro->motorizacao }}</td>
+                                        <th>Km</th>
+                                        <td>{{ $carro->km }}</td>
                                     </tr>
                                     <tr>
                                         <th>Câmbio</th>
                                         <td>{{ $carro->cambio }}</td>
                                     </tr>
                                 </table>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <a href="/aprove-seu-credito" class="pg-carro_aprove_credito">Aprove o seu crédito</a>
                             </div>
                             <p>{!! $carro->texto !!}</p>
                         </div>

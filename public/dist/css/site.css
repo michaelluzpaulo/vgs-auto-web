@@ -8,6 +8,8 @@
 }
 
 :root {
+  --fs-10: 0.625rem;
+  --fs-11: 0.6875rem;
   --fs-12: 0.75rem;
   --fs-14: 0.875rem;
   --fs-16: 1rem;
@@ -25,12 +27,15 @@
   --gray-200: #ccc;
   --gray-500: #768291;
   --gray-600: #28313c;
-  --black: #05060a;
+  --black: #080a00;
+  --black-100: #000;
   --azul: #3b5998;
   --green: #25d366;
+  --green-500: #16a14b;
 }
 
 body {
+  /* font-family: "Barlow Semi Condensed", sans-serif; */
   font-family: "Open Sans", sans-serif;
   text-rendering: optimizeLegibility !important;
   -webkit-font-soothing: antialiased !important;
@@ -84,6 +89,8 @@ h1 {
 .all-header {
   width: 100%;
   background: var(--black);
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 300;
 }
 .all-header .logo img {
   width: 100%;
@@ -177,31 +184,52 @@ h1 {
   height: 200px;
   background-size: cover;
   border: 0;
+  /* position: relative; */
+}
+.carro-card-mask {
+  height: 20px;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0 -20px 10px -10px inset rgba(0, 0, 0);
 }
 .carro-card_box {
   background: var(--white);
-  padding: 10px 20px;
+  padding: 10px;
 }
 .carro-card_box-categoria {
-  background: var(--black);
+  background: var(--black-100);
   color: var(--white);
   text-align: center;
   width: 100%;
   margin: auto;
   padding: 3px 0;
+  text-transform: uppercase;
 }
 .carro-card_box-titulo {
   color: var(--black);
   height: 54px;
+  text-align: center;
+  font-size: var(--fs-16);
+}
+.carro-card_box-desc hr {
+  margin: 1rem 0 0 0;
 }
 .carro-card_box-ano,
+.carro-card_box-km,
 .carro-card_box-combustivel {
-  font-size: var(--fs-14);
+  font-size: var(--fs-11);
   color: var(--black);
 }
 .carro-card_box-valor {
   color: var(--black);
   text-align: center;
+  font-size: var(--fs-20);
+}
+.carro-card_box-valor-vendido {
+  font-size: var(--fs-20);
 }
 .g-btn-ver-todos {
   background: var(--black);
@@ -216,6 +244,8 @@ h1 {
 .footer-menu {
   background: var(--black);
   color: var(--white);
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 300;
 }
 .footer-menu-ico-redes {
   font-size: var(--fs-30);
@@ -245,8 +275,10 @@ h1 {
 .footer-copy {
   text-align: center;
   color: var(--black);
-  font-size: var(--fs-12);
+  font-size: var(--fs-14);
   padding: 8px 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 300;
 }
 .all-breadcrumb {
   background-color: var(--gray-500);
@@ -271,7 +303,6 @@ h1 {
   height: 178px;
   background: red;
 }
-
 .all-maps {
   width: 100%;
   height: 350px;
@@ -367,6 +398,15 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.pg-carro_aprove_credito {
+  background: var(--green);
+  padding: 10px;
+  margin-top: 10px;
+  color: var(--black);
+}
+.pg-carro_aprove_credito:hover {
+  background: var(--green-500);
 }
 
 @media (max-width: 1024px) {

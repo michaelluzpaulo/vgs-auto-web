@@ -59,6 +59,12 @@
                     <input type="text" class="form-control" name="motorizacao" id="motorizacao" maxlength="40">
                 </div>
             </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="km" class="control-label">KM: </label>
+                    <input type="text" class="form-control" name="km" id="km" maxlength="40">
+                </div>
+            </div>
 
             <div class="col-md-3">
                 <div class="form-group">

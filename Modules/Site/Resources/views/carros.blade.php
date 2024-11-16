@@ -29,22 +29,32 @@
                     @foreach ($carro as $c)
                         <div class="col-lg-3 col-6">
                             <a href="/carro/{{ $c->ref_amigavel }}" class="carro-card">
-                                <img class="g-background-1 carro-card_img"
-                                    style="background-image: url(/storage/carro/big_{{ $c->img }});width: 100%;background-repeat: no-repeat;background-position: center center;">
+                                <div class="position-relative">
+                                    <img class="g-background-1 carro-card_img"
+                                        style="background-image: url(/storage/carro/big_{{ $c->img }});width: 100%;background-repeat: no-repeat;background-position: center center;">
+                                    <div class="carro-card-mask"></div>
+                                </div>
                                 <div class="carro-card_box-categoria">{{ $c->CATEGORIA }}</div>
                                 <div class="carro-card_box d-flex flex-column gap-3">
                                     <div class="carro-card_box-titulo">{{ $c->titulo }}</div>
-                                    <div class="d-flex justify-content-between">
-                                        <div class="carro-card_box-ano"><strong>ANO:</strong> {{ $c->ano }}</div>
-                                        <div class="carro-card_box-combustivel"><strong>COMB:</strong> {{ $c->combustivel }}
-                                        </div>
-                                    </div>
                                     @if ($c->vendido == 'S')
-                                        <div class="text-center text-bg-dark bg-secondary">VENDIDO</div>
+                                        <div class="text-center text-bg-dark bg-secondary carro-card_box-valor-vendido">
+                                            VENDIDO</div>
                                     @else
                                         <div class="carro-card_box-valor">R$ <?php echo __currency_mysql_to_iso($c->valor); ?></div>
                                     @endif
-
+                                    <div class="carro-card_box-desc">
+                                        <hr>
+                                        <div class="d-flex justify-content-center mt-2">
+                                            <div class="carro-card_box-ano">Ano: <strong>{{ $c->ano }}</strong></div>
+                                            <div class="carro-card_box-km">
+                                                <span>&nbsp;-&nbsp;</span>KM: <strong>{{ $c->km }}</strong>
+                                            </div>
+                                            <div class="carro-card_box-combustivel"><span>&nbsp;-&nbsp;</span>Comb: <strong>
+                                                    {{ $c->combustivel }}</strong>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </a>
                         </div>

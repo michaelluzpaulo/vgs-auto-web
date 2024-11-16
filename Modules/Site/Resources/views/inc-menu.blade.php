@@ -7,7 +7,7 @@
 </li>
 <li class="text-white desktop">|</li>
 <li class="nav-item">
-    <a class="nav-link" href="/financiamento">FINANCIAMENTO</a>
+    <a class="nav-link" href="/aprove-seu-credito">APROVE O SEU CRÉDITO</a>
 </li>
 <li class="text-white desktop">|</li>
 <li class="nav-item">

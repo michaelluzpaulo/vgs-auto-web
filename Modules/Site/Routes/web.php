@@ -24,6 +24,7 @@ Route::group(['middleware' => ['web'], 'prefix' => '/'], function () {
   Route::get('carros', 'SiteController@carros');
   Route::get('carro/{ref_amigavel}', 'SiteController@carro');
   Route::get('localizacao', 'SiteController@nossoEndereco');
+  Route::get('aprove-seu-credito', 'SiteController@financiamento');
   Route::get('financiamento', 'SiteController@financiamento');
   Route::post('financiamento', 'SiteController@financiamentoSend');
 });

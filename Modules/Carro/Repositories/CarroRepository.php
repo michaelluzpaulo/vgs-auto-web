@@ -17,7 +17,7 @@ class CarroRepository extends AbstractRepository implements RepositoryInterface
    * @var string
    */
   protected $table = "carro";
-  protected $fillable = ['titulo', 'texto', 'ref_amigavel', 'ativo', 'vendido', 'created_at', 'updated_at', 'categoria_id', 'valor', 'img', 'cor', 'ano', 'combustivel', 'motorizacao', 'cambio'];
+  protected $fillable = ['titulo', 'texto', 'ref_amigavel', 'ativo', 'vendido', 'created_at', 'updated_at', 'categoria_id', 'valor', 'img', 'cor', 'ano', 'combustivel', 'motorizacao', 'cambio', 'km'];
   //protected $guarded = ['id'];
   public $timestamps = false;
 

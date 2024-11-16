@@ -87,9 +87,13 @@
                                 value="<?php echo $carro->motorizacao; ?>" maxlength="40">
                         </div>
                     </div>
-
-
-
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="km" class="control-label">KM: </label>
+                            <input type="text" class="form-control" name="km" id="km"
+                                value="<?php echo $carro->km; ?>" maxlength="40">
+                        </div>
+                    </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="cambio" class="control-label">Câmbio: </label>

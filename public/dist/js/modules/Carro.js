@@ -210,10 +210,10 @@ const Carro = (function () {
    * Salva o registro no banco de dados
    */
   function __save() {
-    var id = parseInt($("#id", _formId).val());
-    var data = $(_formId).serializeJSON();
-    var method = id ? "PUT" : "POST";
-    var url = id ? "/admin/carros/" + id : "/admin/carros";
+    const id = parseInt($("#id", _formId).val());
+    let data = $(_formId).serializeJSON();
+    const method = id ? "PUT" : "POST";
+    const url = id ? "/admin/carros/" + id : "/admin/carros";
 
     $.loadmask();
     $.ajax({
@@ -225,19 +225,17 @@ const Carro = (function () {
       dataType: "json",
       timeout: 120000,
       success: function (json) {
-        let loop = 0;
-        $.unloadmask();
         if (json.error == 0) {
-          var step = 0;
-          var message = json.message;
+          let step = 0;
+          let message = json.message;
           __refreshTable();
 
-          var formData = new FormData();
-          var file = document.querySelector("#img", _formId);
+          let formData = new FormData();
+          let file = document.querySelector("#img", _formId);
 
           if (file.value != "") {
             step++;
-            var file = file.files[0];
+            let file = file.files[0];
             formData.append("img", file);
 
             $.ajax({
@@ -247,8 +245,8 @@ const Carro = (function () {
               dataType: "json",
               processData: false,
               contentType: false,
-              success: function (retorno) {
-                message += retorno.message;
+              success: function (resp) {
+                message += resp.message;
                 step--;
               },
               error: function (jqXHR, textStatus, errorThrown) {
@@ -256,21 +254,6 @@ const Carro = (function () {
               },
             });
           }
-          var tentativa = 0;
-          var interval = setInterval(function () {
-            if (tentativa > 10 || step == 0) {
-              clearInterval(interval);
-              $.unloadmask();
-              Notify.success(message);
-              $(_modalId).hide();
-              $(_modalId).modal("hide");
-            }
-            tentativa++;
-          }, 2000);
-        }
-        if (json.error == 0) {
-          message += json.message;
-          __refreshTable();
 
           if (qs("#img_input")) {
             let file = qs("#img_input");
@@ -283,7 +266,7 @@ const Carro = (function () {
                     formData.append("file[" + i + "]", file.files[i]);
                   }
                 }
-                loop++;
+                step++;
                 $.ajax({
                   url: `/admin/carros/${json.data.id}/galeria-foto`,
                   type: "POST",
@@ -291,9 +274,9 @@ const Carro = (function () {
                   dataType: "json",
                   processData: false,
                   contentType: false,
-                  success: function (retorno) {
-                    loop--;
-                    message += retorno.message;
+                  success: function (resp) {
+                    step--;
+                    message += resp.message;
                   },
                   error: function (jqXHR, textStatus, errorThrown) {
                     ServiceHttp.exceptionAjax(jqXHR, textStatus, errorThrown);
@@ -302,20 +285,18 @@ const Carro = (function () {
               }
             }
           }
-          let fuga = 0;
-          let interval = setInterval(() => {
-            fuga++;
-            if (loop <= 0 || fuga > 10) {
+
+          let tentativa = 0;
+          let interval = setInterval(function () {
+            if (tentativa > 10 || step == 0) {
+              clearInterval(interval);
+              $.unloadmask();
               Notify.success(message);
               $(_modalId).hide();
               $(_modalId).modal("hide");
-              $.unloadmask();
-              clearInterval(interval);
-              setTimeout(() => {
-                __update(json.data.id);
-              }, 1500);
             }
-          }, 2500);
+            tentativa++;
+          }, 2000);
         }
       },
       error: function (jqXHR, textStatus, errorThrown) {
