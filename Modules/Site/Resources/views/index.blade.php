@@ -119,7 +119,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <h1 class="m-t-50"><strong>SIGA-NOS NO INSTAGRAM</strong></h1>
+                    <h1 class="m-t-50 text-center"><strong>SIGA-NOS NO INSTAGRAM</strong></h1>
                     <div>
                         <div class="desktop">
                             <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0"
