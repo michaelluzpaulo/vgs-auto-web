@@ -37,6 +37,7 @@
                                 <div class="carro-card_box-categoria">{{ $c->CATEGORIA }}</div>
                                 <div class="carro-card_box d-flex flex-column gap-3">
                                     <div class="carro-card_box-titulo">{{ $c->titulo }}</div>
+                                    <div class="carro-card_box-ano">Ano: {{ $c->ano }}</div>
                                     @if ($c->vendido == 'S')
                                         <div class="text-center text-bg-dark bg-secondary carro-card_box-valor-vendido">
                                             VENDIDO</div>
@@ -46,10 +47,8 @@
                                     <div class="carro-card_box-desc">
                                         <hr>
                                         <div class="d-flex justify-content-center mt-2">
-                                            <div class="carro-card_box-ano">Ano: <strong>{{ $c->ano }}</strong></div>
-                                            <div class="carro-card_box-km">
-                                                <span>&nbsp;-&nbsp;</span>KM: <strong>{{ $c->km }}</strong>
-                                            </div>
+
+                                            <div class="carro-card_box-km">KM: <strong>{{ $c->km }}</strong></div>
                                             <div class="carro-card_box-combustivel"><span>&nbsp;-&nbsp;</span>Comb: <strong>
                                                     {{ $c->combustivel }}</strong>
                                             </div>

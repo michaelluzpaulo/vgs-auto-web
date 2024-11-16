@@ -173,7 +173,7 @@ h1 {
 .carro-card {
   display: block;
   margin-bottom: 50px;
-  background: var(--gray-200);
+  background: var(--white);
 }
 .carro-card:hover {
   -webkit-box-shadow: 0px 7px 5px 0px rgba(0, 0, 0, 0.4);
@@ -196,7 +196,6 @@ h1 {
   box-shadow: 0 -20px 10px -10px inset rgba(0, 0, 0);
 }
 .carro-card_box {
-  background: var(--white);
   padding: 10px;
 }
 .carro-card_box-categoria {
@@ -205,28 +204,34 @@ h1 {
   text-align: center;
   width: 100%;
   margin: auto;
-  padding: 3px 0;
   text-transform: uppercase;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.6);
 }
 .carro-card_box-titulo {
   color: var(--black);
-  height: 54px;
+  min-height: 48px;
+  text-align: center;
+  font-size: var(--fs-16);
+}
+.carro-card_box-ano {
+  color: var(--black);
   text-align: center;
   font-size: var(--fs-16);
 }
 .carro-card_box-desc hr {
-  margin: 1rem 0 0 0;
+  margin: 0.5rem 0 0 0;
 }
-.carro-card_box-ano,
 .carro-card_box-km,
 .carro-card_box-combustivel {
-  font-size: var(--fs-11);
+  font-size: var(--fs-12);
   color: var(--black);
 }
 .carro-card_box-valor {
   color: var(--black);
   text-align: center;
-  font-size: var(--fs-20);
+  font-size: var(--fs-22);
 }
 .carro-card_box-valor-vendido {
   font-size: var(--fs-20);
@@ -243,6 +248,11 @@ h1 {
 }
 .footer-menu {
   background: var(--black);
+  color: var(--white);
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 300;
+}
+.footer_h1 {
   color: var(--white);
   font-family: "Barlow Semi Condensed", sans-serif;
   font-weight: 300;

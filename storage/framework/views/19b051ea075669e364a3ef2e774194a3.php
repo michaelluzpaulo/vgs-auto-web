@@ -36,6 +36,7 @@
                                 <div class="carro-card_box-categoria"><?php echo e($c->CATEGORIA); ?></div>
                                 <div class="carro-card_box d-flex flex-column gap-3">
                                     <div class="carro-card_box-titulo"><?php echo e($c->titulo); ?></div>
+                                    <div class="carro-card_box-km">KM: <strong><?php echo e($c->km); ?></strong></div>
                                     <?php if($c->vendido == 'S'): ?>
                                         <div class="text-center text-bg-dark bg-secondary carro-card_box-valor-vendido">
                                             VENDIDO</div>
@@ -45,10 +46,7 @@
                                     <div class="carro-card_box-desc">
                                         <hr>
                                         <div class="d-flex justify-content-center mt-2">
-                                            <div class="carro-card_box-ano">Ano: <strong><?php echo e($c->ano); ?></strong></div>
-                                            <div class="carro-card_box-km">
-                                                <span>&nbsp;-&nbsp;</span>KM: <strong><?php echo e($c->km); ?></strong>
-                                            </div>
+                                            <div class="carro-card_box-ano">Ano: <?php echo e($c->ano); ?></div>
                                             <div class="carro-card_box-combustivel"><span>&nbsp;-&nbsp;</span>Comb: <strong>
                                                     <?php echo e($c->combustivel); ?></strong>
                                             </div>

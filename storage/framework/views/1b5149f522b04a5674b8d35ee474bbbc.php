@@ -93,14 +93,12 @@
                             <?php endif; ?>
                             <div class="carro-card_box d-flex flex-column gap-3">
                                 <div class="carro-card_box-titulo"><?php echo e($c->titulo); ?></div>
+                                <div class="carro-card_box-ano">Ano: <?php echo e($c->ano); ?></div>
                                 <div class="carro-card_box-valor">R$ <?php echo __currency_mysql_to_iso($c->valor); ?></div>
                                 <div class="carro-card_box-desc">
                                     <hr>
                                     <div class="d-flex justify-content-center mt-2">
-                                        <div class="carro-card_box-ano">Ano: <strong><?php echo e($c->ano); ?></strong></div>
-                                        <div class="carro-card_box-km">
-                                            <span>&nbsp;-&nbsp;</span>KM: <strong><?php echo e($c->km); ?></strong>
-                                        </div>
+                                        <div class="carro-card_box-km">KM: <strong><?php echo e($c->km); ?></strong></div>
                                         <div class="carro-card_box-combustivel"><span>&nbsp;-&nbsp;</span>Comb: <strong>
                                                 <?php echo e($c->combustivel); ?></strong>
                                         </div>
@@ -124,7 +122,7 @@
                         <div class="desktop">
                             <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0"
                                 src="https://www.instagram.com/vgs.auto/embed/?cr=1&amp;v=12&amp;wp=1242&amp;rd=https%3A%2F%2Fvgsauto.com.br"
-                                allowtransparency="true" allowfullscreen="true" frameborder="0" height="900"
+                                allowtransparency="true" allowfullscreen="true" frameborder="0" height="850"
                                 data-instgrm-payload-id="instagram-media-payload-0" scrolling="no"
                                 style="background: white; max-width: 70%; width: 70%; max-height: 100%; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;margin: auto"></iframe>
                         </div>

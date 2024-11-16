@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="d-flex flex-column  gap-3 items-center" style="align-items: center">
-                    <h2 class="title-geral">CONTATE-NOS</h2>
+                    <h1 class="footer_h1">CONTATE-NOS</h1>
                     <div class="d-flex gap-3">
                         <a href="https://www.instagram.com/vgs.auto/" class="text-white footer-menu-ico-redes"
                             target="_blanck"><i class="bi bi-instagram"></i></a>
