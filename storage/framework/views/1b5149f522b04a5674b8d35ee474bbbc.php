@@ -80,7 +80,7 @@
         <div class="container">
             <div class="row">
                 <?php $__currentLoopData = $carro; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-3 col-12">
                         <a href="/carro/<?php echo e($c->ref_amigavel); ?>" class="carro-card">
                             <div class="position-relative">
                                 <img class="g-background-1 carro-card_img"
@@ -117,7 +117,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <h1 class="m-t-50"><strong>SIGA-NOS NO INSTAGRAM</strong></h1>
+                    <h1 class="m-t-50 text-center"><strong>SIGA-NOS NO INSTAGRAM</strong></h1>
                     <div>
                         <div class="desktop">
                             <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0"

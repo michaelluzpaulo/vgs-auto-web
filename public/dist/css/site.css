@@ -461,7 +461,8 @@ h1 {
     width: 100%;
   }
   .carro-card_box-titulo {
-    height: 74px;
+    min-height: 100%;
+    /* height: 74px; */
     font-size: var(--fs-16);
   }
   .carro-card_box-combustivel {
