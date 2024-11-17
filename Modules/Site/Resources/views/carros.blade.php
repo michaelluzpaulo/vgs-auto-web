@@ -27,7 +27,7 @@
             <div class="container">
                 <div class="row">
                     @foreach ($carro as $c)
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-3 col-12">
                             <a href="/carro/{{ $c->ref_amigavel }}" class="carro-card">
                                 <div class="position-relative">
                                     <img class="g-background-1 carro-card_img"
