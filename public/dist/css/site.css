@@ -502,8 +502,4 @@ h1 {
     width: 1em;
     height: 1em;
   }
-  .carro-card_box-ano,
-  .carro-card_box-combustivel {
-    height: 42px;
-  }
 }
