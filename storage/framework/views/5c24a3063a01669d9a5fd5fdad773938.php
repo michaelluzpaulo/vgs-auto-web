@@ -66,12 +66,12 @@
                             <div class="descricao-produto-group">
                                 <table>
                                     <tr>
-                                        <th>Título</th>
-                                        <td style="text-transform: uppercase"><?php echo e($carro->titulo); ?></td>
-                                    </tr>
-                                    <tr>
                                         <th>Marca</th>
                                         <td style="text-transform: uppercase"><?php echo e($categoria->nome); ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Modelo</th>
+                                        <td style="text-transform: uppercase"><?php echo e($carro->titulo); ?></td>
                                     </tr>
                                     <tr>
                                         <th>Cor</th>
