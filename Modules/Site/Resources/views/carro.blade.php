@@ -71,6 +71,10 @@
                                         <td style="text-transform: uppercase">{{ $categoria->nome }}</td>
                                     </tr>
                                     <tr>
+                                        <th>Título</th>
+                                        <td style="text-transform: uppercase">{{ $carro->titulo }}</td>
+                                    </tr>
+                                    <tr>
                                         <th>Cor</th>
                                         <td>{{ $carro->cor }}</td>
                                     </tr>
