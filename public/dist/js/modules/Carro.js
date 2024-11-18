@@ -114,6 +114,12 @@ const Carro = (function () {
           },
         },
         {
+          targets: [3],
+          createdCell: function (td, cellData, rowData, row, col) {
+            $(td).css({ textAlign: "end" });
+          },
+        },
+        {
           targets: -1,
           data: null,
           sortable: false,

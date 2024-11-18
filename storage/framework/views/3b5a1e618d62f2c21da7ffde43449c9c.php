@@ -4,17 +4,17 @@
 <?php $__env->startSection('js'); ?>
     <script type="text/javascript" src="<?php echo e(asset('vendorjs/ckeditor4/ckeditor.js')); ?>?v=<?php echo time(); ?>"></script>
     <script type="text/javascript" src="<?php echo e(asset('vendorjs/ckeditor4/adapters/jquery.js')); ?>"></script>
-    <script type="text/javascript" src="/dist/js/modules/Carro.js?v=<?php echo time(); ?>"></script>
-    <script type="text/javascript" src="/dist/js/modules/CarroGaleria.js?v=<?php echo time(); ?>"></script>
+    <script type="text/javascript" src="/dist/js/modules/Institucional.js?v=<?php echo time(); ?>"></script>
+    <script type="text/javascript" src="/dist/js/modules/InstitucionalGaleria.js?v=<?php echo time(); ?>"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            Carro.init();
+            Institucional.init();
         });
     </script>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('module_title'); ?>
-    <h1><small>Cadastros /</small> Carros</h1>
+    <h1><small>Cadastros /</small> Institucionais</h1>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -22,7 +22,7 @@
         <div class="card card-secondary card-outline">
             <div class="card-header">
 
-                <form name="form-carro-principal" id="form-carro-principal">
+                <form name="form-institucional-principal" id="form-institucional-principal">
                     <div class="row">
                         <div class="col-lg-2">
                             <div class="form-group">
@@ -33,8 +33,8 @@
 
                         <div class="col-lg-3">
                             <div class="form-group">
-                                <label for="filtro_nome" class="control-label">Nome</label>
-                                <input type="text" class="form-control" name="filtro_nome" id="filtro_nome"
+                                <label for="filtro_titulo" class="control-label">Título</label>
+                                <input type="text" class="form-control" name="filtro_titulo" id="filtro_titulo"
                                     placeholder="Digite uma palavra chave">
                             </div>
                         </div>
@@ -66,16 +66,13 @@
                     <div class="col-12">
                         <br />
                         <div class="table-responsive">
-                            <table id="carroTable" class="table table-striped dataTable table-bordered" cellspacing="0"
-                                width="100%">
+                            <table id="institucionalTable" class="table table-striped dataTable table-bordered"
+                                cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
                                         <th>Título</th>
-                                        <th>Categoria</th>
-                                        <th class="text-end">Valor R$</th>
-                                        <th class="text-center">Vendido</th>
-                                        <th class="text-center">Ativo</th>
+                                        <th>Ref. Amigável</th>
                                         <th class="text-center">Editar</th>
                                     </tr>
                                 </thead>
@@ -94,4 +91,4 @@
     </section>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('admin::layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\work\www\vgs_carros\vgs-auto-web\Modules/Carro\Resources/views/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin::layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\work\www\vgs_carros\vgs-auto-web\Modules/Institucional\Resources/views/index.blade.php ENDPATH**/ ?>

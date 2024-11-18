@@ -75,9 +75,9 @@
                                         <th>ID</th>
                                         <th>Título</th>
                                         <th>Categoria</th>
-                                        <th>Valor R$</th>
-                                        <th>Vendido</th>
-                                        <th>Ativo</th>
+                                        <th class="text-end">Valor R$</th>
+                                        <th class="text-center">Vendido</th>
+                                        <th class="text-center">Ativo</th>
                                         <th class="text-center">Editar</th>
                                     </tr>
                                 </thead>
