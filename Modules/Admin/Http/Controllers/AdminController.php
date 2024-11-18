@@ -34,6 +34,6 @@ class AdminController extends Controller
     if (user()->role_id == 1) {
       return redirect('admin/usuarios');
     }
-    return redirect('admin/comunicacoes');
+    return redirect('admin/carros');
   }
 }
