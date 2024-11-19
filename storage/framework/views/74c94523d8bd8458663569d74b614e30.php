@@ -17,19 +17,19 @@
                     <label for="ativo" class="control-label">Categoria: </label>
                     <select class="form-control" name="categoria_id" id="categoria_id" required>
                         <option value="" selected="selected">Selecione...</option>
-                        @foreach ($categorias as $cat)
-                            <option value="{{ $cat['id'] }}">{{ $cat->nome }}</option>
-                        @endforeach
+                        <?php $__currentLoopData = $categorias; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($cat['id']); ?>"><?php echo e($cat->nome); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                    <label for="status" class="control-label">Status: </label>
-                    <select class="form-control" name="status" id="status">
-                        <option value="D">Disponível</option>
-                        <option value="V" selected="selected">Vendido</option>
+                    <label for="vendido" class="control-label">Vendido: </label>
+                    <select class="form-control" name="vendido" id="vendido">
+                        <option value="S">Sim</option>
                         <option value="R">Reservado</option>
+                        <option value="N" selected="selected">Não</option>
                     </select>
                 </div>
             </div>
@@ -111,3 +111,4 @@
         <button type="submit" class="btn btn-success"><i class="bi bi-save"></i> Salvar</button>
     </div>
 </form>
+<?php /**PATH D:\work\www\vgs_carros\vgs-auto-web\Modules/Carro\Resources/views/create.blade.php ENDPATH**/ ?>

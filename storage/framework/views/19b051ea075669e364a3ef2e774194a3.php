@@ -26,7 +26,7 @@
             <div class="container">
                 <div class="row">
                     <?php $__currentLoopData = $carro; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-3 col-12">
                             <a href="/carro/<?php echo e($c->ref_amigavel); ?>" class="carro-card">
                                 <div class="position-relative">
                                     <img class="g-background-1 carro-card_img"
@@ -36,17 +36,23 @@
                                 <div class="carro-card_box-categoria"><?php echo e($c->CATEGORIA); ?></div>
                                 <div class="carro-card_box d-flex flex-column gap-3">
                                     <div class="carro-card_box-titulo"><?php echo e($c->titulo); ?></div>
-                                    <div class="carro-card_box-km">KM: <strong><?php echo e($c->km); ?></strong></div>
-                                    <?php if($c->vendido == 'S'): ?>
+                                    <div class="carro-card_box-ano">Ano: <?php echo e($c->ano); ?></div>
+                                    <?php if($c->status == 'D'): ?>
+                                        <div class="carro-card_box-valor">R$ <?php echo __currency_mysql_to_iso($c->valor); ?></div>
+                                    <?php endif; ?>
+                                    <?php if($c->status == 'R'): ?>
+                                        <div class="text-center text-bg-dark bg-secondary carro-card_box-valor-vendido">
+                                            RESERVADO</div>
+                                    <?php endif; ?>
+                                    <?php if($c->status == 'V'): ?>
                                         <div class="text-center text-bg-dark bg-secondary carro-card_box-valor-vendido">
                                             VENDIDO</div>
-                                    <?php else: ?>
-                                        <div class="carro-card_box-valor">R$ <?php echo __currency_mysql_to_iso($c->valor); ?></div>
                                     <?php endif; ?>
                                     <div class="carro-card_box-desc">
                                         <hr>
                                         <div class="d-flex justify-content-center mt-2">
-                                            <div class="carro-card_box-ano">Ano: <?php echo e($c->ano); ?></div>
+
+                                            <div class="carro-card_box-km">KM: <strong><?php echo e($c->km); ?></strong></div>
                                             <div class="carro-card_box-combustivel"><span>&nbsp;-&nbsp;</span>Comb: <strong>
                                                     <?php echo e($c->combustivel); ?></strong>
                                             </div>

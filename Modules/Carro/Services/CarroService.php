@@ -30,6 +30,12 @@ class CarroService
     $this->carroFotoRepository = $carroFotoRepository;
   }
 
+  // public function index()
+  // {
+  //   $status = $this->repository->listStatus();
+  //   return view('carro::index', ['status' => $status]);
+  // }
+
   public function isValidate($arr)
   {
 
@@ -72,7 +78,8 @@ class CarroService
     $categorias = $this->categoriaRepository->findByArray([], ['*'], 'nome ASC');
     $combustiveis = $this->repository->listCombustivel();
     $cambios = $this->repository->listCambio();
-    return view('carro::create', ['categorias' => $categorias, 'combustiveis' => $combustiveis, 'cambios' => $cambios]);
+    $status = $this->repository->listStatus();
+    return view('carro::create', ['categorias' => $categorias, 'combustiveis' => $combustiveis, 'cambios' => $cambios, 'status' => $status]);
   }
 
   public function edit($id)
@@ -83,9 +90,10 @@ class CarroService
 
     $combustiveis = $this->repository->listCombustivel();
     $cambios = $this->repository->listCambio();
+    $status = $this->repository->listStatus();
 
 
-    return view('carro::edit', ['carro' => $carro,  'categorias' => $categorias, 'combustiveis' => $combustiveis, 'cambios' => $cambios,  'carroFotos' => $carroFotos]);
+    return view('carro::edit', ['carro' => $carro,  'categorias' => $categorias, 'combustiveis' => $combustiveis, 'cambios' => $cambios,  'carroFotos' => $carroFotos, 'status' => $status]);
   }
 
   public function destroy($id)
@@ -109,6 +117,8 @@ class CarroService
 
       $search['id'] = (int)$search['id'];
       $search['nome'] = filter_var($search['nome'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+      $search['active'] = $search['active'];
+      $search['status'] = $search['status'];
 
       switch ((int)$order[0]['column']) {
         case 0:
@@ -124,7 +134,7 @@ class CarroService
           $sort = 'valor';
           break;
         case 4:
-          $sort = 'vendido';
+          $sort = 'status';
           break;
         case 5:
           $sort = 'ativo';

@@ -88,9 +88,6 @@
                                 <div class="carro-card-mask"></div>
                             </div>
                             <div class="carro-card_box-categoria"><?php echo e($c->CATEGORIA); ?></div>
-                            <?php if($c->vendido == 'S'): ?>
-                                <div class="target text-center">VENDIDO</div>
-                            <?php endif; ?>
                             <div class="carro-card_box d-flex flex-column gap-3">
                                 <div class="carro-card_box-titulo"><?php echo e($c->titulo); ?></div>
                                 <div class="carro-card_box-ano">Ano: <?php echo e($c->ano); ?></div>

@@ -33,7 +33,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label for="ativo" class="control-label">Categoria: </label>
                             <select class="form-control" name="categoria_id" id="categoria_id" required>
@@ -46,16 +46,18 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="vendido" class="control-label active">Vendido: </label>
-                            <select class="form-control" name="vendido" id="vendido">
-                                <option value="S" <?php echo $carro->vendido == 'S' ? 'selected' : ''; ?>>Sim
+                            <label for="status" class="control-label active">Vendido: </label>
+                            <select class="form-control" name="status" id="status">
+                                <option value="D" <?php echo $carro->status == 'D' ? 'selected' : ''; ?>>Disponível
                                 </option>
-                                <option value="N" <?php echo $carro->vendido == 'N' ? 'selected' : ''; ?>>Não
+                                <option value="V" <?php echo $carro->status == 'V' ? 'selected' : ''; ?>>Vendido
+                                </option>
+                                <option value="R" <?php echo $carro->status == 'R' ? 'selected' : ''; ?>>Reservado
                                 </option>
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="form-group">
                             <label for="ativo" class="control-label active">Ativo: </label>
                             <select class="form-control" name="ativo" id="ativo">
@@ -64,27 +66,18 @@
                             </select>
                         </div>
                     </div>
-
-
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="form-group">
                             <label for="cor" class="control-label">Cor: </label>
                             <input type="text" class="form-control" name="cor" id="cor"
                                 value="<?php echo $carro->cor; ?>" maxlength="40">
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="form-group">
                             <label for="ano" class="control-label">Ano: </label>
                             <input type="text" class="form-control" name="ano" id="ano"
                                 value="<?php echo $carro->ano; ?>" maxlength="40">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="motorizacao" class="control-label">Motorização: </label>
-                            <input type="text" class="form-control" name="motorizacao" id="motorizacao"
-                                value="<?php echo $carro->motorizacao; ?>" maxlength="40">
                         </div>
                     </div>
                     <div class="col-md-3">

@@ -40,6 +40,27 @@
                                     placeholder="Digite uma palavra chave">
                             </div>
                         </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label class="control-label" for="filtro_active">Ativo</label>
+                                <select class="form-control" name="filtro_active" id="filtro_active" style="width:100%">
+                                    <option value="" selected>Todos</option>
+                                    <option value="S">Ativo</option>
+                                    <option value="N">Inativo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label class="control-label" for="filtro_status">Status</label>
+                                <select class="form-control" name="filtro_status" id="filtro_status" style="width:100%">
+                                    <option value="" selected>Todos</option>
+                                    <option value="D">Disponível</option>
+                                    <option value="V">Vendido</option>
+                                    <option value="R">Reservado</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <div class="col-lg-1">
                             <label class="control-label">&nbsp;</label>
@@ -76,7 +97,7 @@
                                         <th>Título</th>
                                         <th>Categoria</th>
                                         <th class="text-end">Valor R$</th>
-                                        <th class="text-center">Vendido</th>
+                                        <th class="text-center">Status</th>
                                         <th class="text-center">Ativo</th>
                                         <th class="text-center">Editar</th>
                                     </tr>

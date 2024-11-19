@@ -38,11 +38,16 @@
                                 <div class="carro-card_box d-flex flex-column gap-3">
                                     <div class="carro-card_box-titulo">{{ $c->titulo }}</div>
                                     <div class="carro-card_box-ano">Ano: {{ $c->ano }}</div>
-                                    @if ($c->vendido == 'S')
+                                    @if ($c->status == 'D')
+                                        <div class="carro-card_box-valor">R$ <?php echo __currency_mysql_to_iso($c->valor); ?></div>
+                                    @endif
+                                    @if ($c->status == 'R')
+                                        <div class="text-center text-bg-dark bg-secondary carro-card_box-valor-vendido">
+                                            RESERVADO</div>
+                                    @endif
+                                    @if ($c->status == 'V')
                                         <div class="text-center text-bg-dark bg-secondary carro-card_box-valor-vendido">
                                             VENDIDO</div>
-                                    @else
-                                        <div class="carro-card_box-valor">R$ <?php echo __currency_mysql_to_iso($c->valor); ?></div>
                                     @endif
                                     <div class="carro-card_box-desc">
                                         <hr>

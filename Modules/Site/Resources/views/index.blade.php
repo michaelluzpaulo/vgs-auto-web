@@ -90,9 +90,6 @@
                                 <div class="carro-card-mask"></div>
                             </div>
                             <div class="carro-card_box-categoria">{{ $c->CATEGORIA }}</div>
-                            @if ($c->vendido == 'S')
-                                <div class="target text-center">VENDIDO</div>
-                            @endif
                             <div class="carro-card_box d-flex flex-column gap-3">
                                 <div class="carro-card_box-titulo">{{ $c->titulo }}</div>
                                 <div class="carro-card_box-ano">Ano: {{ $c->ano }}</div>

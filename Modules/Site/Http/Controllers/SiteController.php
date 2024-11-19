@@ -48,7 +48,7 @@ class SiteController extends Controller
       ->orderByRaw("ordem")
       ->get();
 
-    $carro = $this->carroRepository->listDestaque('N');
+    $carro = $this->carroRepository->listDestaque('D');
 
 
     return view('site::index', ['pgId' => "pg-home", 'pgClass' => '', 'bannersPrincipal' => $bannersPrincipal, 'carro' => $carro]);
@@ -85,7 +85,7 @@ class SiteController extends Controller
 
   public function carros()
   {
-    $carro = $this->carroRepository->listCarros('N');
+    $carro = $this->carroRepository->listCarros();
 
     return view('site::carros', ['pgId' => "pg-carros", 'pgClass' => '', 'carro' => $carro]);
   }
@@ -125,10 +125,12 @@ class SiteController extends Controller
       }
       $data['desejo_receber_promocao_ofertasTxt'] = isset($data['desejo_receber_promocao_ofertas']) ? 'SIM' : 'NÃO';
 
-      $existNews = DB::table('newsletter')->where('email', '=', $data['email'])->first();
-      $newsletter =  $existNews ? $this->newsletterRepository->find($existNews->id) : $this->newsletterRepository;
-      $newsletter->fill($data);
-      $newsletter->save();
+      if ($data['desejo_receber_promocao_ofertasTxt'] == 'SIM') {
+        $existNews = DB::table('newsletter')->where('email', '=', $data['email'])->first();
+        $newsletter =  $existNews ? $this->newsletterRepository->find($existNews->id) : $this->newsletterRepository;
+        $newsletter->fill($data);
+        $newsletter->save();
+      }
 
       $this->emailService->financiamentoEmail($data);
 

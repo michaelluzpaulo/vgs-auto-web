@@ -17,7 +17,7 @@ class CarroRepository extends AbstractRepository implements RepositoryInterface
    * @var string
    */
   protected $table = "carro";
-  protected $fillable = ['titulo', 'texto', 'ref_amigavel', 'ativo', 'vendido', 'created_at', 'updated_at', 'categoria_id', 'valor', 'img', 'cor', 'ano', 'combustivel', 'motorizacao', 'cambio', 'km'];
+  protected $fillable = ['titulo', 'texto', 'ref_amigavel', 'ativo', 'status', 'created_at', 'updated_at', 'categoria_id', 'valor', 'img', 'cor', 'ano', 'combustivel', 'motorizacao', 'cambio', 'km'];
   //protected $guarded = ['id'];
   public $timestamps = false;
 
@@ -35,7 +35,7 @@ class CarroRepository extends AbstractRepository implements RepositoryInterface
     return $this->listCambio()[$id];
   }
 
-  public function listCombustivel()
+  public function listCombustivel(): array
   {
     return [
       1 => ['id' => 1, 'nome' => 'Etanol'],
@@ -45,27 +45,47 @@ class CarroRepository extends AbstractRepository implements RepositoryInterface
     ];
   }
 
-  public function getCombustivel($id)
+  public function getCombustivel(int $key)
   {
-    return $this->listCombustivel()[$id];
+    return $this->listCombustivel()[$key];
   }
-  public function listDestaque($vendido = 'S')
+
+  public function listStatus(): array
+  {
+    return [
+      "D" => ['id' => "D", 'nome' => 'Disponivel'],
+      "V" => ['id' => "V", 'nome' => 'Vendido'],
+      "R" => ['id' => "R", 'nome' => 'Reservado'],
+    ];
+  }
+
+  public function _getStatus(string $key)
+  {
+    return $this->listStatus()[$key] ?? ['id' => "", 'nome' => 'Indefinido'];
+  }
+
+  // Vendido = Status
+  // Sim --> Disponível
+  // Não --> Vendido
+  // R --> Reservado
+
+  public function listDestaque(string $status = 'V')
   {
     $select = DB::table('carro AS C')
       ->selectRaw("C.*,CAT.nome AS CATEGORIA")
       ->join("categoria AS CAT", 'C.categoria_id', 'CAT.id')
       ->orderByRaw('CAT.nome ASC, C.titulo ASC')
       ->limit(8);
-    $select->whereRaw("C.vendido = '{$vendido}' && C.ativo = 'S'");
+    $select->whereRaw("C.status = '{$status}' && C.ativo = 'S'");
     return $select->get();
   }
-  public function listCarros($vendido = 'S')
+  public function listCarros($ativo = 'S')
   {
     $select = DB::table('carro AS C')
       ->selectRaw("C.*,CAT.nome AS CATEGORIA")
       ->join("categoria AS CAT", 'C.categoria_id', 'CAT.id')
       ->orderByRaw('CAT.nome ASC, C.titulo ASC');
-    // $select->whereRaw("C.vendido = '{$vendido}' && C.ativo = 'S'");
+    $select->whereRaw("C.ativo = '{$ativo}' && C.ativo = 'S'");
     return $select->get();
   }
 
@@ -90,12 +110,12 @@ class CarroRepository extends AbstractRepository implements RepositoryInterface
       $select->where('C.titulo', 'LIKE', "%{$query_params['search']['titulo']}%");
     }
 
-    if (!empty($query_params['search']['status'])) {
-      $select->where('C.ativo', 'LIKE', $query_params['search']['status']);
+    if (!empty($query_params['search']['active'])) {
+      $select->where('C.ativo', '=', $query_params['search']['active']);
     }
 
-    if (!empty($query_params['search']['vendido'])) {
-      $select->where('C.vendido', 'LIKE', $query_params['search']['status']);
+    if (!empty($query_params['search']['status'])) {
+      $select->where('C.status', '=', $query_params['search']['status']);
     }
 
 
@@ -117,7 +137,7 @@ class CarroRepository extends AbstractRepository implements RepositoryInterface
     $data = [];
 
     foreach ($result as $row) {
-      $data[] = ['DT_RowId' => $row->id, $row->id, $row->titulo, $row->CATEGORIA, $row->valor, $row->vendido, $row->ativo];
+      $data[] = ['DT_RowId' => $row->id, $row->id, $row->titulo, $row->CATEGORIA, $row->valor, $this->_getStatus($row->status)["nome"], $row->ativo];
     }
 
     // Set total amount of table

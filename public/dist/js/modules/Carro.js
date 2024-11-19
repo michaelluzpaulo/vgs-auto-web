@@ -104,7 +104,8 @@ const Carro = (function () {
         $.loadmask();
         aoData["search[id]"] = $("#filtro_id").val();
         aoData["search[nome]"] = $("#filtro_nome").val();
-        aoData["search[tipo]"] = $("#filtro_tipo_id").val();
+        aoData["search[active]"] = $("#filtro_active").val();
+        aoData["search[status]"] = $("#filtro_status").val();
       },
       columnDefs: [
         {
