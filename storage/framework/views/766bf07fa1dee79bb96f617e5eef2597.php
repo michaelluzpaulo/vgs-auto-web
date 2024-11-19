@@ -1,12 +1,11 @@
-@extends('site::layouts.master')
-@section('js')
+<?php $__env->startSection('js'); ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-@endsection
-@section('css')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('css'); ?>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet" />
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
     <main>
         <div class="all-breadcrumb">
             <div class="container ">
@@ -26,12 +25,12 @@
         <div class="p-geral">
             <div class="container">
                 <div class="row">
-                    <h1 class="col-12">{!! $institucional->titulo !!}</h1>
+                    <h1 class="col-12"><?php echo $institucional->titulo; ?></h1>
                     <div class="col-12">
                         <hr>
                     </div>
                     <div class="col-12">
-                        <p>{!! $institucional->texto !!}</p>
+                        <p><?php echo $institucional->texto; ?></p>
                     </div>
                     <div class="mt-3">
                         <iframe
@@ -42,4 +41,6 @@
             </div>
         </div>
     </main>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('site::layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\work\www\vgs_carros\vgs-auto-web\Modules/Site\Resources/views/localizacao.blade.php ENDPATH**/ ?>
