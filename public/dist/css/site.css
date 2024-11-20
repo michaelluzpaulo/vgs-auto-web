@@ -509,4 +509,8 @@ h1 {
     width: 1em;
     height: 1em;
   }
+  .logo-c6 {
+    width: 155px;
+    max-width: 100%;
+  }
 }
