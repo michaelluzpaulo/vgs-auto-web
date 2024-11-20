@@ -83,8 +83,9 @@
                     <div class="col-lg-3 col-12">
                         <a href="/carro/<?php echo e($c->ref_amigavel); ?>" class="carro-card">
                             <div class="position-relative">
-                                <img class="g-background-1 carro-card_img"
-                                    style="background-image: url(/storage/carro/big_<?php echo e($c->img); ?>);width: 100%;background-repeat: no-repeat;background-position: center center;">
+                                <div class="g-background-1  carro-card_img"
+                                    style="background-image: url(/storage/carro/big_<?php echo e($c->img); ?>);width: 100%">
+                                </div>
                                 <div class="carro-card-mask"></div>
                             </div>
                             <div class="carro-card_box-categoria"><?php echo e($c->CATEGORIA); ?></div>

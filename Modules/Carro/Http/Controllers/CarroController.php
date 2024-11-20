@@ -106,9 +106,9 @@ class CarroController extends Controller
   {
     return $this->fotoService->saveFoto($id, $request);
   }
-  public function destroyFoto($id, $fotoId)
+  public function destroyFoto($id)
   {
-    return $this->fotoService->destroyFoto($id, $fotoId);
+    return $this->fotoService->destroyFoto($id);
   }
   public function updateGalleryFoto(Request $request, $id)
   {
