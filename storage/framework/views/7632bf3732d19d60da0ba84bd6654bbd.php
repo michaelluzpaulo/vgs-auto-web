@@ -56,15 +56,6 @@
                 </div>
                 <form class="form-padrao" id="form-financiamento">
                     <div class="row">
-                        <!--    <div class="col-lg-12">
-                                                                                                                                                                                <br />
-                                                                                                                                                                                <div class="g-titulo-1">Veículo(s) que desejo financiar</div>
-                                                                                                                                                                            </div>
-                                                                                                                                                                            <div class="col-lg-12">
-                                                                                                                                                                                <div class="form-group">
-                                                                                                                                                                                    <textarea class="form-control" name="veiculo_desejado" id="veiculo_desejado" rows="5" required></textarea>
-                                                                                                                                                                                </div>
-                                                                                                                                                                            </div> -->
                         <div class="col-lg-12">
                             <div class="mt-4">Dados pessoais</div>
                         </div>
@@ -90,18 +81,6 @@
                                     id="documento" />
                             </div>
                         </div>
-                        <!--      <div class="col-lg-3">
-                                                                                                                                                                                                        <div class="form-group">
-                                                                                                                                                                                                            <label for="rg" class="form-label">RG</label>
-                                                                                                                                                                                                            <input type="text" class="form-control" name="rg" id="rg" />
-                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                    </div> -->
-                        <!--     <div class="col-lg-6">
-                                                                                                                                                                                                        <div class="form-group">
-                                                                                                                                                                                                            <label for="nome_mae" class="form-label">Nome da mãe</label>
-                                                                                                                                                                                                            <input type="text" class="form-control" name="nome_mae" id="nome_mae" />
-                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                    </div>-->
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="data_nascimento" class="form-label">Data nascimento</label>
@@ -109,43 +88,6 @@
                                     name="data_nascimento" id="data_nascimento" />
                             </div>
                         </div>
-                        <!--         <div class="col-lg-3">
-                                                                                                                                                                                                    <div class="form-group">
-                                                                                                                                                                                                        <label for="local_nascimento" class="form-label">Naturalidade</label>
-                                                                                                                                                                                                        <input type="text" class="form-control" name="local_nascimento"
-                                                                                                                                                                                                            id="local_nascimento" />
-                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                </div> -->
-                        <!--         <div class="col-lg-2">
-                                                                                                                                                                                                    <div class="form-group">
-                                                                                                                                                                                                        <label for="possui_cnh" class="form-label">Possui CNH</label>
-                                                                                                                                                                                                        <br>
-                                                                                                                                                                                                        <div class="form-check form-check-inline">
-                                                                                                                                                                                                            <input class="form-check-input" type="radio" name="possui_cnh" id="possui_cnh_s"
-                                                                                                                                                                                                                value="S">
-                                                                                                                                                                                                            <label class="form-check-label" for="inlineRadio1">Sim</label>
-                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                        <div class="form-check form-check-inline">
-                                                                                                                                                                                                            <input class="form-check-input" type="radio" name="possui_cnh" id="possui_cnh_n"
-                                                                                                                                                                                                                value="N" checked>
-                                                                                                                                                                                                            <label class="form-check-label" for="inlineRadio2">Não</label>
-                                                                                                                                                                                                        </div>
-
-                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                </div> -->
-                        <!--      <div class="col-lg-4">
-                                                                                                                                                                                                    <div class="form-group">
-                                                                                                                                                                                                        <label for="cargo" class="form-label">Função / Cargo</label>
-                                                                                                                                                                                                        <input type="text" class="form-control" name="cargo" id="cargo" />
-                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                </div>  -->
-                        <!--    <div class="col-lg-3">
-                                                                                                                                                                                                <div class="form-group">
-                                                                                                                                                                                                    <label for="renda" class="form-label">Salário</label>
-                                                                                                                                                                                                    <input type="text" class="form-control" data-mask-type="moeda" name="renda"
-                                                                                                                                                                                                        id="renda" />
-                                                                                                                                                                                                </div>
-                                                                                                                                                                                            </div> -->
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="telefone" class="form-label">Telefone</label>
@@ -153,60 +95,6 @@
                                     id="telefone" />
                             </div>
                         </div>
-                        <!--
-                                                                                                                                                                                <div class="col-lg-12">
-                                                                                                                                                                                    <div class="mt-4">Dados endereço</div>
-                                                                                                                                                                                </div>
-                                                                                                                                                                                <div class="col-lg-12">
-                                                                                                                                                                                    <hr />
-                                                                                                                                                                                </div>
-                                                                                                                                                                                <div class="col-lg-2">
-                                                                                                                                                                                    <div class="form-group">
-                                                                                                                                                                                        <label for="cep" class="form-label">CEP residencial</label>
-                                                                                                                                                                                        <input type="text" class="form-control" data-mask-type="cep" name="cep"
-                                                                                                                                                                                            id="cep" data-cep='cep' />
-                                                                                                                                                                                    </div>
-                                                                                                                                                                                </div>
-                                                                                                                                                                                <div class="col-lg-4">
-                                                                                                                                                                                    <div class="form-group">
-                                                                                                                                                                                        <label for="endereco" class="form-label">Logradouro</label>
-                                                                                                                                                                                        <input type="text" class="form-control" name="endereco" id="endereco"
-                                                                                                                                                                                            data-cep='endereco' />
-                                                                                                                                                                                    </div>
-                                                                                                                                                                                </div>
-                                                                                                                                                                                <div class="col-lg-2">
-                                                                                                                                                                                    <div class="form-group">
-                                                                                                                                                                                        <label for="numero" class="form-label">Número</label>
-                                                                                                                                                                                        <input type="text" class="form-control" name="numero" id="numero" />
-                                                                                                                                                                                    </div>
-                                                                                                                                                                                </div>
-                                                                                                                                                                                <div class="col-lg-4">
-                                                                                                                                                                                    <div class="form-group">
-                                                                                                                                                                                        <label for="complemento" class="form-label">Complemento</label>
-                                                                                                                                                                                        <input type="text" class="form-control" name="complemento" id="complemento" />
-                                                                                                                                                                                    </div>
-                                                                                                                                                                                </div>
-                                                                                                                                                                                <div class="col-lg-4">
-                                                                                                                                                                                    <div class="form-group">
-                                                                                                                                                                                        <label for="bairro" class="form-label">Bairro</label>
-                                                                                                                                                                                        <input type="text" class="form-control" name="bairro" id="bairro"
-                                                                                                                                                                                            data-cep='bairro' />
-                                                                                                                                                                                    </div>
-                                                                                                                                                                                </div>
-                                                                                                                                                                                <div class="col-lg-4">
-                                                                                                                                                                                    <div class="form-group">
-                                                                                                                                                                                        <label for="cidade" class="form-label">Cidade</label>
-                                                                                                                                                                                        <input type="text" class="form-control" name="cidade" id="cidade"
-                                                                                                                                                                                            data-cep='cidade' />
-                                                                                                                                                                                    </div>
-                                                                                                                                                                                </div>
-                                                                                                                                                                                <div class="col-lg-4">
-                                                                                                                                                                                    <div class="form-group">
-                                                                                                                                                                                        <label for="estado" class="form-label">Estado</label>
-                                                                                                                                                                                        <input type="text" class="form-control" name="estado" id="estado"
-                                                                                                                                                                                            data-cep='uf' />
-                                                                                                                                                                                    </div>
-                                                                                                                                                                                </div> -->
                         <div class="col-lg-12">
                             <br>
                             <hr />
@@ -262,12 +150,11 @@
                                 </label>
                             </div>
                         </div>
-                        
                         <div class="col-lg-12">
-                            <div class="text-center mt-2">
-                                <button type="submit" class="btn g-btn-ver-todos">Enviar</button>
-                            </div>
+                            <button class="g-recaptcha" data-sitekey="reCAPTCHA_site_key" data-callback='onSubmit'
+                                data-action='submit'>Submit</button>
                         </div>
+                        
                     </div>
                 </form>
             </div>

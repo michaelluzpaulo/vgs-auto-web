@@ -71,96 +71,98 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer.min.js"></script>
 
     <head>
+        <script src="https://www.google.com/recaptcha/api.js?render=6LfaDIUqAAAAALQDGMN2DEndj_nWKlHteHIARBtq"></script>
 
-        <head>
-            
+        
+        
 
-            
-            
+        <?php echo $__env->yieldContent('css'); ?>
+        <link rel="stylesheet" href="/dist/css/site.css?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>">
 
-            <?php echo $__env->yieldContent('css'); ?>
-            <link rel="stylesheet" href="/dist/css/site.css?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>">
-
-            <?php echo app('Illuminate\Foundation\Vite')(['resources/js/app.js']); ?>
+        <?php echo app('Illuminate\Foundation\Vite')(['resources/js/app.js']); ?>
 
 
-        </head>
+    </head>
 
-    <body id="<?php echo e($pgId); ?>" class="<?php echo e($pgId); ?> <?php echo e($pgClass); ?> ">
-        <div class="wrapper">
-            <header>
-                <div class="all-header">
-                    <div class="container">
-                        <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand" href="/">
-                                <div class="logo">
-                                    <img src="<?php echo e(env('APP_LOGO_HEADER')); ?>" title="VGS negócios automotivos"
-                                        alt="logo VGS negócios automotivos">
-                                </div>
-                            </a>
-                            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse justify-content-end gap-5" id="navbarSupportedContent">
-                                <ul class="navbar-nav  mb-2 mb-lg-0 d-flex items-center ">
-                                    <?php echo $__env->make('site::inc-menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                                </ul>
-                                <div class="desktop">
-                                    <a href="https://wa.me/5551998331102?text=VGS%20negócios%20automotivos"
-                                        target="_blanck" class="header-redes-sociais">
-                                        <i class="bi bi-whatsapp header-redes-sociais-ico"></i>
-                                        <span>(51) 99833-1102</span>
-                                    </a>
-                                </div>
+<body id="<?php echo e($pgId); ?>" class="<?php echo e($pgId); ?> <?php echo e($pgClass); ?> ">
+    <div class="wrapper">
+        <header>
+            <div class="all-header">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="/">
+                            <div class="logo">
+                                <img src="<?php echo e(env('APP_LOGO_HEADER')); ?>" title="VGS negócios automotivos"
+                                    alt="logo VGS negócios automotivos">
                             </div>
-                        </nav>
-                    </div>
+                        </a>
+                        <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-end gap-5" id="navbarSupportedContent">
+                            <ul class="navbar-nav  mb-2 mb-lg-0 d-flex items-center ">
+                                <?php echo $__env->make('site::inc-menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                            </ul>
+                            <div class="desktop">
+                                <a href="https://wa.me/5551998331102?text=VGS%20negócios%20automotivos" target="_blanck"
+                                    class="header-redes-sociais">
+                                    <i class="bi bi-whatsapp header-redes-sociais-ico"></i>
+                                    <span>(51) 99833-1102</span>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
                 </div>
-            </header>
-            <main>
-                <?php echo $__env->yieldContent('content'); ?>
-            </main>
-            <footer>
-                <?php echo $__env->make('site::inc-footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-            </footer>
-            <a class="whats_fixed" href="https://wa.me/5551998331102?text=VGS%20negócios%20automotivos" target="_blank"
-                title="whatsapp">
-                <i class="bi bi-whatsapp" aria-hidden="true"></i>
-            </a>
-        </div>
-        
-        <script src="/vendorjs/jquery/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-        </script>
+            </div>
+        </header>
+        <main>
+            <?php echo $__env->yieldContent('content'); ?>
+        </main>
+        <footer>
+            <?php echo $__env->make('site::inc-footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        </footer>
+        <a class="whats_fixed" href="https://wa.me/5551998331102?text=VGS%20negócios%20automotivos" target="_blank"
+            title="whatsapp">
+            <i class="bi bi-whatsapp" aria-hidden="true"></i>
+        </a>
+    </div>
+    
+    <script src="/vendorjs/jquery/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 
-        
-        
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
 
-        <script src="/vendorjs/owl/owl.carousel.min.js"></script>
-        <script src="/dist/js/services/service-notify.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
-        <script src="/dist/js/core/Validator.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
-        <script src="/dist/js/core/ModalFactory.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
-        <script src="/dist/js/services/service-http.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
-        <script src="/dist/js/vendorjs/jquery.loadmask.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
-        <script src="/dist/js/vendorjs/jquery.maskedinput.min.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
-        <script src="/dist/js/vendorjs/jquery.serializejson.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
-        <script src="/dist/js/vendorjs/jquery.validate.min.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
-        <script src="/dist/js/core/Utils.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
-        <script src="/dist/js/core/Config.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
+    <script src="/vendorjs/owl/owl.carousel.min.js"></script>
+    <script src="/dist/js/services/service-notify.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
+    <script src="/dist/js/core/Validator.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
+    <script src="/dist/js/core/ModalFactory.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
+    <script src="/dist/js/services/service-http.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
+    <script src="/dist/js/vendorjs/jquery.loadmask.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
+    <script src="/dist/js/vendorjs/jquery.maskedinput.min.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
+    <script src="/dist/js/vendorjs/jquery.serializejson.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
+    <script src="/dist/js/vendorjs/jquery.validate.min.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
+    <script src="/dist/js/core/Utils.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
+    <script src="/dist/js/core/Config.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
 
 
-        <?php echo $__env->yieldContent('js'); ?>
-        <script src="/dist/js/site/Financiamento.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
-        <script src="/dist/js/site/Contato.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
-        <script src="/dist/js/site/main.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
+    <?php echo $__env->yieldContent('js'); ?>
+    <script src="/dist/js/site/Financiamento.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
+    <script src="/dist/js/site/Contato.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
+    <script src="/dist/js/site/main.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
 
-        
+    <script>
+        function onSubmit(token) {
+            document.getElementById("form-financiamento").submit();
+        }
+    </script>
 
-    </body>
+</body>
 
 </html>
 <?php /**PATH D:\work\www\vgs_carros\vgs-auto-web\Modules/Site\Resources/views/layouts/master.blade.php ENDPATH**/ ?>

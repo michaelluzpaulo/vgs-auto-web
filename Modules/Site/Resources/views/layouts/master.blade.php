@@ -71,109 +71,100 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer.min.js"></script>
 
     <head>
+        <script src="https://www.google.com/recaptcha/api.js?render=6LfaDIUqAAAAALQDGMN2DEndj_nWKlHteHIARBtq"></script>
 
-        <head>
-            {{-- <script src="https://www.google.com/recaptcha/api.js?render=6LfBgoAqAAAAADs9h1GY7vDF0VdJSMsLmrhhO-4p"></script> --}}
-
-            {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"> --}}
-            {{-- <link rel="stylesheet"
+        {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"> --}}
+        {{-- <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> --}}
 
-            @yield('css')
-            <link rel="stylesheet" href="/dist/css/site.css?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}">
+        @yield('css')
+        <link rel="stylesheet" href="/dist/css/site.css?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}">
 
-            @vite(['resources/js/app.js'])
+        @vite(['resources/js/app.js'])
 
 
-        </head>
+    </head>
 
-    <body id="{{ $pgId }}" class="{{ $pgId }} {{ $pgClass }} ">
-        <div class="wrapper">
-            <header>
-                <div class="all-header">
-                    <div class="container">
-                        <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand" href="/">
-                                <div class="logo">
-                                    <img src="{{ env('APP_LOGO_HEADER') }}" title="VGS negócios automotivos"
-                                        alt="logo VGS negócios automotivos">
-                                </div>
-                            </a>
-                            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse justify-content-end gap-5" id="navbarSupportedContent">
-                                <ul class="navbar-nav  mb-2 mb-lg-0 d-flex items-center ">
-                                    @include('site::inc-menu')
-                                </ul>
-                                <div class="desktop">
-                                    <a href="https://wa.me/5551998331102?text=VGS%20negócios%20automotivos"
-                                        target="_blanck" class="header-redes-sociais">
-                                        <i class="bi bi-whatsapp header-redes-sociais-ico"></i>
-                                        <span>(51) 99833-1102</span>
-                                    </a>
-                                </div>
+<body id="{{ $pgId }}" class="{{ $pgId }} {{ $pgClass }} ">
+    <div class="wrapper">
+        <header>
+            <div class="all-header">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="/">
+                            <div class="logo">
+                                <img src="{{ env('APP_LOGO_HEADER') }}" title="VGS negócios automotivos"
+                                    alt="logo VGS negócios automotivos">
                             </div>
-                        </nav>
-                    </div>
+                        </a>
+                        <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-end gap-5" id="navbarSupportedContent">
+                            <ul class="navbar-nav  mb-2 mb-lg-0 d-flex items-center ">
+                                @include('site::inc-menu')
+                            </ul>
+                            <div class="desktop">
+                                <a href="https://wa.me/5551998331102?text=VGS%20negócios%20automotivos" target="_blanck"
+                                    class="header-redes-sociais">
+                                    <i class="bi bi-whatsapp header-redes-sociais-ico"></i>
+                                    <span>(51) 99833-1102</span>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
                 </div>
-            </header>
-            <main>
-                @yield('content')
-            </main>
-            <footer>
-                @include('site::inc-footer')
-            </footer>
-            <a class="whats_fixed" href="https://wa.me/5551998331102?text=VGS%20negócios%20automotivos" target="_blank"
-                title="whatsapp">
-                <i class="bi bi-whatsapp" aria-hidden="true"></i>
-            </a>
-        </div>
-        {{--
+            </div>
+        </header>
+        <main>
+            @yield('content')
+        </main>
+        <footer>
+            @include('site::inc-footer')
+        </footer>
+        <a class="whats_fixed" href="https://wa.me/5551998331102?text=VGS%20negócios%20automotivos" target="_blank"
+            title="whatsapp">
+            <i class="bi bi-whatsapp" aria-hidden="true"></i>
+        </a>
+    </div>
+    {{--
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script> --}}
-        <script src="/vendorjs/jquery/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-        </script>
+    <script src="/vendorjs/jquery/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 
-        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> --}}
-        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> --}}
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> --}}
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
 
-        <script src="/vendorjs/owl/owl.carousel.min.js"></script>
-        <script src="/dist/js/services/service-notify.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
-        <script src="/dist/js/core/Validator.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
-        <script src="/dist/js/core/ModalFactory.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
-        <script src="/dist/js/services/service-http.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
-        <script src="/dist/js/vendorjs/jquery.loadmask.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
-        <script src="/dist/js/vendorjs/jquery.maskedinput.min.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
-        <script src="/dist/js/vendorjs/jquery.serializejson.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
-        <script src="/dist/js/vendorjs/jquery.validate.min.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
-        <script src="/dist/js/core/Utils.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
-        <script src="/dist/js/core/Config.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
+    <script src="/vendorjs/owl/owl.carousel.min.js"></script>
+    <script src="/dist/js/services/service-notify.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
+    <script src="/dist/js/core/Validator.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
+    <script src="/dist/js/core/ModalFactory.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
+    <script src="/dist/js/services/service-http.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
+    <script src="/dist/js/vendorjs/jquery.loadmask.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
+    <script src="/dist/js/vendorjs/jquery.maskedinput.min.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
+    <script src="/dist/js/vendorjs/jquery.serializejson.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
+    <script src="/dist/js/vendorjs/jquery.validate.min.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
+    <script src="/dist/js/core/Utils.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
+    <script src="/dist/js/core/Config.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
 
 
-        @yield('js')
-        <script src="/dist/js/site/Financiamento.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
-        <script src="/dist/js/site/Contato.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
-        <script src="/dist/js/site/main.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
+    @yield('js')
+    <script src="/dist/js/site/Financiamento.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
+    <script src="/dist/js/site/Contato.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
+    <script src="/dist/js/site/main.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
 
-        {{-- <script>
-            function onClick(e) {
-                e.preventDefault();
-                grecaptcha.ready(function() {
-                    grecaptcha.execute('6LfBgoAqAAAAADs9h1GY7vDF0VdJSMsLmrhhO-4p', {
-                        action: 'submit'
-                    }).then(function(token) {
-                        // Add your logic to submit to your backend server here.
-                    });
-                });
-            }
-        </script> --}}
+    <script>
+        function onSubmit(token) {
+            document.getElementById("form-financiamento").submit();
+        }
+    </script>
 
-    </body>
+</body>
 
 </html>
