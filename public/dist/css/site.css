@@ -422,7 +422,8 @@ h1 {
   width: 190px;
   max-width: 100%;
 }
-.lightbox .lb-data .lb-caption {
+.lightbox .lb-data .lb-caption,
+.lightbox .lb-data .lb-number {
   display: none !important;
 }
 
