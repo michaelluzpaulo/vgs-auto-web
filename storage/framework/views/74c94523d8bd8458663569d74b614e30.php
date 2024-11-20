@@ -25,11 +25,11 @@
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                    <label for="vendido" class="control-label">Vendido: </label>
-                    <select class="form-control" name="vendido" id="vendido">
-                        <option value="S">Sim</option>
+                    <label for="status" class="control-label">Status: </label>
+                    <select class="form-control" name="status" id="status">
+                        <option value="D" selected="selected">Disponível</option>
+                        <option value="V" >Vendido</option>
                         <option value="R">Reservado</option>
-                        <option value="N" selected="selected">Não</option>
                     </select>
                 </div>
             </div>

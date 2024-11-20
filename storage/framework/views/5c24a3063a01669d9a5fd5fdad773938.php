@@ -56,10 +56,15 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="valor-produto text-center">
-                            <?php if($carro->vendido == 'S'): ?>
-                                VENDIDO
-                            <?php else: ?>
+                            
+                            <?php if($carro->status == 'D'): ?>
                                 R$ <?php echo __currency_mysql_to_iso($carro->valor); ?>
+                            <?php endif; ?>
+                            <?php if($carro->status == 'R'): ?>
+                                RESERVADO
+                            <?php endif; ?>
+                            <?php if($carro->status == 'V'): ?>
+                                VENDIDO
                             <?php endif; ?>
                         </div>
                         <div class="descricao-produto">

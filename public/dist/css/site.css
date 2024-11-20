@@ -418,6 +418,13 @@ h1 {
 .pg-carro_aprove_credito:hover {
   background: var(--green-500);
 }
+.logo-c6 {
+  width: 190px;
+  max-width: 100%;
+}
+.lightbox .lb-data .lb-caption {
+  display: none !important;
+}
 
 @media (max-width: 1024px) {
   .p-geral {

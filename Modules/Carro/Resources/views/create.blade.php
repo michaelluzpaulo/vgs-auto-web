@@ -27,8 +27,8 @@
                 <div class="form-group">
                     <label for="status" class="control-label">Status: </label>
                     <select class="form-control" name="status" id="status">
-                        <option value="D">Disponível</option>
-                        <option value="V" selected="selected">Vendido</option>
+                        <option value="D" selected="selected">Disponível</option>
+                        <option value="V" >Vendido</option>
                         <option value="R">Reservado</option>
                     </select>
                 </div>

@@ -57,10 +57,19 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="valor-produto text-center">
-                            @if ($carro->vendido == 'S')
+                            {{-- @if ($carro->vendido == 'S')
                                 VENDIDO
                             @else
+                                R$ <//?php echo __currency_mysql_to_iso($carro->valor); ?>
+                            @endif --}}
+                            @if ($carro->status == 'D')
                                 R$ <?php echo __currency_mysql_to_iso($carro->valor); ?>
+                            @endif
+                            @if ($carro->status == 'R')
+                                RESERVADO
+                            @endif
+                            @if ($carro->status == 'V')
+                                VENDIDO
                             @endif
                         </div>
                         <div class="descricao-produto">
