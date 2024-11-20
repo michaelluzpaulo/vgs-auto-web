@@ -242,8 +242,8 @@ const Carro = (function () {
 
           if (file.value != "") {
             step++;
-            let file = file.files[0];
-            formData.append("img", file);
+            const file2 = file.files[0];
+            formData.append("img", file2);
 
             $.ajax({
               url: "/admin/carros/" + json.data.id + "/foto",

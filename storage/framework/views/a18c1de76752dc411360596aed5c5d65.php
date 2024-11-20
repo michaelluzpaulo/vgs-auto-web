@@ -19,7 +19,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
-    <link rel="shortcut icon" href="https://genfavicon.com/tmp/icon_a7bcb5f96c4ba95174d37e622a872f2b.ico" />
+    <link rel="shortcut icon" href="/dist/img/favicon.png" />
 
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="/vendorjs/overlayScrollbars/css/OverlayScrollbars.min.css">
