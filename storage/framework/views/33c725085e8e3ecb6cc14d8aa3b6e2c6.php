@@ -71,7 +71,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer.min.js"></script>
 
     <head>
-        <script src="https://www.google.com/recaptcha/api.js?render=6LfaDIUqAAAAALQDGMN2DEndj_nWKlHteHIARBtq"></script>
+        
+
 
         
         
@@ -156,11 +157,7 @@
     <script src="/dist/js/site/Contato.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
     <script src="/dist/js/site/main.js?v=<?php echo e(env('APP_VERSION_ARQUIVE_STATIC')); ?>"></script>
 
-    <script>
-        function onSubmit(token) {
-            document.getElementById("form-financiamento").submit();
-        }
-    </script>
+    
 
 </body>
 

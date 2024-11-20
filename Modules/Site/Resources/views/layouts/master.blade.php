@@ -71,7 +71,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer.min.js"></script>
 
     <head>
-        <script src="https://www.google.com/recaptcha/api.js?render=6LfaDIUqAAAAALQDGMN2DEndj_nWKlHteHIARBtq"></script>
+        {{-- <script src="https://www.google.com/recaptcha/api.js?render=6LfHEYUqAAAAAHax8w-DaiP06a8Q4EQGy_qEjmW9"></script> --}}
+
 
         {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"> --}}
         {{-- <link rel="stylesheet"
@@ -159,11 +160,18 @@
     <script src="/dist/js/site/Contato.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
     <script src="/dist/js/site/main.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
 
-    <script>
-        function onSubmit(token) {
-            document.getElementById("form-financiamento").submit();
+    {{-- <script>
+        function onClick(e) {
+            e.preventDefault();
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6LfHEYUqAAAAAHax8w-DaiP06a8Q4EQGy_qEjmW9', {
+                    action: 'submit'
+                }).then(function(token) {
+                    // Add your logic to submit to your backend server here.
+                });
+            });
         }
-    </script>
+    </script> --}}
 
 </body>
 

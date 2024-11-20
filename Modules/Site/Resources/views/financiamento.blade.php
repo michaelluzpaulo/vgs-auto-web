@@ -151,15 +151,16 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="col-lg-12">
-                            <button class="g-recaptcha" data-sitekey="reCAPTCHA_site_key" data-callback='onSubmit'
-                                data-action='submit'>Submit</button>
-                        </div>
                         {{-- <div class="col-lg-12">
+                            <button type="submit" class="g-recaptcha"
+                                data-sitekey="6LfHEYUqAAAAAHax8w-DaiP06a8Q4EQGy_qEjmW9" data-callback='onSubmit'
+                                data-action='submit'>Submit</button>
+                        </div> --}}
+                        <div class="col-lg-12">
                             <div class="text-center mt-2">
                                 <button type="submit" class="btn g-btn-ver-todos">Enviar</button>
                             </div>
-                        </div> --}}
+                        </div>
                     </div>
                 </form>
             </div>
