@@ -118,7 +118,7 @@
                     <hr />
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="img" class="control-label">Imagem (1380 largura): </label>
+                            <label for="img" class="control-label">Imagem (600 largura): </label>
                             <input type="file" class="form-control" name="img" id="img" />
                             <?php if($carro->img):?>
                             <p class="center" style="padding: 30px">

@@ -62,6 +62,12 @@ class CarroFotoService
 
       $file = $request->file('img');
 
+      //verificar se ini_set está habilitado e se tamanho do arquivo é maior que o permitido
+      if (ini_get('upload_max_filesize') < $file->getSize()) {
+        throw new Exception('Tamanho do arquivo excede o permitido');
+      }
+
+
       if ($file->isValid()) {
         $name = uniqid(date('HisYmd'));
 
@@ -74,6 +80,7 @@ class CarroFotoService
           $constraint->aspectRatio();
           $constraint->upsize();
         })->save("storage/carro/big_{$nameFile}");
+
         $upload = Image::make($file)->fit(400, 300, function ($constraint) {
           $constraint->aspectRatio();
           $constraint->upsize();

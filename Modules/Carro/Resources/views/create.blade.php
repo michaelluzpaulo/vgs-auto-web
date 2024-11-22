@@ -28,7 +28,7 @@
                     <label for="status" class="control-label">Status: </label>
                     <select class="form-control" name="status" id="status">
                         <option value="D" selected="selected">Disponível</option>
-                        <option value="V" >Vendido</option>
+                        <option value="V">Vendido</option>
                         <option value="R">Reservado</option>
                     </select>
                 </div>
@@ -91,7 +91,7 @@
 
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="img" class="control-label">Imagem (1380 largura): </label>
+                    <label for="img" class="control-label">Imagem (600 largura): </label>
                     <input type="file" class="form-control" name="img" id="img" />
                 </div>
             </div>
