@@ -166,13 +166,19 @@
                         </div>
                     </div>
                     <div class="col-lg-12">
-                        Imagens cadastradas<br />
                         <div class="table-responsive">
-                            <table id="carroFotoTable" class="table table-striped table-bordered" cellspacing="0"
-                                width="100%">
+
+                            <button type="button" class="btn btn-danger run-btn-delete-carro-foto-all-selected"><i
+                                    class="bi bi-trash"></i>
+                                Excluir imagens selecionadas</button>
+                            <table style="margin-top:10px" id="carroFotoTable"
+                                class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
-                                        <th width="150" class="text-center"> - </th>
+                                        <th width="50" class="text-center">
+                                            <input type="checkbox" id="run-carro-multifotos-excluir-all">
+                                        </th>
+                                        <th width="150" class="text-center"> Foto</th>
                                         <th>Legenda</th>
                                         <th width="120" class="text-center">Excluir</th>
                                     </tr>
@@ -181,6 +187,10 @@
                                     @if ($carroFotos && count($carroFotos) > 0)
                                         @foreach ($carroFotos as $f)
                                             <tr class="carroFotoTable_tr-{{ $f->id }}">
+                                                <td class="text-center" style="vertical-align: middle;">
+                                                    <input type="checkbox" name="carro_foto[]"
+                                                        value="{{ $f->id }}" class="carro-multifotos-img">
+                                                </td>
                                                 <td style="text-align:center;vertical-align: middle">
                                                     <a target="_blank" href="/storage/carro/big_{{ $f->img }}">
                                                         <img alt="{{ $f->legenda }}" title="{{ $f->legenda }}"
@@ -219,3 +229,12 @@
         <button type="button" class="btn btn-danger run-btn-delete"><i class="bi bi-trash"></i> Excluir</button>
     </div>
 </form>
+
+<script>
+    qs('#run-carro-multifotos-excluir-all').addEventListener('click', function() {
+        let checked = this.checked;
+        qsAll('.carro-multifotos-img').forEach(function(el) {
+            el.checked = checked;
+        });
+    });
+</script>

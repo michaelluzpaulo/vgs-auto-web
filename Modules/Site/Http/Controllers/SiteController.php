@@ -125,7 +125,7 @@ class SiteController extends Controller
       }
       $data['desejo_receber_promocao_ofertasTxt'] = isset($data['desejo_receber_promocao_ofertas']) ? 'SIM' : 'NÃO';
 
-      if ($data['desejo_receber_promocao_ofertasTxt'] == 'SIM') {
+      if (isset($data['desejo_receber_promocao_ofertas'])) {
         $existNews = DB::table('newsletter')->where('email', '=', $data['email'])->first();
         $newsletter =  $existNews ? $this->newsletterRepository->find($existNews->id) : $this->newsletterRepository;
         $newsletter->fill($data);
