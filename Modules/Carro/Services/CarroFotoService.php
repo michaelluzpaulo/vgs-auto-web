@@ -64,7 +64,19 @@ class CarroFotoService
 
       //verificar se ini_set está habilitado e se tamanho do arquivo é maior que o permitido
       if (ini_get('upload_max_filesize') < $file->getSize()) {
-        throw new Exception('Tamanho do arquivo excede o permitido');
+        throw new Exception("Tamanho do arquivo excede o upload_max_filesize permitido: " . ini_get('upload_max_filesize') . ', memory_limit: ' . ini_get('memory_limit'));
+      }
+
+      if (ini_get('post_max_size') < $file->getSize()) {
+        throw new Exception("Tamanho do arquivo excede o post_max_size permitido: " . ini_get('post_max_size') . ', memory_limit: ' . ini_get('memory_limit'));
+      }
+
+      if (ini_get('max_execution_time') < 120) {
+        throw new Exception("Tempo de execução excede o max_execution_time permitido: " . ini_get('max_execution_time') . ', memory_limit: ' . ini_get('memory_limit'));
+      }
+
+      if (ini_get('max_input_time') < 120) {
+        throw new Exception("Tempo de execução excede o max_input_time permitido: " . ini_get('max_execution_time') . ', memory_limit: ' . ini_get('memory_limit'));
       }
 
 
