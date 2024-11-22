@@ -4,11 +4,7 @@ namespace Modules\Institucional\Services;
 
 use Exception;
 use Illuminate\Support\Facades\File;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Validator;
-use Illuminate\Validation\Rule;
-use Intervention\Image\ImageManagerStatic as Image;
+use Intervention\Image\Laravel\Facades\Image;
 use Modules\Institucional\Repositories\InstitucionalRepository;
 use Modules\Institucional\Repositories\InstitucionalFotoRepository;
 
@@ -52,6 +48,7 @@ class InstitucionalFotoService
 
   public function saveFoto($id = 0, $request)
   {
+    ini_set('memory_limit', '256M');
 
     try {
       $obj = $this->institucionalRepository->find($id);
@@ -67,25 +64,14 @@ class InstitucionalFotoService
 
         // Recupera a extensão do arquivo
         $extension = $file->extension();
-
-        // Define finalmente o nome
         $nameFile = "{$name}.{$extension}";
-        $upload = Image::make($file)->fit(600, 450, function ($constraint) {
-          $constraint->aspectRatio();
-          $constraint->upsize();
-        })->save("storage/institucional/big_{$nameFile}");
-        $upload = Image::make($file)->fit(400, 300, function ($constraint) {
-          $constraint->aspectRatio();
-          $constraint->upsize();
-        })->save("storage/institucional/tmb_{$nameFile}");
 
-        if (!$upload) {
-          throw new Exception('Falha ao fazer upload da imagem pequena');
-        }
+        $image = Image::read($file);
+
+        $image->cover(600, 450)->save("storage/institucional/big_{$nameFile}");
+        $image->cover(400, 300)->save("storage/institucional/tmb_{$nameFile}");
 
         if ($obj->img) {
-          // @unlink("storage/institucional/tmb_{$obj->img}");
-          // @unlink("storage/institucional/big_{$obj->img}");
           $this->__deleteArquivoFisico($obj->img);
         }
 
@@ -114,6 +100,7 @@ class InstitucionalFotoService
 
   public function saveGalleryFoto($id = 0, $request)
   {
+    ini_set('memory_limit', '256M');
     try {
       $obj = $this->institucionalRepository->find($id);
 
@@ -128,32 +115,15 @@ class InstitucionalFotoService
 
           // Recupera a extensão do arquivo
           $extension = $file->extension();
-
-          // Define finalmente o nome
           $nameFile = "{$name}.{$extension}";
 
-          // $dir = __DIR__ . '/../../../public/storage/institucional/' . $obj->id;
-          // if (!is_dir($dir)) {
-          //   mkdir($dir, 0755, true);
-          // }
 
-          // dd($file);
-          $upload = Image::make($file)->resize(1200, null, function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-          })->save("storage/institucional/big_{$nameFile}");
+          $image = Image::read($file);
 
-          $upload = Image::make($file)->fit(600, 450, function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-          })->save("storage/institucional/tmb_{$nameFile}");
+          $image->scaleDown(1200, null)->save("storage/institucional/big_{$nameFile}");
+          $image->cover(600, 450)->save("storage/institucional/tmb_{$nameFile}");
 
-          // Se tiver funcionado o arquivo foi armazenado em storage/app/public/categories/nomedinamicoarquivo.extensao
 
-          // Verifica se NÃO deu certo o upload (Redireciona de volta)
-          if (!$upload) {
-            throw new \Exception("Falha ao fazer upload! ");
-          }
           $nomeOriginal = explode('.', $file->getClientOriginalName());
           $objFoto = null;
           $objFoto = new InstitucionalFotoRepository();

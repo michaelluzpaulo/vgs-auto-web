@@ -4,10 +4,7 @@ namespace Modules\Banner\Services;
 
 use Exception;
 use Illuminate\Support\Facades\File;
-use Illuminate\Http\Request;
-use Validator;
-use Illuminate\Validation\Rule;
-use Intervention\Image\ImageManagerStatic as Image;
+use Intervention\Image\Laravel\Facades\Image;
 use Modules\Banner\Repositories\BannerRepository;
 
 class BannerFotoService
@@ -48,6 +45,8 @@ class BannerFotoService
 
   public function saveFoto($id = 0, $request)
   {
+    ini_set('memory_limit', '256M');
+
     try {
       $obj = $this->bannerRepository->find($id);
       $tipoImg  = $request->all()['tipo'] == 1 ? 'img' : 'img_mob';
@@ -62,29 +61,19 @@ class BannerFotoService
         $name = uniqid(date('HisYmd'));
         // Recupera a extensão do arquivo
         $extension = $file->extension();
-
-        // Define finalmente o nome
         $nameFile = "{$name}.{$extension}";
 
         $w = 1920;
-        $h = 384;
+        $h = 400;
         if ($tipoImg != 'img') {
-          $w = 600;
-          $h = 600;
+          $w = 640;
+          $h = 480;
         }
 
-        $upload = Image::make($file)->fit($w, $h, function ($constraint) {
-          $constraint->aspectRatio();
-          $constraint->upsize();
-        })->save("storage/banner/big_{$nameFile}");
-        $upload = Image::make($file)->fit(300, 200, function ($constraint) {
-          $constraint->aspectRatio();
-          $constraint->upsize();
-        })->save("storage/banner/tmb_{$nameFile}");
+        $image = Image::read($file);
 
-        if (!$upload) {
-          throw new \Exception('Falha ao fazer upload da imagem pequena');
-        }
+        $image->cover($w, $h)->save("storage/banner/big_{$nameFile}");
+        $image->cover(300, 200)->save("storage/banner/tmb_{$nameFile}");
 
         if ($obj->{$tipoImg}) {
           $this->__deleteArquivoFisico($obj->{$tipoImg});

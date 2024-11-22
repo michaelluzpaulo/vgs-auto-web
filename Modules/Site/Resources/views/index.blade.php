@@ -15,7 +15,7 @@
             autoplayTimeout: 6000,
             autoplayHoverPause: true,
             dots: false,
-            nav: false,
+            nav: true,
             navText: [
                 "<i class='bi bi-chevron-compact-left' aria-hidden='true' style='color:#fff' title='back'></i>",
                 "<i class='bi bi-chevron-compact-right' aria-hidden='true' style='color:#fff' title='next'></i>"
@@ -31,33 +31,28 @@
             autoplayTimeout: 6000,
             autoplayHoverPause: true,
             dots: false,
-            nav: false,
+            nav: true,
             navText: [
                 "<i class='bi bi-chevron-compact-left' aria-hidden='true' style='color:#fff' title='back'></i>",
                 "<i class='bi bi-chevron-compact-right' aria-hidden='true' style='color:#fff' title='next'></i>"
             ]
         });
 
-
         //  $('.myModal').modal()
     </script>
-
-
 @stop
 
 
-
 @section('content')
-
 
     <div class="all-banner">
         <div class="desktop">
             <div class="owl-carousel owl-theme owl-carousel-principal-mobile shadow" style="position: relative">
                 @foreach ($bannersPrincipal as $banner)
                     <div class="item">
-                        <a href="{{ $banner->url }}" data-background="/storage/banner/big_{{ $banner->img }}"
-                            class="item owl-carousel__item"
-                            style="background-image: url(/storage/banner/big_{{ $banner->img }});width: 100%;height: 384px;background-repeat: no-repeat;background-position: center center;background-size: cover;display:block">
+                        <a href="{{ $banner->url }}">
+                            <img src="/storage/banner/big_{{ $banner->img }}"
+                                style="width:100vw,display: block;max-width: 100%;height: auto;" alt="" />
                         </a>
                     </div>
                 @endforeach
@@ -68,11 +63,16 @@
                 @foreach ($bannersPrincipal as $banner)
                     <div class="item">
                         <a href="{{ $banner->url }}">
-                            <figure data-background="/storage/banner/big_{{ $banner->img }}"
-                                class="item owl-carousel__item"
-                                style="background-image: url(/storage/banner/big_{{ $banner->img }});width: 100%;height: 200px;background-repeat: no-repeat;background-position: center center;">
-                            </figure>
+                            <img src="/storage/banner/big_{{ $banner->img_mob }}"
+                                style="width:100vw,display: block;max-width: 100%;height: auto;" alt="" />
                         </a>
+                        {{--
+                        <a href="{{ $banner->url }}">
+                            <figure data-background="/storage/banner/big_{{ $banner->img_mob }}"
+                                class="item owl-carousel__item"
+                                style="background-image: url(/storage/banner/big_{{ $banner->img_mob }});width: 100%;height: 200px;background-repeat: no-repeat;background-position: center center;">
+                            </figure>
+                        </a> --}}
                     </div>
                 @endforeach
             </div>
@@ -138,8 +138,4 @@
             </div>
         </div>
     </div>
-
-
-
-
 @stop

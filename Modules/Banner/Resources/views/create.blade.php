@@ -38,16 +38,16 @@
             <hr>
             <div class="col-lg-6">
                 <div class="form-group">
-                    <label for="img" class="control-label">Imagem: (1920x384)</label>
+                    <label for="img" class="control-label">Imagem: (1920x400)</label>
                     <input type="file" class="form-control" name="img" id="img">
                 </div>
             </div>
-            <!--  <div class="col-lg-6">
+            <div class="col-lg-6">
                 <div class="form-group">
-                    <label for="img_mob" class="control-label">Imagem Mobile: (600x600)</label>
+                    <label for="img_mob" class="control-label">Imagem Mobile: (640x480)</label>
                     <input type="file" class="form-control" name="img_mob" id="img_mob">
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 

@@ -17,7 +17,7 @@ class BannerRepository extends AbstractRepository implements RepositoryInterface
    * @var string
    */
   protected $table = "banner";
-  protected $fillable = ['nome', 'url', 'img', 'ordem', 'ativo', 'target'];
+  protected $fillable = ['nome', 'url', 'img', 'ordem', 'ativo', 'target', 'img_mob'];
   //protected $guarded = ['id'];
   public $timestamps = false;
 

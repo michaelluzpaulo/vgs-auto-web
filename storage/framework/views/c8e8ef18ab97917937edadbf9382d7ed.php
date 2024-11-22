@@ -51,14 +51,14 @@
             <div class="col-lg-6">
                 <div class="form-group">
                     <label for="img" class="control-label">&nbsp;</label>
-                    @if ($banner->img)
-                        <div><a href="/storage/banner/big_{{ $banner->img }}" target="_blank"
+                    <?php if($banner->img): ?>
+                        <div><a href="/storage/banner/big_<?php echo e($banner->img); ?>" target="_blank"
                                 class="btn btn-secondary">Ver imagem</a></div>
-                    @else
+                    <?php else: ?>
                         <div class="alert alert-warning" role="alert">
                             <i class="fa fa-exclamation-triangle"></i> Nenhum arquivo encontrado.
                         </div>
-                    @endif
+                    <?php endif; ?>
                 </div>
             </div>
 
@@ -74,14 +74,14 @@
             <div class="col-lg-6">
                 <div class="form-group">
                     <label for="img_mobxx" class="control-label">&nbsp;</label>
-                    @if ($banner->img_mob)
-                        <div><a href="/storage/banner/big_{{ $banner->img_mob }}" target="_blank"
+                    <?php if($banner->img_mob): ?>
+                        <div><a href="/storage/banner/big_<?php echo e($banner->img_mob); ?>" target="_blank"
                                 class="btn btn-secondary">Ver imagem</a></div>
-                    @else
+                    <?php else: ?>
                         <div class="alert alert-warning" role="alert">
                             <i class="fa fa-exclamation-triangle"></i> Nenhum arquivo encontrado.
                         </div>
-                    @endif
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -95,3 +95,4 @@
         <button type="button" class="btn btn-danger run-btn-delete"><i class="bi bi-trash"></i> Excluir</button>
     </div>
 </form>
+<?php /**PATH /Volumes/work/www/vgs_auto_group/vgs_auto/Modules/Banner/Resources/views/edit.blade.php ENDPATH**/ ?>

@@ -204,68 +204,6 @@ const Banner = (function () {
     );
   }
 
-  /**
-   * Salva o registro no banco de dados
-   */
-
-  // function __save() {
-  //   var id = parseInt($("#id", _formId).val());
-  //   var data = $(_formId).serializeJSON();
-  //   var method = id ? "PUT" : "POST";
-  //   var url = id ? "/admin/banners/" + id : "/admin/banners";
-
-  //   $.loadmask();
-  //   $.ajax({
-  //     type: method,
-  //     url: url,
-  //     data: {
-  //       data: JSON.stringify(data),
-  //     },
-  //     dataType: "json",
-  //     timeout: 120000,
-  //     success: function (json) {
-  //       $.unloadmask();
-  //       if (json.error == 0) {
-  //         __refreshTable();
-
-  //         var formData = new FormData();
-  //         var file = document.querySelector("#img", _formId);
-
-  //         if (file.value != "") {
-  //           $.unloadmask();
-  //           $.loadmask("ATUALIZANDO FOTO....");
-  //           var file = file.files[0];
-  //           formData.append("img", file);
-  //           formData.append("tipo", 1);
-
-  //           $.ajax({
-  //             url: "/admin/banners/" + json.data.id + "/foto",
-  //             type: "POST",
-  //             data: formData,
-  //             dataType: "json",
-  //             processData: false,
-  //             contentType: false,
-  //             success: function (retorno) {
-  //               message += retorno.message;
-  //               $.unloadmask();
-  //             },
-  //             error: function (jqXHR, textStatus, errorThrown) {
-  //               ServiceHttp.exceptionAjax(jqXHR, textStatus, errorThrown);
-  //             },
-  //           });
-  //         }
-
-  //         Notify.success(json.message);
-  //         $(_modalId).hide();
-  //         $(_modalId).modal("hide");
-  //       }
-  //     },
-  //     error: function (jqXHR, textStatus, errorThrown) {
-  //       ServiceHttp.exceptionAjax(jqXHR, textStatus, errorThrown);
-  //     },
-  //   });
-  // }
-
   function __save() {
     var id = parseInt($("#id", _formId).val());
     var data = $(_formId).serializeJSON();
@@ -283,16 +221,16 @@ const Banner = (function () {
       timeout: 120000,
       success: function (json) {
         if (json.error == 0) {
-          var step = 0;
-          var message = json.message;
+          let step = 0;
+          let message = json.message;
           __refreshTable();
 
-          var formData = new FormData();
-          var file = document.querySelector("#img", _formId);
+          let formData = new FormData();
+          let file = document.querySelector("#img", _formId);
 
           if (file.value != "") {
             step++;
-            var file = file.files[0];
+            file = file.files[0];
             formData.append("img", file);
             formData.append("tipo", 1);
 
@@ -313,34 +251,34 @@ const Banner = (function () {
             });
           }
 
-          // var formData = new FormData();
-          // var file = document.querySelector("#img_mob", _formId);
+          formData = new FormData();
+          file = document.querySelector("#img_mob", _formId);
 
-          // if (file.value != "") {
-          //   step++;
-          //   var file = file.files[0];
-          //   formData.append("img_mob", file);
-          //   formData.append("tipo", 2);
+          if (file.value != "") {
+            step++;
+            file = file.files[0];
+            formData.append("img_mob", file);
+            formData.append("tipo", 2);
 
-          //   $.ajax({
-          //     url: "/admin/banners/" + json.data.id + "/foto",
-          //     type: "POST",
-          //     data: formData,
-          //     dataType: "json",
-          //     processData: false,
-          //     contentType: false,
-          //     success: function (retorno) {
-          //       message += retorno.message;
-          //       step--;
-          //     },
-          //     error: function (jqXHR, textStatus, errorThrown) {
-          //       ServiceHttp.exceptionAjax(jqXHR, textStatus, errorThrown);
-          //     },
-          //   });
-          // }
+            $.ajax({
+              url: "/admin/banners/" + json.data.id + "/foto",
+              type: "POST",
+              data: formData,
+              dataType: "json",
+              processData: false,
+              contentType: false,
+              success: function (retorno) {
+                message += retorno.message;
+                step--;
+              },
+              error: function (jqXHR, textStatus, errorThrown) {
+                ServiceHttp.exceptionAjax(jqXHR, textStatus, errorThrown);
+              },
+            });
+          }
 
-          var tentativa = 0;
-          var interval = setInterval(function () {
+          let tentativa = 0;
+          const interval = setInterval(function () {
             if (tentativa > 10 || step == 0) {
               clearInterval(interval);
               $.unloadmask();

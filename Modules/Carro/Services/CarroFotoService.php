@@ -4,13 +4,10 @@ namespace Modules\Carro\Services;
 
 use Exception;
 use Illuminate\Support\Facades\File;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Validator;
-use Illuminate\Validation\Rule;
-use Intervention\Image\ImageManagerStatic as Image;
 use Modules\Carro\Repositories\CarroRepository;
 use Modules\Carro\Repositories\CarroFotoRepository;
+
+use Intervention\Image\Laravel\Facades\Image;
 
 class CarroFotoService
 {
@@ -52,6 +49,7 @@ class CarroFotoService
 
   public function saveFoto($id = 0, $request)
   {
+    ini_set('memory_limit', '256M');
 
     try {
       $obj = $this->carroRepository->find($id);
@@ -60,61 +58,39 @@ class CarroFotoService
         throw new Exception('Nenhuma imagem enviada! ');
       }
 
-      $file = $request->file('img');
-
-      //verificar se ini_set está habilitado e se tamanho do arquivo é maior que o permitido
-      if (ini_get('upload_max_filesize') < $file->getSize()) {
-        throw new Exception("Tamanho do arquivo de " . $file->getSize() . " excede o upload_max_filesize permitido: " . ini_get('upload_max_filesize') . ', memory_limit: ' . ini_get('memory_limit'));
+      if (!$request->file('img')->isValid()) {
+        throw new Exception('Erro de validação! ');
       }
 
-      if (ini_get('post_max_size') < $file->getSize()) {
-        throw new Exception("Tamanho do arquivo de " . $file->getSize() . " excede o post_max_size permitido: " . ini_get('post_max_size') . ', memory_limit: ' . ini_get('memory_limit'));
+      $name = uniqid(date('HisYmd'));
+
+      // Recupera a extensão do arquivo
+      $extension = $request->file('img')->extension();
+      $nameFile = "{$name}.{$extension}";
+
+      $image = Image::read($request->file('img'));
+      $image->cover(600, 450)->save("storage/carro/big_{$nameFile}");
+      $image->cover(400, 300)->save("storage/carro/tmb_{$nameFile}");
+
+      if ($obj->img) {
+        $this->__deleteArquivoFisico($obj->img);
       }
 
-      if (ini_get('max_execution_time') < 120) {
-        throw new Exception("Tempo de execução excede o max_execution_time permitido: " . ini_get('max_execution_time') . ', memory_limit: ' . ini_get('memory_limit'));
-      }
-
-      if (ini_get('max_input_time') < 120) {
-        throw new Exception("Tempo de execução excede o max_input_time permitido: " . ini_get('max_execution_time') . ', memory_limit: ' . ini_get('memory_limit'));
-      }
+      $obj->img = $nameFile;
+      $obj->save();
 
 
-      if ($file->isValid()) {
-        $name = uniqid(date('HisYmd'));
-
-        // Recupera a extensão do arquivo
-        $extension = $file->extension();
-
-        // Define finalmente o nome
-        $nameFile = "{$name}.{$extension}";
-        $upload = Image::make($file)->fit(600, 450, function ($constraint) {
-          $constraint->aspectRatio();
-          $constraint->upsize();
-        })->save("storage/carro/big_{$nameFile}");
-
-        $upload = Image::make($file)->fit(400, 300, function ($constraint) {
-          $constraint->aspectRatio();
-          $constraint->upsize();
-        })->save("storage/carro/tmb_{$nameFile}");
-
-        if (!$upload) {
-          throw new Exception('Falha ao fazer upload da imagem pequena');
-        }
-
-        if ($obj->img) {
-          // @unlink("storage/carro/tmb_{$obj->img}");
-          // @unlink("storage/carro/big_{$obj->img}");
-          $this->__deleteArquivoFisico($obj->img);
-        }
-
-        $obj->img = $nameFile;
-        $obj->save();
-      }
-
-      return response()->json(['error' => 0, 'message' => 'O upload da imagem foi concluído com sucesso.', 'data' => ['id' => $obj->id]], 200);
+      return response()->json(['error' => 0, 'message' => '<br />O upload da imagem foi concluído com sucesso.', 'data' => ['id' => $obj->id]], 200);
     } catch (Exception $e) {
-      return response()->json(['error' => 1, 'message' => $e->getMessage(), 'data' => []], 400);
+
+      $msg = $e->getMessage();
+      // $msg .= "<br />upload_max_filesize: " . ini_get('upload_max_filesize');
+      // $msg .= "<br />post_max_size: " . ini_get('post_max_size');
+      // $msg .= "<br />max_execution_time: " . ini_get('max_execution_time');
+      // $msg .= "<br />max_input_time: " . ini_get('max_input_time');
+      // $msg .= "<br />memory_limit: " . ini_get('memory_limit');
+
+      return response()->json(['error' => 1, 'message' => $msg, 'data' => []], 400);
     }
   }
 
@@ -133,6 +109,8 @@ class CarroFotoService
 
   public function saveGalleryFoto($id = 0, $request)
   {
+    ini_set('memory_limit', '256M');
+
     try {
       $obj = $this->carroRepository->find($id);
 
@@ -147,32 +125,14 @@ class CarroFotoService
 
           // Recupera a extensão do arquivo
           $extension = $file->extension();
-
-          // Define finalmente o nome
           $nameFile = "{$name}.{$extension}";
 
-          // $dir = __DIR__ . '/../../../public/storage/carro/' . $obj->id;
-          // if (!is_dir($dir)) {
-          //   mkdir($dir, 0755, true);
-          // }
+          $image = Image::read($file);
 
-          // dd($file);
-          $upload = Image::make($file)->resize(1200, null, function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-          })->save("storage/carro/big_{$nameFile}");
 
-          $upload = Image::make($file)->fit(600, 450, function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-          })->save("storage/carro/tmb_{$nameFile}");
+          $image->scaleDown(800, null)->save("storage/carro/big_{$nameFile}");
+          $image->cover(600, 450)->save("storage/carro/tmb_{$nameFile}");
 
-          // Se tiver funcionado o arquivo foi armazenado em storage/app/public/categories/nomedinamicoarquivo.extensao
-
-          // Verifica se NÃO deu certo o upload (Redireciona de volta)
-          if (!$upload) {
-            throw new \Exception("Falha ao fazer upload! ");
-          }
           $nomeOriginal = explode('.', $file->getClientOriginalName());
           $objFoto = null;
           $objFoto = new CarroFotoRepository();

@@ -131,9 +131,9 @@ h1 {
   color: var(--green);
 }
 .owl-carousel {
-  height: 384px;
+  /* height: 384px; */
 }
-.owl-carousel .owl-dots.disabled,
+/* .owl-carousel .owl-dots.disabled, */
 .owl-carousel .owl-nav.disabled {
   display: flex;
 }
@@ -442,10 +442,10 @@ h1 {
 }
 @media (max-width: 700px) {
   .all-banner {
-    height: 200px;
+    min-height: 200px;
   }
   .owl-carousel-principal .owl-carousel__item {
-    height: 200px;
+    min-height: 200px;
     background-size: cover;
   }
 
