@@ -26,4 +26,5 @@ Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin/carros'], func
 
   Route::post('/{id}/galeria-foto', 'CarroController@updateGalleryFoto');
   Route::delete('/{id}/galeria-foto/{fotoId}', 'CarroController@destroyGalleryFoto');
+  Route::post('/{id}/galeria-foto-all-checked', 'CarroController@destroyGalleryFotoAllChecked');
 });

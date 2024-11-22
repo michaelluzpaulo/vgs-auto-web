@@ -12,6 +12,18 @@ var CarroGaleria = (function () {
       __deleteGalleryFoto(fotoId);
     });
 
+    $(".run-btn-delete-carro-foto-all-selected", _modalId).on(
+      "click",
+      function (e) {
+        e.preventDefault();
+        const fotos = [];
+        $(".carro-multifotos-img:checked", _modalId).each(function () {
+          fotos.push($(this).val());
+        });
+        __deleteGalleryFotoAllChecked(fotos);
+      }
+    );
+
     if (document.querySelector(".img_input")) {
       document.querySelector(".img_input").addEventListener("change", () => {
         _imagesArrayUpload = [];
@@ -59,6 +71,33 @@ var CarroGaleria = (function () {
           url: "/admin/carros/" + id + "/galeria-foto/" + fotoId,
           dataType: "json",
           timeout: 120000,
+          success: function (json) {
+            $("#confirmModal").modal("hide");
+            $(_modalId).modal("hide");
+            Notify.success(json.message);
+            setTimeout(() => {
+              Carro.update(json.data.id);
+            }, 1500);
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            ServiceHttp.exceptionAjax(jqXHR, textStatus, errorThrown);
+          },
+        });
+      }
+    );
+  }
+
+  function __deleteGalleryFotoAllChecked(fotos) {
+    const id = $("#id", _formId).val();
+    Notify.confirm(
+      "Você confirma a exclusão do registro?<br />Após a confirmação será impossível reverter o comando.",
+      function () {
+        $.ajax({
+          type: "POST",
+          url: "/admin/carros/" + id + "/galeria-foto-all-checked",
+          dataType: "json",
+          timeout: 120000,
+          data: { fotos },
           success: function (json) {
             $("#confirmModal").modal("hide");
             $(_modalId).modal("hide");

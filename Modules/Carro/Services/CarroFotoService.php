@@ -95,6 +95,19 @@ class CarroFotoService
   }
 
 
+  public function destroyGalleryFotoAllChecked($id, $fotos)
+  {
+    foreach ($fotos as $fotoId) {
+      $obj = $this->carroFotoRepository->find($fotoId);
+      if (File::exists("storage/carro/tmb_{$obj->img}")) {
+        File::delete("storage/carro/tmb_{$obj->img}");
+        File::delete("storage/carro/big_{$obj->img}");
+      }
+      $obj->delete();
+    }
+
+    return response()->json(['error' => 0, 'message' => "Registros removidos com sucesso", 'data' => ['id' => $id]], 200);
+  }
   public function destroyGalleryFoto($id, $fotoId)
   {
     $obj = $this->carroFotoRepository->find($fotoId);

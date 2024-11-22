@@ -118,4 +118,8 @@ class CarroController extends Controller
   {
     return $this->fotoService->destroyGalleryFoto($id, $fotoId);
   }
+  public function destroyGalleryFotoAllChecked(Request $request, $id)
+  {
+    return $this->fotoService->destroyGalleryFotoAllChecked($id, $request->all()['fotos']);
+  }
 }
