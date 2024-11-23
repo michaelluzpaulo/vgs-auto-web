@@ -4,8 +4,8 @@
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="{{ asset('vendorjs/ckeditor4/ckeditor.js') }}?v=<?php echo time(); ?>"></script>
-    <script type="text/javascript" src="{{ asset('vendorjs/ckeditor4/adapters/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('shared/ckeditor4/ckeditor.js') }}?v=<?php echo time(); ?>"></script>
+    <script type="text/javascript" src="{{ asset('shared/ckeditor4/adapters/jquery.js') }}"></script>
     <script type="text/javascript" src="/dist/js/modules/Institucional.js?v=<?php echo time(); ?>"></script>
     <script type="text/javascript" src="/dist/js/modules/InstitucionalGaleria.js?v=<?php echo time(); ?>"></script>
     <script type="text/javascript">

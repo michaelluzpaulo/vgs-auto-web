@@ -12,7 +12,7 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="/vendorjs/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/shared/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/dist/css/adminlte.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -22,7 +22,7 @@
     <link rel="shortcut icon" href="/dist/img/favicon.png" />
 
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="/vendorjs/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="/shared/overlayScrollbars/css/OverlayScrollbars.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" />
     <link rel="stylesheet"
@@ -203,13 +203,13 @@
 
 
     <!-- jQuery -->
-    <script src="/vendorjs/jquery/jquery.min.js?v={{ time() }}"></script>
+    <script src="/shared/jquery/jquery.min.js?v={{ time() }}"></script>
     <!-- Bootstrap 5 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 
-    {{-- <script src="/vendorjs/bootstrap/js/bootstrap.bundle.min.js"></script> --}}
+    {{-- <script src="/shared/bootstrap/js/bootstrap.bundle.min.js"></script> --}}
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
 

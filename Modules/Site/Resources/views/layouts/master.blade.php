@@ -63,8 +63,8 @@
         href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
 
-    <link href="/vendorjs/owl/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="/vendorjs/owl/assets/owl.theme.default.css" rel="stylesheet">
+    <link href="/shared/owl/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/shared/owl/assets/owl.theme.default.css" rel="stylesheet">
     <link rel="shortcut icon" href="/dist/img/favicon.png" />
 
 
@@ -133,7 +133,7 @@
     {{--
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script> --}}
-    <script src="/vendorjs/jquery/jquery.min.js"></script>
+    <script src="/shared/jquery/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
@@ -142,7 +142,7 @@
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
 
-    <script src="/vendorjs/owl/owl.carousel.min.js"></script>
+    <script src="/shared/owl/owl.carousel.min.js"></script>
     <script src="/dist/js/services/service-notify.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
     <script src="/dist/js/core/Validator.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>
     <script src="/dist/js/core/ModalFactory.js?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}"></script>

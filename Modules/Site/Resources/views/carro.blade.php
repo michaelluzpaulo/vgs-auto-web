@@ -1,6 +1,6 @@
 @extends('site::layouts.master')
 @section('js')
-    <script src="/vendorjs/lightbox2/dist/js/lightbox.min.js"></script>
+    <script src="/shared/lightbox2/dist/js/lightbox.min.js"></script>
     <script>
         @if ($carro->vendido == 'S')
             document.querySelector('.nav-link-2').classList.add("active");
@@ -10,7 +10,7 @@
     </script>
 @endsection
 @section('css')
-    <link href="/vendorjs/lightbox2/dist/css/lightbox.min.css" rel="stylesheet">
+    <link href="/shared/lightbox2/dist/css/lightbox.min.css" rel="stylesheet">
 @endsection
 
 @section('content')
