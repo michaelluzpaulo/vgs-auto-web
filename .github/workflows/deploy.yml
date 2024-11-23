@@ -10,16 +10,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: "8.2"
+      # - name: Set up PHP
+      #   uses: shivammathur/setup-php@v2
+      #   with:
+      #     php-version: "8.2"
 
-      - name: Install dependencies
-        run: composer install --no-dev --no-progress --prefer-dist --optimize-autoloader
+      # - name: Install dependencies
+      #   run: composer install --no-dev --no-progress --prefer-dist --optimize-autoloader
 
-      - name: Generate optimized autoload files
-        run: composer dump-autoload --optimize
+      # - name: Generate optimized autoload files
+      #   run: composer dump-autoload --optimize
 
       # - name: Run Laravel Mix
       #   run: npm install && npm run production
