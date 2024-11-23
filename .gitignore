@@ -17,4 +17,7 @@ yarn-error.log
 /.idea
 /.vscode
 /public/ckfinder
+/public/vendorjs/*
 /public/vendorjs
+public/vendorjs
+
