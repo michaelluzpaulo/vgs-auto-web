@@ -70,23 +70,58 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer.min.js"></script>
 
-    <head>
-        {{-- <script src="https://www.google.com/recaptcha/api.js?render=6LfHEYUqAAAAAHax8w-DaiP06a8Q4EQGy_qEjmW9"></script> --}}
+
+    <!-- Google Tag Manager -->
+
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+
+                    new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+
+        })(window, document, 'script', 'dataLayer', 'GTM-N5PL25QW');
+    </script>
+
+    <!-- End Google Tag Manager -->
 
 
-        {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"> --}}
-        {{-- <link rel="stylesheet"
+    {{-- <script src="https://www.google.com/recaptcha/api.js?render=6LfHEYUqAAAAAHax8w-DaiP06a8Q4EQGy_qEjmW9"></script> --}}
+
+
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"> --}}
+    {{-- <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> --}}
 
-        @yield('css')
-        <link rel="stylesheet" href="/dist/css/site.css?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}">
+    @yield('css')
+    <link rel="stylesheet" href="/dist/css/site.css?v={{ env('APP_VERSION_ARQUIVE_STATIC') }}">
 
-        @vite(['resources/js/app.js'])
+    @vite(['resources/js/app.js'])
 
 
-    </head>
+</head>
 
 <body id="{{ $pgId }}" class="{{ $pgId }} {{ $pgClass }} ">
+
+    <!-- Google Tag Manager (noscript) -->
+
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5PL25QW" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- End Google Tag Manager (noscript) -->
+
     <div class="wrapper">
         <header>
             <div class="all-header">
