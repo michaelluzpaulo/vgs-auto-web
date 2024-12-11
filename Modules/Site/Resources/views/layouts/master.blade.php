@@ -71,6 +71,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer.min.js"></script>
 
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DSH67D0Z2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-2DSH67D0Z2');
+    </script>
+
     <!-- Google Tag Manager -->
 
     <script>
@@ -94,6 +107,7 @@
 
         })(window, document, 'script', 'dataLayer', 'GTM-N5PL25QW');
     </script>
+
 
     <!-- End Google Tag Manager -->
 
